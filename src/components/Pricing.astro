@@ -1,0 +1,158 @@
+﻿---
+import { LINKS } from '../config';
+
+const plans = [
+  {
+    name: "Torneo Relámpago",
+    badge: "Pago Único",
+    price: "$99.000",
+    currency: "COP",
+    period: "/ por torneo",
+    desc: "Ideal para copas de fin de semana, torneos relámpago o campeonatos de empresas.",
+    popular: false,
+    ctaText: "Crear Torneo Relámpago",
+    ctaLink: LINKS.register,
+    features: [
+      "Hasta 16 equipos participantes",
+      "Fixture y llaves automáticas",
+      "Tabla de posiciones en tiempo real",
+      "Planilla digital básica",
+      "Enlace público para jugadores",
+      "Soporte por correo y WhatsApp"
+    ]
+  },
+  {
+    name: "Liga Pro",
+    badge: "Más Popular",
+    price: "$189.000",
+    currency: "COP",
+    period: "/ mes (Multicategoría)",
+    desc: "Para complejos deportivos y organizadores habituales que gestionan ligas continuas.",
+    popular: true,
+    ctaText: "Comenzar Prueba Gratis (14 Días)",
+    ctaLink: LINKS.register,
+    features: [
+      "Categorías ilimitadas (Libre, Senior, Femenil)",
+      "Hasta 48 equipos simultáneos",
+      "Control de tarjetas y sanciones automáticas",
+      "Goleadores y valla menos vencida",
+      "Múltiples árbitros con acceso móvil",
+      "Soporte prioritario WhatsApp 24/7",
+      "Descarga de planillas en PDF oficial"
+    ]
+  },
+  {
+    name: "Corporativo & Ligas",
+    badge: "A la Medida",
+    price: "Cotizar",
+    currency: "",
+    period: "Grandes organizaciones",
+    desc: "Para ligas departamentales, cajas de compensación y complejos multideportivos.",
+    popular: false,
+    ctaText: "Hablar con un Asesor",
+    ctaLink: LINKS.whatsappContact,
+    features: [
+      "Equipos y torneos sin límite",
+      "Dominio web propio (ej. tu-liga.com)",
+      "Carnetización digital con código QR",
+      "Panel para comité disciplinario y apelaciones",
+      "Capacitación presencial o virtual a árbitros",
+      "Gerente de cuenta dedicado 24/7",
+      "Acuerdo de nivel de servicio (SLA 99.9%)"
+    ]
+  }
+];
+---
+
+<section id="pricing" class="py-20 md:py-32 relative">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Heading -->
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <span class="text-xs font-bold uppercase tracking-widest text-emerald-400 bg-emerald-950/60 border border-emerald-500/30 px-3 py-1 rounded-full">
+        Precios Claros y Flexibles
+      </span>
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight mt-4 mb-4">
+        Invierte en orden, ahorra <span class="text-gradient-emerald">cientos de horas de gestión</span>
+      </h2>
+      <p class="text-base sm:text-lg text-slate-300">
+        Sin contratos forzosos. Elige pagar únicamente por torneo o suscríbete para administrar tu complejo todo el año.
+      </p>
+    </div>
+
+    <!-- Pricing Cards Grid -->
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch max-w-6xl mx-auto">
+      {plans.map((plan) => (
+        <div class={`rounded-3xl p-8 flex flex-col justify-between relative transition-all duration-300 ${
+          plan.popular 
+            ? 'bg-gradient-to-b from-slate-900 via-slate-900 to-emerald-950/40 border-2 border-emerald-500 shadow-2xl shadow-emerald-950/60 lg:-translate-y-2' 
+            : 'bg-slate-900/60 border border-slate-800 hover:border-slate-700'
+        }`}>
+          
+          {plan.popular && (
+            <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-gradient-to-r from-emerald-400 to-cyan-400 text-slate-950 font-black text-xs uppercase tracking-wider py-1 px-4 rounded-full shadow-lg">
+              {plan.badge}
+            </div>
+          )}
+
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <h3 class="text-xl font-bold text-white">{plan.name}</h3>
+              {!plan.popular && (
+                <span class="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-slate-800 text-slate-300 border border-slate-700">
+                  {plan.badge}
+                </span>
+              )}
+            </div>
+
+            <p class="text-xs sm:text-sm text-slate-400 min-h-[40px] mb-6">
+              {plan.desc}
+            </p>
+
+            <div class="flex items-baseline gap-1 mb-6 pb-6 border-b border-slate-800">
+              <span class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight font-sans">
+                {plan.price}
+              </span>
+              {plan.currency && <span class="text-xs text-slate-400 font-semibold">{plan.currency}</span>}
+              <span class="text-xs text-slate-400 ml-1">{plan.period}</span>
+            </div>
+
+            <!-- Features list -->
+            <ul class="space-y-3.5 mb-8">
+              {plan.features.map((feat) => (
+                <li class="flex items-start gap-3 text-xs sm:text-sm text-slate-300">
+                  <svg class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span>{feat}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <!-- CTA Button -->
+          <a 
+            href={plan.ctaLink}
+            target={plan.popular ? "_self" : "_blank"}
+            rel="noopener noreferrer"
+            class={`w-full py-3.5 px-6 rounded-xl font-bold text-sm text-center transition-all duration-200 block ${
+              plan.popular
+                ? 'bg-gradient-to-r from-emerald-400 via-emerald-300 to-cyan-400 text-slate-950 shadow-lg shadow-emerald-500/25 hover:shadow-emerald-500/40 hover:from-emerald-300 hover:to-cyan-300'
+                : 'bg-slate-800 text-white hover:bg-slate-700 border border-slate-700 hover:border-slate-600'
+            }`}
+          >
+            {plan.ctaText}
+          </a>
+
+        </div>
+      ))}
+    </div>
+
+    <!-- Guarantee badge -->
+    <div class="mt-12 text-center text-xs text-slate-400 flex items-center justify-center gap-2">
+      <span class="text-emerald-400">🔒</span>
+      <span>Sin tarjetas de crédito requeridas para comenzar tu prueba gratuita. Cancela en cualquier momento.</span>
+    </div>
+
+  </div>
+</section>
