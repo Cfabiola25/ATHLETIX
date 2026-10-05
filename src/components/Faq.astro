@@ -1,67 +1,67 @@
 ﻿---
 const faqs = [
   {
-    q: "¿Cómo se relacionan Athletix y el motor SIGET?",
-    a: "Athletix es la plataforma comercial, de marca y de soporte para los organizadores de torneos; mientras que SIGET (Sistema Integral de Gestión de Torneos) es el motor tecnológico que procesa de manera segura los calendarios, las tablas de posiciones y las validaciones disciplinarias."
+    q: "¿Cómo se conectan Athletix y el motor SIGET?",
+    a: "Athletix es la cara comercial, de marca y de soporte para los organizadores de torneos; mientras que SIGET (Sistema Integral de Gestión de Torneos) es el motor de software que procesa las reglas, genera los calendarios automáticos sin cruces y calcula las tablas de posiciones en tiempo real."
   },
   {
     q: "¿Los jugadores o capitanes deben pagar para consultar la tabla?",
-    a: "No. El acceso para jugadores, delegados y fanáticos es completamente gratuito. Cada torneo genera un enlace web público que se puede compartir directamente por WhatsApp para consultar resultados, horarios y clasificaciones desde cualquier teléfono móvil."
+    a: "No. El acceso para jugadores, delegados, familiares y seguidores es 100% gratuito. Cada torneo cuenta con un enlace público que puedes compartir directamente por WhatsApp para que cualquiera revise los resultados y horarios desde su teléfono celular."
   },
   {
-    q: "¿Qué modalidades de fútbol son compatibles?",
-    a: "Athletix y SIGET están optimizados para Fútbol 11, Fútbol 7, Fútbol 8, Fútbol 5 (Sintética) y Microfútbol / Futsal. Puedes configurar el puntaje por victoria, empate o bonificaciones federativas, así como la duración de cada tiempo de juego."
+    q: "¿Qué deportes y modalidades puedo gestionar?",
+    a: "Está diseñado para Fútbol 11, Fútbol 7, Fútbol 8, Fútbol 5 (Sintética) y Microfútbol / Futsal. Permite personalizar el puntaje por victoria, empate o bonificaciones de Fair Play, además de los tiempos de juego según tu reglamento particular."
   },
   {
-    q: "¿Cómo evita el software que juegue un futbolista inhabilitado?",
-    a: "Al registrar tarjetas amarillas o rojas en la planilla digital, el sistema actualiza la ficha del jugador al instante. Si acumula el límite configurado (por ejemplo, 3 amarillas) o recibe una roja directa, la planilla de la siguiente jornada bloquea su alineación y avisa al árbitro en pantalla."
+    q: "¿Cómo evita el software que juegue un futbolista sancionado?",
+    a: "Al registrar tarjetas amarillas o rojas en la planilla digital, el sistema actualiza la ficha del jugador al instante. Si acumula el límite configurado (por ejemplo, 3 amarillas) o recibe roja directa, la planilla de la siguiente jornada bloquea su alineación y avisa al árbitro con un aviso en pantalla."
   },
   {
-    q: "¿Los árbitros necesitan instalar alguna aplicación?",
-    a: "No. La planilla digital funciona directamente desde el navegador de cualquier teléfono celular con una interfaz ligera y optimizada para uso al borde de la cancha."
+    q: "¿El árbitro necesita descargar una aplicación pesada?",
+    a: "No. La planilla digital funciona directamente desde el navegador web de cualquier teléfono móvil, con una interfaz rápida y botones grandes pensados para usar al pie de la cancha."
   },
   {
-    q: "¿Puedo exportar actas oficiales y reportes a PDF?",
-    a: "Sí. Con un solo clic puedes descargar el boletín oficial de cada fecha con firmas de capitanes y jueces, ideal para asambleas de delegados o resoluciones disciplinarias."
+    q: "¿Puedo exportar actas y resoluciones oficiales a PDF?",
+    a: "Sí. Con un solo clic puedes descargar el boletín oficial de cada fecha con firmas digitales de capitanes y jueces, listo para imprimir o enviar a la asamblea de delegados."
   }
 ];
 ---
 
-<section id="faq" class="py-24 md:py-36 border-t border-white/[0.06]">
+<section id="faq" class="py-20 md:py-28 bg-white border-b border-slate-200/80">
   <div class="max-w-4xl mx-auto px-6 sm:px-8 lg:px-12">
     
-    <div class="max-w-2xl mb-16">
-      <span class="text-xs font-medium text-emerald-400 mb-3 block">
+    <div class="max-w-3xl mb-14">
+      <span class="text-xs font-semibold uppercase tracking-wider text-emerald-700 bg-emerald-50 border border-emerald-200/60 px-3 py-1 rounded-full mb-3 inline-block">
         Preguntas frecuentes
       </span>
-      <h2 class="text-3xl sm:text-4xl font-semibold tracking-tight text-white leading-tight">
-        Respuestas claras a tus dudas operativas.
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight">
+        Respuestas claras, sin rodeos.
       </h2>
-      <p class="text-base text-slate-400 mt-4 leading-relaxed">
-        ¿Tienes requerimientos particulares para tu liga? Nuestro equipo está disponible directamente por WhatsApp.
+      <p class="text-base sm:text-lg text-slate-600 mt-4 leading-relaxed">
+        ¿Tienes requerimientos particulares para tu liga o complejo deportivo? Nuestro equipo te atiende directamente por WhatsApp.
       </p>
     </div>
 
-    <!-- Accordion List: Clean Apple Style -->
+    <!-- Accordion List: Clean Daytime Style -->
     <div class="space-y-3.5">
       {faqs.map((faq) => (
-        <div class="faq-item rounded-xl ios-surface transition-colors overflow-hidden">
+        <div class="faq-item rounded-xl bg-slate-50 border border-slate-200/80 transition-colors overflow-hidden">
           <button 
             type="button"
-            class="faq-btn w-full p-6 text-left flex items-center justify-between gap-4 focus:outline-none"
+            class="faq-btn w-full p-5 sm:p-6 text-left flex items-center justify-between gap-4 focus:outline-none"
             aria-expanded="false"
           >
-            <span class="text-sm sm:text-base font-medium text-white pr-2">
+            <span class="text-sm sm:text-base font-bold text-slate-900 pr-2">
               {faq.q}
             </span>
-            <div class="faq-icon-wrapper w-7 h-7 rounded-full bg-white/[0.04] flex items-center justify-center shrink-0 text-slate-400 transition-transform duration-200">
+            <div class="faq-icon-wrapper w-7 h-7 rounded-full bg-white border border-slate-200 flex items-center justify-center shrink-0 text-slate-500 transition-transform duration-200 shadow-xs">
               <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7" />
               </svg>
             </div>
           </button>
           
-          <div class="faq-content hidden px-6 pb-6 text-xs sm:text-sm text-slate-400 leading-relaxed border-t border-white/[0.04] pt-4 font-normal">
+          <div class="faq-content hidden px-5 sm:px-6 pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-200/60 pt-4">
             {faq.a}
           </div>
         </div>
@@ -86,11 +86,13 @@ const faqs = [
       if (isExpanded) {
         btn.setAttribute('aria-expanded', 'false');
         content?.classList.add('hidden');
-        icon?.classList.remove('rotate-180', 'text-white');
+        icon?.classList.remove('rotate-180', 'text-emerald-700', 'border-emerald-300');
+        item.classList.remove('bg-white', 'border-emerald-200');
       } else {
         btn.setAttribute('aria-expanded', 'true');
         content?.classList.remove('hidden');
-        icon?.classList.add('rotate-180', 'text-white');
+        icon?.classList.add('rotate-180', 'text-emerald-700', 'border-emerald-300');
+        item.classList.add('bg-white', 'border-emerald-200');
       }
     });
   });

@@ -8,8 +8,8 @@ interface Props {
 }
 
 const { 
-  title = `Athletix — Software Integral de Gestión Deportiva`,
-  description = `La plataforma de gestión deportiva diseñada para organizadores de torneos, complejos de canchas y ligas. Fixtures automáticos, control de sanciones y planillas digitales impulsadas por el motor SIGET.` 
+  title = `Athletix — Software Profesional para Torneos y Canchas`,
+  description = `Organiza torneos de fútbol, fútbol 8 y microfútbol sin complicaciones. Fixtures automáticos sin cruces, planillas digitales móviles y control de sanciones impulsado por el motor SIGET.` 
 } = Astro.props;
 ---
 
@@ -25,14 +25,14 @@ const {
     <title>{title}</title>
     <meta name="title" content={title} />
     <meta name="description" content={description} />
-    <meta name="keywords" content="gestión deportiva, software torneos futbol, planillas arbitrales digitales, fixtures automáticos, SIGET, Athletix" />
+    <meta name="keywords" content="software torneos futbol, gestion deportiva, canchas sinteticas, planillas arbitrales digitales, fixture automatico, SIGET, Athletix" />
 
-    <!-- High-End Typography: Inter -->
+    <!-- Google Fonts: Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   </head>
-  <body class="bg-[#0B0D13] text-[#94A3B8] min-h-screen relative flex flex-col font-sans antialiased selection:bg-[#10B981] selection:text-white">
+  <body class="bg-[#F8FAFC] text-[#334155] min-h-screen relative flex flex-col font-sans antialiased selection:bg-emerald-100 selection:text-emerald-900">
     <div class="relative z-10 flex flex-col min-h-screen">
       <slot />
     </div>

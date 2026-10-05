@@ -2,118 +2,109 @@
 
 @layer base {
   :root {
-    --bg-base: #0B0D13;
-    --bg-surface: #12151E;
-    --bg-surface-hover: #181C28;
-    --border-subtle: rgba(255, 255, 255, 0.07);
-    --border-hover: rgba(255, 255, 255, 0.14);
-    --accent: #10B981;
-    --accent-light: #34D399;
+    --bg-base: #F8FAFC;
+    --bg-surface: #FFFFFF;
+    --bg-subtle: #F1F5F9;
+    --border-light: #E2E8F0;
+    --border-strong: #CBD5E1;
+    --text-primary: #0F172A;
+    --text-secondary: #334155;
+    --text-muted: #64748B;
+    --accent-green: #16A34A;
+    --accent-green-hover: #15803D;
   }
 
   html {
     scroll-behavior: smooth;
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, sans-serif;
-    color-scheme: dark;
-    background-color: #0B0D13;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    color-scheme: light;
+    background-color: #F8FAFC;
   }
 
   body {
-    background-color: #0B0D13;
-    color: #94A3B8;
+    background-color: #F8FAFC;
+    color: #334155;
     overflow-x: hidden;
     letter-spacing: -0.011em;
-    selection-background-color: #10B981;
-    selection-color: #FFFFFF;
+    selection-background-color: #DCFCE7;
+    selection-color: #14532D;
   }
 
-  /* High-end tabular numbers for stats & times */
   .tabular-nums {
     font-variant-numeric: tabular-nums;
   }
 }
 
-/* Minimalist High-End Surface Cards (macOS / iOS native sheet style) */
-.ios-surface {
-  background-color: #12151E;
-  border: 1px solid rgba(255, 255, 255, 0.07);
-  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.4);
+/* Real Daytime Sports App Cards & Shadows */
+.card-clean {
+  background-color: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.05), 0 8px 10px -6px rgba(15, 23, 42, 0.02);
 }
 
-.ios-surface-hover {
+.card-clean-hover {
   transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.ios-surface-hover:hover {
-  background-color: #151924;
-  border-color: rgba(255, 255, 255, 0.12);
+.card-clean-hover:hover {
+  border-color: #CBD5E1;
+  box-shadow: 0 20px 30px -10px rgba(15, 23, 42, 0.08);
+  transform: translateY(-2px);
+}
+
+/* Primary Action Buttons */
+.btn-green {
+  background-color: #16A34A;
+  color: #FFFFFF;
+  font-weight: 600;
+  transition: all 0.18s ease;
+  box-shadow: 0 1px 2px 0 rgba(22, 163, 74, 0.25);
+}
+
+.btn-green:hover {
+  background-color: #15803D;
+  box-shadow: 0 4px 12px 0 rgba(22, 163, 74, 0.3);
   transform: translateY(-1px);
 }
 
-.ios-surface-inset {
-  background-color: #0E1017;
-  border: 1px solid rgba(255, 255, 255, 0.05);
+.btn-clean {
+  background-color: #FFFFFF;
+  color: #0F172A;
+  border: 1px solid #E2E8F0;
+  font-weight: 500;
+  transition: all 0.18s ease;
 }
 
-/* Native Segmented Control (Apple style) */
-.segmented-control {
-  background-color: #0E1017;
-  border: 1px solid rgba(255, 255, 255, 0.06);
+.btn-clean:hover {
+  background-color: #F8FAFC;
+  border-color: #CBD5E1;
+  color: #0F172A;
+}
+
+/* Daytime Segmented Tabs */
+.segmented-light {
+  background-color: #F1F5F9;
+  border: 1px solid #E2E8F0;
   padding: 4px;
   border-radius: 12px;
 }
 
-.segmented-btn {
+.segmented-tab {
   padding: 6px 14px;
   border-radius: 8px;
   font-size: 13px;
   font-weight: 500;
-  transition: all 0.18s ease;
-  color: #94A3B8;
+  color: #64748B;
+  transition: all 0.15s ease;
 }
 
-.segmented-btn:hover {
-  color: #F8FAFC;
+.segmented-tab:hover {
+  color: #0F172A;
 }
 
-.segmented-btn.active {
-  background-color: #1E2330;
-  color: #FFFFFF;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
-}
-
-/* Primary Button (Refined Luxury Emerald / Monochrome) */
-.btn-primary {
+.segmented-tab.active {
   background-color: #FFFFFF;
-  color: #0B0D13;
+  color: #0F172A;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
   font-weight: 600;
-  letter-spacing: -0.01em;
-  transition: all 0.18s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.btn-primary:hover {
-  background-color: #F1F5F9;
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.12);
-}
-
-.btn-secondary {
-  background-color: rgba(255, 255, 255, 0.04);
-  color: #F1F5F9;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  font-weight: 500;
-  transition: all 0.18s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.btn-secondary:hover {
-  background-color: rgba(255, 255, 255, 0.08);
-  border-color: rgba(255, 255, 255, 0.15);
-  color: #FFFFFF;
-}
-
-/* Subtle accent pill */
-.pill-accent {
-  background-color: rgba(16, 185, 129, 0.1);
-  color: #34D399;
-  border: 1px solid rgba(16, 185, 129, 0.2);
 }

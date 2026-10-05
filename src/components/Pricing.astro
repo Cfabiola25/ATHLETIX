@@ -8,7 +8,7 @@ const plans = [
     price: "$99.000",
     currency: "COP",
     period: "por torneo",
-    desc: "Para copas de fin de semana, torneos relámpago o campeonatos empresariales.",
+    desc: "Para copas de fin de semana, torneos de microfútbol barriales o campeonatos empresariales.",
     popular: false,
     ctaText: "Crear torneo relámpago",
     ctaLink: LINKS.register,
@@ -18,27 +18,27 @@ const plans = [
       "Tabla de posiciones en tiempo real",
       "Planilla digital básica para jueces",
       "Enlace público de resultados para WhatsApp",
-      "Soporte directo"
+      "Soporte directo por WhatsApp"
     ]
   },
   {
     name: "Liga Pro",
-    tag: "Recomendado",
+    tag: "Más popular",
     price: "$189.000",
     currency: "COP",
     period: "al mes",
     desc: "Para complejos deportivos con canchas sintéticas y ligas continuas con múltiples categorías.",
     popular: true,
-    ctaText: "Comenzar prueba de 14 días",
+    ctaText: "Comenzar prueba gratis de 14 días",
     ctaLink: LINKS.register,
     features: [
-      "Categorías ilimitadas (Libre, Senior, Femenino)",
+      "Categorías ilimitadas (Libre, Veteranos, Femenino)",
       "Hasta 48 equipos simultáneos",
       "Bloqueo automático de jugadores sancionados",
       "Goleadores y valla menos vencida en vivo",
       "Acceso móvil ilimitado para árbitros",
       "Descarga de boletines oficiales en PDF",
-      "Soporte prioritario por WhatsApp"
+      "Soporte prioritario 24/7 por WhatsApp"
     ]
   },
   {
@@ -47,9 +47,9 @@ const plans = [
     price: "A convenir",
     currency: "",
     period: "grandes organizaciones",
-    desc: "Para ligas departamentales, cajas de compensación y complejos multideportivos.",
+    desc: "Para ligas departamentales, cajas de compensación y complejos multideportivos de 4+ canchas.",
     popular: false,
-    ctaText: "Hablar con un asesor",
+    ctaText: "Hablar con un asesor comercial",
     ctaLink: LINKS.whatsappContact,
     features: [
       "Torneos y categorías sin límite",
@@ -63,66 +63,65 @@ const plans = [
 ];
 ---
 
-<section id="pricing" class="py-24 md:py-36 border-t border-white/[0.06]">
+<section id="pricing" class="py-20 md:py-28 bg-[#F8FAFC] border-b border-slate-200/80">
   <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
     
     <!-- Section Header -->
-    <div class="max-w-2xl mb-16 md:mb-24">
-      <span class="text-xs font-medium text-emerald-400 mb-3 block">
-        Planes y precios
+    <div class="max-w-3xl mb-16">
+      <span class="text-xs font-semibold uppercase tracking-wider text-emerald-700 bg-emerald-50 border border-emerald-200/60 px-3 py-1 rounded-full mb-3 inline-block">
+        Planes transparentes
       </span>
-      <h2 class="text-3xl sm:text-4xl font-semibold tracking-tight text-white leading-tight">
-        Planes transparentes para cada etapa de tu liga.
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight">
+        Invierte en orden, ahorra horas de discusión.
       </h2>
-      <p class="text-base text-slate-400 mt-4 leading-relaxed">
-        Paga únicamente por el torneo que organizas o suscríbete mensualmente si operas un complejo durante todo el año.
+      <p class="text-base sm:text-lg text-slate-600 mt-4 leading-relaxed">
+        Paga únicamente por el torneo que organizas o suscríbete mensualmente si operas un complejo deportivo durante todo el año.
       </p>
     </div>
 
     <!-- Pricing Cards Grid -->
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto items-stretch">
       {plans.map((plan) => (
-        <div class={`rounded-2xl p-8 flex flex-col justify-between transition-all ${
+        <div class={`rounded-2xl p-8 flex flex-col justify-between transition-all bg-white ${
           plan.popular 
-            ? 'ios-surface border-white/20 shadow-2xl relative' 
-            : 'ios-surface'
+            ? 'card-clean border-2 border-emerald-600 shadow-xl relative' 
+            : 'card-clean'
         }`}>
           
           <div>
             <div class="flex items-center justify-between mb-4">
-              <h3 class="text-lg font-semibold text-white tracking-tight">
+              <h3 class="text-lg font-bold text-slate-900 tracking-tight">
                 {plan.name}
               </h3>
-              {plan.popular && (
-                <span class="text-[11px] font-medium text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-2.5 py-0.5 rounded-full">
+              {plan.popular ? (
+                <span class="text-[11px] font-bold text-emerald-800 bg-emerald-100/80 px-2.5 py-0.5 rounded-full">
                   {plan.tag}
                 </span>
-              )}
-              {!plan.popular && (
-                <span class="text-[11px] font-medium text-slate-400 bg-white/[0.04] border border-white/[0.06] px-2.5 py-0.5 rounded-full">
+              ) : (
+                <span class="text-[11px] font-medium text-slate-600 bg-slate-100 px-2.5 py-0.5 rounded-full">
                   {plan.tag}
                 </span>
               )}
             </div>
 
-            <p class="text-xs sm:text-sm text-slate-400 min-h-[40px] mb-6 leading-relaxed">
+            <p class="text-xs sm:text-sm text-slate-600 min-h-[40px] mb-6 leading-relaxed">
               {plan.desc}
             </p>
 
-            <div class="flex items-baseline gap-1.5 mb-8 pb-6 border-b border-white/[0.06]">
-              <span class="text-3xl sm:text-4xl font-semibold text-white tracking-tight tabular-nums">
+            <div class="flex items-baseline gap-1 mb-8 pb-6 border-b border-slate-100">
+              <span class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight font-mono tabular-nums">
                 {plan.price}
               </span>
-              {plan.currency && <span class="text-xs font-medium text-slate-400">{plan.currency}</span>}
-              <span class="text-xs text-slate-400">/ {plan.period}</span>
+              {plan.currency && <span class="text-xs font-semibold text-slate-500">{plan.currency}</span>}
+              <span class="text-xs text-slate-500 ml-1">/ {plan.period}</span>
             </div>
 
             <!-- Features -->
-            <ul class="space-y-3.5 mb-8 text-xs sm:text-sm text-slate-300">
+            <ul class="space-y-3.5 mb-8 text-xs sm:text-sm text-slate-700">
               {plan.features.map((feat) => (
                 <li class="flex items-start gap-3">
-                  <span class="text-emerald-400 font-medium">✓</span>
-                  <span class="text-slate-300 font-normal">{feat}</span>
+                  <span class="text-emerald-600 font-bold">✓</span>
+                  <span>{feat}</span>
                 </li>
               ))}
             </ul>
@@ -133,10 +132,10 @@ const plans = [
             href={plan.ctaLink}
             target={plan.popular ? "_self" : "_blank"}
             rel="noopener noreferrer"
-            class={`w-full py-3 px-5 rounded-full text-xs sm:text-sm text-center font-medium block transition-all ${
+            class={`w-full py-3.5 px-5 rounded-xl text-xs sm:text-sm text-center font-semibold block transition-all ${
               plan.popular
-                ? 'btn-primary'
-                : 'btn-secondary'
+                ? 'btn-green shadow-sm'
+                : 'btn-clean'
             }`}
           >
             {plan.ctaText}
@@ -146,9 +145,9 @@ const plans = [
       ))}
     </div>
 
-    <!-- Trust Footnote -->
-    <div class="mt-12 text-center text-xs text-slate-400">
-      <span>Sin contratos de permanencia. Puedes cancelar o pausar tu suscripción en cualquier momento.</span>
+    <!-- Footnote -->
+    <div class="mt-12 text-center text-xs text-slate-500">
+      <span>Sin contratos forzosos. Puedes pausar o cancelar tu suscripción en cualquier momento.</span>
     </div>
 
   </div>
