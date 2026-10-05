@@ -8,8 +8,8 @@ interface Props {
 }
 
 const { 
-  title = `ATHLETIX | Software de Operación y Gestión para Torneos de Fútbol`,
-  description = `Athletix y el motor SIGET automatizan fixtures sin cruces, planillas arbitrales digitales y control de sanciones para ligas y complejos deportivos.` 
+  title = `Athletix — Software Integral de Gestión Deportiva`,
+  description = `La plataforma de gestión deportiva diseñada para organizadores de torneos, complejos de canchas y ligas. Fixtures automáticos, control de sanciones y planillas digitales impulsadas por el motor SIGET.` 
 } = Astro.props;
 ---
 
@@ -25,18 +25,14 @@ const {
     <title>{title}</title>
     <meta name="title" content={title} />
     <meta name="description" content={description} />
-    <meta name="keywords" content="torneos de futbol, planillas arbitrales, software para canchas sinteticas, fixture automatico, control de tarjetas, SIGET, Athletix" />
+    <meta name="keywords" content="gestión deportiva, software torneos futbol, planillas arbitrales digitales, fixtures automáticos, SIGET, Athletix" />
 
-    <!-- Google Fonts: Plus Jakarta Sans (Editorial UI) + JetBrains Mono (Scoreboards & Timers) -->
+    <!-- High-End Typography: Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   </head>
-  <body class="bg-[#080A0E] text-slate-200 min-h-screen relative flex flex-col font-sans antialiased selection:bg-[#CCFF00] selection:text-black">
-    <!-- Top razor hairline line in volt -->
-    <div class="w-full h-[2px] bg-[#CCFF00]/80"></div>
-
-    <!-- Main App Container -->
+  <body class="bg-[#0B0D13] text-[#94A3B8] min-h-screen relative flex flex-col font-sans antialiased selection:bg-[#10B981] selection:text-white">
     <div class="relative z-10 flex flex-col min-h-screen">
       <slot />
     </div>

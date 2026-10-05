@@ -2,36 +2,36 @@
 import { LINKS } from '../config';
 ---
 
-<!-- Pre-Footer CTA -->
-<section class="py-16 md:py-24 border-b border-[#1E2633] bg-[#080A0E]">
-  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="rounded-xl p-8 sm:p-12 bg-[#0E121A] border border-[#1E2633] text-center">
+<!-- Pre-Footer Call to Action -->
+<section class="py-24 md:py-36 border-t border-white/[0.06]">
+  <div class="max-w-5xl mx-auto px-6 sm:px-8 lg:px-12 text-center">
+    <div class="ios-surface rounded-3xl p-10 sm:p-16">
       
       <div class="max-w-2xl mx-auto">
-        <span class="text-xs font-mono font-bold uppercase tracking-wider text-[#CCFF00] bg-[#CCFF00]/10 border border-[#CCFF00]/30 px-3 py-1 rounded inline-block mb-4">
-          EMPIEZA ESTE FIN DE SEMANA
+        <span class="text-xs font-medium text-emerald-400 mb-3 block">
+          Pruébalo este fin de semana
         </span>
-        <h2 class="text-3xl sm:text-4xl font-black uppercase tracking-tight text-white mb-4 font-sans">
-          ¿Listo para dejar el Excel y las hojas arrugadas?
+        <h2 class="text-3xl sm:text-4xl font-semibold tracking-tight text-white mb-4">
+          Comienza a profesionalizar tus torneos hoy.
         </h2>
-        <p class="text-sm sm:text-base text-slate-300 mb-8 leading-relaxed">
-          Crea tu torneo en 5 minutos, arma las llaves y prueba la planilla digital en tu próxima fecha sin compromiso.
+        <p class="text-sm sm:text-base text-slate-400 mb-8 leading-relaxed font-normal">
+          Configura tu torneo en 5 minutos, genera las llaves y prueba la planilla digital en tu próxima fecha sin compromiso.
         </p>
 
-        <div class="flex flex-col sm:flex-row items-center justify-center gap-3">
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-3.5">
           <a 
             href={LINKS.register}
-            class="w-full sm:w-auto btn-volt px-7 py-3.5 rounded-lg text-xs font-black uppercase tracking-wider text-center"
+            class="btn-primary w-full sm:w-auto px-7 py-3 rounded-full text-sm font-semibold text-center"
           >
-            Comenzar Prueba Gratis en SIGET
+            Comenzar prueba gratis en SIGET
           </a>
           <a 
             href={LINKS.whatsappContact}
             target="_blank"
             rel="noopener noreferrer"
-            class="w-full sm:w-auto px-5 py-3.5 rounded-lg text-xs font-bold uppercase tracking-wider text-slate-200 bg-[#141A24] hover:bg-[#1E2633] border border-[#1E2633] transition-colors text-center"
+            class="btn-secondary w-full sm:w-auto px-6 py-3 rounded-full text-sm font-medium text-center"
           >
-            Hablar con un Asesor
+            Hablar con un asesor
           </a>
         </div>
       </div>
@@ -41,73 +41,70 @@ import { LINKS } from '../config';
 </section>
 
 <!-- Footer -->
-<footer class="bg-[#080A0E] text-slate-400 text-xs py-12">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+<footer class="border-t border-white/[0.06] text-slate-400 text-xs py-14">
+  <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
       
-      <!-- Brand -->
+      <!-- Brand column -->
       <div class="md:col-span-1">
         <div class="flex items-center gap-2.5 mb-3">
-          <div class="w-7 h-7 rounded bg-[#0E121A] border border-[#1E2633] flex items-center justify-center">
-            <svg class="w-4 h-4" viewBox="0 0 40 40" fill="none">
-              <path d="M22 6L10 22H18L16 34L28 18H20L22 6Z" fill="#CCFF00"/>
-            </svg>
+          <div class="w-7 h-7 rounded-lg bg-[#12151E] border border-white/[0.08] flex items-center justify-center">
+            <img src="/logo-athletix.svg" alt="Athletix" class="w-4 h-4" />
           </div>
-          <span class="text-lg font-black text-white uppercase tracking-tight">ATHLETIX</span>
+          <span class="text-sm font-semibold text-white tracking-tight">Athletix</span>
         </div>
-        <p class="text-slate-400 text-[11px] leading-relaxed mb-3">
-          Plataforma de comercialización y soporte para la operación de torneos deportivos amateur y profesionales.
+        <p class="text-slate-400 text-xs leading-relaxed mb-3">
+          Software de gestión deportiva y comercialización para ligas y complejos de fútbol.
         </p>
-        <span class="text-[10px] font-mono text-[#CCFF00] bg-[#CCFF00]/10 border border-[#CCFF00]/25 px-2 py-0.5 rounded uppercase">
-          IMPULSADO POR MOTOR SIGET V1
+        <span class="text-[11px] text-slate-400 bg-white/[0.03] border border-white/[0.06] px-2.5 py-1 rounded-full inline-block">
+          Tecnología del motor SIGET V1
         </span>
       </div>
 
       <!-- Navigation -->
       <div>
-        <h4 class="font-bold text-white uppercase font-mono text-[11px] tracking-wider mb-3">Navegación</h4>
-        <ul class="space-y-2 text-slate-400">
+        <h4 class="font-medium text-white text-xs mb-3.5">Navegación</h4>
+        <ul class="space-y-2.5 text-slate-400 text-xs">
           <li><a href="#features" class="hover:text-white transition-colors">Funcionalidades</a></li>
-          <li><a href="#preview" class="hover:text-white transition-colors">Tablero en Vivo</a></li>
-          <li><a href="#pricing" class="hover:text-white transition-colors">Planes y Precios</a></li>
-          <li><a href="#faq" class="hover:text-white transition-colors">Preguntas Frecuentes</a></li>
+          <li><a href="#preview" class="hover:text-white transition-colors">Demostración en vivo</a></li>
+          <li><a href="#pricing" class="hover:text-white transition-colors">Planes y precios</a></li>
+          <li><a href="#faq" class="hover:text-white transition-colors">Preguntas frecuentes</a></li>
         </ul>
       </div>
 
-      <!-- Software -->
+      <!-- Platform -->
       <div>
-        <h4 class="font-bold text-white uppercase font-mono text-[11px] tracking-wider mb-3">Acceso Plataforma</h4>
-        <ul class="space-y-2 text-slate-400">
-          <li><a href={LINKS.login} class="hover:text-white transition-colors">Ingreso Administradores</a></li>
-          <li><a href={LINKS.register} class="hover:text-white transition-colors">Registrar Nuevo Torneo</a></li>
-          <li><a href={LINKS.whatsappContact} target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">Soporte a Planilleros</a></li>
+        <h4 class="font-medium text-white text-xs mb-3.5">Acceso</h4>
+        <ul class="space-y-2.5 text-slate-400 text-xs">
+          <li><a href={LINKS.login} class="hover:text-white transition-colors">Iniciar sesión en SIGET</a></li>
+          <li><a href={LINKS.register} class="hover:text-white transition-colors">Crear nuevo torneo</a></li>
+          <li><a href={LINKS.whatsappContact} target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">Soporte a organizadores</a></li>
         </ul>
       </div>
 
-      <!-- Direct Contact -->
+      <!-- Contact -->
       <div>
-        <h4 class="font-bold text-white uppercase font-mono text-[11px] tracking-wider mb-3">Contacto Directo</h4>
-        <ul class="space-y-2 text-slate-400">
-          <li class="flex items-center gap-1.5 text-slate-300">
-            <span class="text-[#CCFF00]">●</span>
-            <a href={LINKS.whatsappContact} target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors font-mono">
-              +57 310 889 5042
+        <h4 class="font-medium text-white text-xs mb-3.5">Contacto</h4>
+        <ul class="space-y-2.5 text-slate-400 text-xs">
+          <li>
+            <a href={LINKS.whatsappContact} target="_blank" rel="noopener noreferrer" class="hover:text-emerald-400 transition-colors">
+              WhatsApp: +57 310 889 5042
             </a>
           </li>
-          <li class="font-mono text-slate-400">contacto@athletix.co</li>
-          <li class="text-slate-500">Colombia • Soporte a torneos en Latinoamérica</li>
+          <li>contacto@athletix.co</li>
+          <li>Colombia · Cobertura para Latinoamérica</li>
         </ul>
       </div>
 
     </div>
 
     <!-- Copyright -->
-    <div class="pt-8 border-t border-[#1E2633] flex flex-col sm:flex-row items-center justify-between gap-4 text-slate-400 font-mono text-[11px]">
-      <p>© {new Date().getFullYear()} ATHLETIX. Desarrollado y operado con la tecnología de SIGET.</p>
-      <div class="flex items-center gap-5">
-        <a href="#" class="hover:text-slate-300 transition-colors">Términos</a>
-        <a href="#" class="hover:text-slate-300 transition-colors">Privacidad</a>
-        <a href="#" class="hover:text-slate-300 transition-colors">Seguridad</a>
+    <div class="pt-8 border-t border-white/[0.04] flex flex-col sm:flex-row items-center justify-between gap-4 text-slate-400 text-xs">
+      <p>© {new Date().getFullYear()} Athletix. Todos los derechos reservados. Desarrollado con el motor SIGET.</p>
+      <div class="flex items-center gap-6">
+        <a href="#" class="hover:text-white transition-colors">Términos de servicio</a>
+        <a href="#" class="hover:text-white transition-colors">Privacidad</a>
+        <a href="#" class="hover:text-white transition-colors">Seguridad</a>
       </div>
     </div>
   </div>

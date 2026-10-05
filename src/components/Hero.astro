@@ -2,196 +2,170 @@
 import { LINKS } from '../config';
 ---
 
-<section class="relative pt-12 pb-16 md:pt-20 md:pb-24 border-b border-[#1E2633]">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
+<section class="relative pt-16 pb-24 md:pt-28 md:pb-36 overflow-hidden">
+  <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+    
+    <!-- Hero Copy Header: Centered & Airy -->
+    <div class="max-w-3xl mx-auto text-center mb-16 md:mb-20">
       
-      <!-- Left Editorial Column -->
-      <div class="lg:col-span-7 flex flex-col items-start text-left">
+      <!-- Minimalist Pill Badge -->
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.04] border border-white/[0.08] text-slate-300 text-[12px] font-medium mb-8">
+        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+        <span>Gestión de torneos impulsada por SIGET</span>
+      </div>
+
+      <!-- Main Headline -->
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight text-white leading-[1.08] mb-6">
+        Organiza tus torneos con la precisión de un software de primer nivel.
+      </h1>
+
+      <!-- Subtitle -->
+      <p class="text-base sm:text-lg text-slate-400 mb-10 leading-relaxed font-normal max-w-2xl mx-auto">
+        Athletix simplifica la programación de fechas, el control de sanciones y la planilla arbitral móvil. Elimina el estrés de las hojas de cálculo y los reclamos en la mesa de control.
+      </p>
+
+      <!-- Clean Action Buttons -->
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-3.5">
+        <a 
+          href={LINKS.register} 
+          class="btn-primary w-full sm:w-auto px-7 py-3 rounded-full text-sm font-semibold inline-flex items-center justify-center gap-2 shadow-sm"
+        >
+          <span>Comenzar prueba gratis</span>
+          <svg class="w-4 h-4 text-[#0B0D13]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+          </svg>
+        </a>
+
+        <a 
+          href={LINKS.whatsappContact} 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          class="btn-secondary w-full sm:w-auto px-6 py-3 rounded-full text-sm font-medium inline-flex items-center justify-center gap-2"
+        >
+          <span>Hablar con un asesor</span>
+        </a>
+      </div>
+
+    </div>
+
+    <!-- Apple / macOS Native Window Showcase -->
+    <div class="max-w-4xl mx-auto">
+      <div class="ios-surface rounded-2xl p-6 sm:p-8 relative">
         
-        <!-- Tactical Badge -->
-        <div class="inline-flex items-center gap-2 px-3 py-1 rounded bg-[#0E121A] border border-[#1E2633] mb-6">
-          <span class="w-2 h-2 bg-[#CCFF00] rounded-none"></span>
-          <span class="text-xs font-mono font-bold tracking-widest text-[#CCFF00] uppercase">
-            OPERACIÓN DEPORTIVA • MOTOR SIGET
+        <!-- Native Window Top Bar -->
+        <div class="flex items-center justify-between pb-5 mb-6 border-b border-white/[0.06]">
+          <div class="flex items-center gap-2">
+            <span class="w-3 h-3 rounded-full bg-white/[0.12] inline-block"></span>
+            <span class="w-3 h-3 rounded-full bg-white/[0.12] inline-block"></span>
+            <span class="w-3 h-3 rounded-full bg-white/[0.12] inline-block"></span>
+          </div>
+          <span class="text-xs font-medium text-slate-400">
+            Copa Élite Clausura — Cancha Central
           </span>
+          <div class="flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-[11px] font-medium">
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+            <span>En vivo</span>
+          </div>
         </div>
 
-        <!-- Strong Stadium Headline -->
-        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black uppercase tracking-tight text-white leading-[1.02] mb-6 font-sans">
-          Basta de pelear con <span class="text-[#CCFF00]">planillas arrugadas</span> y horarios cruzados.
-        </h1>
+        <!-- Clean Scoreboard Unit (iOS Sports App Style) -->
+        <div class="ios-surface-inset rounded-xl p-6 mb-6">
+          <div class="flex items-center justify-between">
+            
+            <!-- Team Local -->
+            <div class="flex items-center gap-3.5 w-5/12">
+              <div class="w-11 h-11 rounded-full bg-white/[0.06] border border-white/[0.08] flex items-center justify-center font-semibold text-white text-sm">
+                AS
+              </div>
+              <div>
+                <h4 class="font-semibold text-white text-sm sm:text-base">Atlético San Juan</h4>
+                <p class="text-xs text-slate-400">Local</p>
+              </div>
+            </div>
 
-        <!-- Direct Raw Subtitle -->
-        <p class="text-base sm:text-lg text-slate-300 mb-8 max-w-2xl leading-relaxed">
-          Los domingos de torneo no tienen por qué ser una pesadilla. <strong class="text-white font-bold">Athletix</strong> automatiza la asignación de canchas, bloquea automáticamente a jugadores con tarjetas acumuladas y actualiza la tabla en vivo gol a gol. Dedícate a la cancha; nosotros blindamos la administración.
-        </p>
+            <!-- Score Center -->
+            <div class="flex flex-col items-center justify-center w-2/12">
+              <div class="text-3xl sm:text-4xl font-semibold text-white tracking-tight tabular-nums">
+                2 — 1
+              </div>
+              <span class="text-[12px] font-medium text-emerald-400 mt-1">
+                78' Segunda parte
+              </span>
+            </div>
 
-        <!-- Direct CTAs -->
-        <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full sm:w-auto mb-10">
-          <a 
-            href={LINKS.register} 
-            class="btn-volt inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-lg text-sm font-black uppercase tracking-wider"
-          >
-            <span>Crear Mi Primer Torneo</span>
-            <svg class="w-4 h-4 text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-            </svg>
-          </a>
+            <!-- Team Visitor -->
+            <div class="flex items-center justify-end gap-3.5 w-5/12 text-right">
+              <div>
+                <h4 class="font-semibold text-white text-sm sm:text-base">Deportivo Unión</h4>
+                <p class="text-xs text-slate-400">Visitante</p>
+              </div>
+              <div class="w-11 h-11 rounded-full bg-white/[0.06] border border-white/[0.08] flex items-center justify-center font-semibold text-white text-sm">
+                DU
+              </div>
+            </div>
 
-          <a 
-            href={LINKS.whatsappContact} 
-            target="_blank" 
-            rel="noopener noreferrer" 
-            class="inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-lg text-xs font-bold uppercase tracking-wider text-slate-200 bg-[#0E121A] hover:bg-[#141A24] border border-[#1E2633] hover:border-slate-500 transition-colors"
-          >
-            <span>Hablar con un Asesor (WhatsApp)</span>
-          </a>
+          </div>
+
+          <!-- Match Incidents: Clean & Subtle -->
+          <div class="mt-6 pt-4 border-t border-white/[0.06] flex flex-wrap items-center justify-between text-xs text-slate-400 gap-2">
+            <div class="flex items-center gap-2">
+              <span class="text-emerald-400 font-medium">⚽ Gol</span>
+              <span class="text-slate-300">M. Rodríguez (34', 68')</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="text-slate-300">C. Silva (41')</span>
+              <span class="text-emerald-400 font-medium">Gol ⚽</span>
+              <span class="text-slate-500">·</span>
+              <span class="text-amber-400">Tarjeta amarilla (52')</span>
+            </div>
+          </div>
         </div>
 
-        <!-- The 3 Real Organizer Pain Points -->
-        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-6 border-t border-[#1E2633] w-full">
-          <div class="p-3.5 rounded-lg bg-[#0E121A] border border-[#1E2633]">
-            <div class="text-[#CCFF00] font-mono text-xs font-bold uppercase tracking-wider mb-1">
-              [ 01 • FIXTURE ]
+        <!-- System Notification (Clean iOS Alert Style) -->
+        <div class="flex items-center justify-between p-3.5 rounded-xl bg-white/[0.03] border border-white/[0.06] text-xs">
+          <div class="flex items-center gap-3">
+            <div class="w-7 h-7 rounded-lg bg-emerald-500/10 text-emerald-400 flex items-center justify-center">
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+              </svg>
             </div>
-            <div class="text-xs font-bold text-white uppercase tracking-tight">Cero Cruces de Cancha</div>
-            <p class="text-[11px] text-slate-400 mt-1 leading-snug">
-              Nunca más programarás dos partidos en el mismo horario.
-            </p>
-          </div>
-
-          <div class="p-3.5 rounded-lg bg-[#0E121A] border border-[#1E2633]">
-            <div class="text-[#CCFF00] font-mono text-xs font-bold uppercase tracking-wider mb-1">
-              [ 02 • SANCIONES ]
+            <div>
+              <p class="font-medium text-slate-200">Validación disciplinaria en tiempo real</p>
+              <p class="text-slate-400 text-[11px]">El sistema previene la alineación de jugadores con suspensiones vigentes.</p>
             </div>
-            <div class="text-xs font-bold text-white uppercase tracking-tight">Blindaje de Tarjetas</div>
-            <p class="text-[11px] text-slate-400 mt-1 leading-snug">
-              El sistema bloquea al jugador con 3 amarillas o roja directa.
-            </p>
           </div>
-
-          <div class="p-3.5 rounded-lg bg-[#0E121A] border border-[#1E2633]">
-            <div class="text-[#CCFF00] font-mono text-xs font-bold uppercase tracking-wider mb-1">
-              [ 03 • PLANILLA ]
-            </div>
-            <div class="text-xs font-bold text-white uppercase tracking-tight">Acta Digital Móvil</div>
-            <p class="text-[11px] text-slate-400 mt-1 leading-snug">
-              El árbitro digita desde el celular con firma del capitán.
-            </p>
-          </div>
+          <span class="text-[11px] font-medium text-slate-400 bg-white/[0.04] px-2.5 py-1 rounded-full border border-white/[0.06] hidden sm:inline">
+            Protección activa
+          </span>
         </div>
 
       </div>
 
-      <!-- Right Column: Solid Tactical Scoreboard (Nike / Linear Style) -->
-      <div class="lg:col-span-5 relative">
-        <div class="sport-card rounded-xl p-5 border border-[#1E2633] bg-[#0E121A] shadow-2xl">
-          
-          <!-- Terminal/Status Bar -->
-          <div class="flex items-center justify-between border-b border-[#1E2633] pb-3 mb-4 text-xs font-mono">
-            <div class="flex items-center gap-2 text-slate-400">
-              <span class="w-2 h-2 bg-[#CCFF00]"></span>
-              <span class="font-bold text-slate-200 uppercase">CANCHA 2 SINTÉTICA</span>
-              <span class="text-slate-600">/</span>
-              <span>11:15 AM</span>
-            </div>
-            <span class="px-2 py-0.5 rounded bg-[#CCFF00]/10 text-[#CCFF00] border border-[#CCFF00]/30 font-bold uppercase text-[10px] tracking-wider">
-              EN JUEGO
-            </span>
-          </div>
+      <!-- 3 Key Solution Highlights (Airy & Understated) -->
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-8">
+        <div class="p-5 rounded-2xl bg-white/[0.02] border border-white/[0.06]">
+          <h4 class="text-sm font-semibold text-white mb-1.5">Programación inteligente</h4>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            Asigna franjas horarias y canchas sin cruces de árbitros ni duplicidad de equipos.
+          </p>
+        </div>
 
-          <!-- Electronic Scoreboard Unit -->
-          <div class="rounded-lg bg-[#080A0E] border border-[#1E2633] p-4 mb-4">
-            
-            <div class="flex items-center justify-between">
-              <!-- Team Local -->
-              <div class="w-5/12">
-                <span class="text-[10px] font-mono uppercase text-slate-400 font-bold tracking-wider">LOCAL</span>
-                <h3 class="text-base sm:text-lg font-black uppercase text-white leading-tight mt-0.5">
-                  ATL. SAN JUAN
-                </h3>
-                <span class="text-[11px] font-mono text-[#CCFF00]">● 2 Goles</span>
-              </div>
+        <div class="p-5 rounded-2xl bg-white/[0.02] border border-white/[0.06]">
+          <h4 class="text-sm font-semibold text-white mb-1.5">Control de sanciones</h4>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            Acumulación automática de amarillas y rojas con inhabilitación inmediata en planillas.
+          </p>
+        </div>
 
-              <!-- Score Numbers -->
-              <div class="w-2/12 flex items-center justify-center">
-                <div class="font-mono text-3xl sm:text-4xl font-black text-white bg-[#141A24] px-3 py-1.5 rounded border border-[#1E2633] tracking-widest tabular-nums">
-                  2:1
-                </div>
-              </div>
-
-              <!-- Team Visitor -->
-              <div class="w-5/12 text-right">
-                <span class="text-[10px] font-mono uppercase text-slate-400 font-bold tracking-wider">VISITA</span>
-                <h3 class="text-base sm:text-lg font-black uppercase text-white leading-tight mt-0.5">
-                  DEP. UNIÓN
-                </h3>
-                <span class="text-[11px] font-mono text-slate-400">● 1 Gol</span>
-              </div>
-            </div>
-
-            <!-- Stadium Clock & Period -->
-            <div class="mt-4 pt-3 border-t border-[#1E2633] flex items-center justify-between text-xs font-mono">
-              <div class="flex items-center gap-2">
-                <span class="text-slate-400">TIEMPO:</span>
-                <span class="text-white font-bold bg-[#141A24] px-2 py-0.5 rounded border border-[#1E2633] tabular-nums">
-                  78:42
-                </span>
-                <span class="text-slate-400 font-sans text-[11px]">2º Tiempo (+3')</span>
-              </div>
-              <span class="text-slate-400 text-[11px]">Árb: H. Restrepo</span>
-            </div>
-
-          </div>
-
-          <!-- Critical Tactical Alert (Real Pain Solved) -->
-          <div class="p-3 rounded-lg bg-[#141A24] border border-amber-500/40 mb-4">
-            <div class="flex items-start gap-2.5">
-              <span class="text-amber-400 text-sm mt-0.5 font-bold">⚠️</span>
-              <div class="text-xs">
-                <div class="font-bold text-white uppercase tracking-tight flex items-center gap-1.5">
-                  <span>Validación Disciplinaria SIGET</span>
-                  <span class="text-[9px] font-mono bg-amber-500/20 text-amber-300 px-1 rounded">BLOQUEO ACTIVO</span>
-                </div>
-                <p class="text-slate-300 text-[11px] mt-0.5 leading-snug">
-                  El jugador <strong>#10 C. Valdés (Dep. Unión)</strong> tiene 1 fecha por roja directa. El sistema no permitió su firma en la planilla.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Real Match Incident Log -->
-          <div class="space-y-1.5 font-mono text-[11px] border-t border-[#1E2633] pt-3">
-            <div class="flex items-center justify-between text-slate-300 px-2 py-1 rounded bg-[#080A0E] border border-[#1E2633]/50">
-              <span class="flex items-center gap-2">
-                <span class="text-[#CCFF00]">⚽ GOL</span>
-                <span>#9 M. Rodríguez (Atl. San Juan)</span>
-              </span>
-              <span class="text-slate-400 tabular-nums">64'</span>
-            </div>
-
-            <div class="flex items-center justify-between text-slate-300 px-2 py-1 rounded bg-[#080A0E] border border-[#1E2633]/50">
-              <span class="flex items-center gap-2">
-                <span class="text-amber-400">🟨 AMARILLA</span>
-                <span>#4 D. Vélez (3ª Acumulada - Susp. Fecha 9)</span>
-              </span>
-              <span class="text-slate-400 tabular-nums">71'</span>
-            </div>
-          </div>
-
-          <!-- Footer Verification Stamp -->
-          <div class="mt-4 pt-3 border-t border-[#1E2633] flex items-center justify-between text-[10px] font-mono text-slate-400">
-            <span class="flex items-center gap-1">
-              <span class="w-1.5 h-1.5 bg-[#CCFF00] rounded-none"></span>
-              TABLA ACTUALIZADA EN VIVO
-            </span>
-            <span class="text-slate-400">ACTA DIGITAL #8491</span>
-          </div>
-
+        <div class="p-5 rounded-2xl bg-white/[0.02] border border-white/[0.06]">
+          <h4 class="text-sm font-semibold text-white mb-1.5">Planilla digital móvil</h4>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            Los jueces registran incidencias desde el celular con firma digital de capitanes.
+          </p>
         </div>
       </div>
 
     </div>
+
   </div>
 </section>

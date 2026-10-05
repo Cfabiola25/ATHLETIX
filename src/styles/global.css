@@ -2,77 +2,118 @@
 
 @layer base {
   :root {
-    --bg-base: #080a0e;
-    --bg-surface: #0e121a;
-    --bg-surface-elevated: #141a24;
-    --border-subtle: #1e2633;
-    --border-strong: #2d384a;
-    --volt: #ccff00;
-    --volt-hover: #b8e600;
+    --bg-base: #0B0D13;
+    --bg-surface: #12151E;
+    --bg-surface-hover: #181C28;
+    --border-subtle: rgba(255, 255, 255, 0.07);
+    --border-hover: rgba(255, 255, 255, 0.14);
+    --accent: #10B981;
+    --accent-light: #34D399;
   }
 
   html {
     scroll-behavior: smooth;
-    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, sans-serif;
     color-scheme: dark;
-    background-color: #080a0e;
+    background-color: #0B0D13;
   }
 
   body {
-    background-color: #080a0e;
-    color: #d1d5db;
+    background-color: #0B0D13;
+    color: #94A3B8;
     overflow-x: hidden;
-    selection-background-color: #ccff00;
-    selection-color: #000000;
+    letter-spacing: -0.011em;
+    selection-background-color: #10B981;
+    selection-color: #FFFFFF;
   }
 
-  /* Monospace numbers for scoreboards, clocks, jerseys */
-  .font-scoreboard {
-    font-family: 'JetBrains Mono', 'Chakra Petch', monospace;
-    font-feature-settings: 'tnum' on, 'lnum' on;
+  /* High-end tabular numbers for stats & times */
+  .tabular-nums {
+    font-variant-numeric: tabular-nums;
   }
 }
 
-/* Solid sport cards - No blurred orbs, no crypto glassmorphism */
-.sport-card {
-  background-color: #0e121a;
-  border: 1px solid #1e2633;
-  transition: border-color 0.15s ease, background-color 0.15s ease;
+/* Minimalist High-End Surface Cards (macOS / iOS native sheet style) */
+.ios-surface {
+  background-color: #12151E;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.4);
 }
 
-.sport-card:hover {
-  border-color: #2d384a;
+.ios-surface-hover {
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.sport-card-elevated {
-  background-color: #141a24;
-  border: 1px solid #1e2633;
+.ios-surface-hover:hover {
+  background-color: #151924;
+  border-color: rgba(255, 255, 255, 0.12);
+  transform: translateY(-1px);
 }
 
-/* Accent volt button & badges */
-.btn-volt {
-  background-color: #ccff00;
-  color: #000000;
-  font-weight: 800;
+.ios-surface-inset {
+  background-color: #0E1017;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Native Segmented Control (Apple style) */
+.segmented-control {
+  background-color: #0E1017;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 4px;
+  border-radius: 12px;
+}
+
+.segmented-btn {
+  padding: 6px 14px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  transition: all 0.18s ease;
+  color: #94A3B8;
+}
+
+.segmented-btn:hover {
+  color: #F8FAFC;
+}
+
+.segmented-btn.active {
+  background-color: #1E2330;
+  color: #FFFFFF;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Primary Button (Refined Luxury Emerald / Monochrome) */
+.btn-primary {
+  background-color: #FFFFFF;
+  color: #0B0D13;
+  font-weight: 600;
   letter-spacing: -0.01em;
-  transition: background-color 0.15s ease, transform 0.1s ease;
+  transition: all 0.18s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.btn-volt:hover {
-  background-color: #d9ff33;
+.btn-primary:hover {
+  background-color: #F1F5F9;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.12);
 }
 
-.btn-volt:active {
-  transform: translateY(1px);
+.btn-secondary {
+  background-color: rgba(255, 255, 255, 0.04);
+  color: #F1F5F9;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  font-weight: 500;
+  transition: all 0.18s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.badge-volt {
-  background-color: rgba(204, 255, 0, 0.1);
-  color: #ccff00;
-  border: 1px solid rgba(204, 255, 0, 0.25);
+.btn-secondary:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.15);
+  color: #FFFFFF;
 }
 
-/* Crisp hairline dividers */
-.border-grid {
-  border-color: #1e2633;
+/* Subtle accent pill */
+.pill-accent {
+  background-color: rgba(16, 185, 129, 0.1);
+  color: #34D399;
+  border: 1px solid rgba(16, 185, 129, 0.2);
 }

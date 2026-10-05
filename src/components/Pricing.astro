@@ -4,52 +4,52 @@ import { LINKS } from '../config';
 const plans = [
   {
     name: "Torneo Relámpago",
-    tag: "PAGO ÚNICO",
+    tag: "Pago único",
     price: "$99.000",
     currency: "COP",
     period: "por torneo",
-    desc: "Para copas de fin de semana, torneos de microfútbol o campeonatos de empresas.",
+    desc: "Para copas de fin de semana, torneos relámpago o campeonatos empresariales.",
     popular: false,
-    ctaText: "Crear Torneo Relámpago",
+    ctaText: "Crear torneo relámpago",
     ctaLink: LINKS.register,
     features: [
       "Hasta 16 equipos participantes",
-      "Fixture automático sin cruces",
+      "Fixture automático sin cruces de horarios",
       "Tabla de posiciones en tiempo real",
-      "Planilla digital básica",
+      "Planilla digital básica para jueces",
       "Enlace público de resultados para WhatsApp",
-      "Soporte técnico directo"
+      "Soporte directo"
     ]
   },
   {
     name: "Liga Pro",
-    tag: "MÁS POPULAR",
+    tag: "Recomendado",
     price: "$189.000",
     currency: "COP",
-    period: "al mes (Multicategoría)",
-    desc: "Para complejos deportivos con canchas sintéticas y ligas continuas de fin de semana.",
+    period: "al mes",
+    desc: "Para complejos deportivos con canchas sintéticas y ligas continuas con múltiples categorías.",
     popular: true,
-    ctaText: "Iniciar Prueba de 14 Días",
+    ctaText: "Comenzar prueba de 14 días",
     ctaLink: LINKS.register,
     features: [
-      "Múltiples categorías (Libre, Veteranos, Femenil)",
+      "Categorías ilimitadas (Libre, Senior, Femenino)",
       "Hasta 48 equipos simultáneos",
       "Bloqueo automático de jugadores sancionados",
       "Goleadores y valla menos vencida en vivo",
-      "Acceso móvil para árbitros y planilleros",
+      "Acceso móvil ilimitado para árbitros",
       "Descarga de boletines oficiales en PDF",
       "Soporte prioritario por WhatsApp"
     ]
   },
   {
     name: "Corporativo & Ligas",
-    tag: "A LA MEDIDA",
+    tag: "A la medida",
     price: "A convenir",
     currency: "",
-    period: "Ligas de gran formato",
-    desc: "Para asociaciones departamentales, cajas de compensación y complejos de 4+ canchas.",
+    period: "grandes organizaciones",
+    desc: "Para ligas departamentales, cajas de compensación y complejos multideportivos.",
     popular: false,
-    ctaText: "Hablar con Asesor",
+    ctaText: "Hablar con un asesor",
     ctaLink: LINKS.whatsappContact,
     features: [
       "Torneos y categorías sin límite",
@@ -57,85 +57,86 @@ const plans = [
       "Carnetización con código QR para jugadores",
       "Panel para comité disciplinario y apelaciones",
       "Capacitación directa para tus planilleros",
-      "Soporte dedicado los fines de semana"
+      "Gerente de cuenta dedicado"
     ]
   }
 ];
 ---
 
-<section id="pricing" class="py-20 md:py-28 border-b border-[#1E2633] bg-[#080A0E]">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<section id="pricing" class="py-24 md:py-36 border-t border-white/[0.06]">
+  <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
     
-    <!-- Heading -->
-    <div class="max-w-3xl mb-16">
-      <div class="inline-flex items-center gap-2 px-2.5 py-1 rounded bg-[#0E121A] border border-[#1E2633] text-[#CCFF00] font-mono text-[11px] font-bold uppercase tracking-wider mb-4">
-        <span>PRECIOS Y SUSCRIPCIONES</span>
-      </div>
-      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black uppercase tracking-tight text-white leading-tight font-sans">
-        Precios justos, sin contratos escondidos.
+    <!-- Section Header -->
+    <div class="max-w-2xl mb-16 md:mb-24">
+      <span class="text-xs font-medium text-emerald-400 mb-3 block">
+        Planes y precios
+      </span>
+      <h2 class="text-3xl sm:text-4xl font-semibold tracking-tight text-white leading-tight">
+        Planes transparentes para cada etapa de tu liga.
       </h2>
-      <p class="text-base sm:text-lg text-slate-300 mt-4">
-        Paga únicamente por el torneo que organizas o suscríbete mensualmente si operas un complejo deportivo todo el año.
+      <p class="text-base text-slate-400 mt-4 leading-relaxed">
+        Paga únicamente por el torneo que organizas o suscríbete mensualmente si operas un complejo durante todo el año.
       </p>
     </div>
 
-    <!-- Pricing Grid -->
-    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+    <!-- Pricing Cards Grid -->
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto items-stretch">
       {plans.map((plan) => (
-        <div class={`rounded-xl p-7 flex flex-col justify-between ${
+        <div class={`rounded-2xl p-8 flex flex-col justify-between transition-all ${
           plan.popular 
-            ? 'bg-[#0E121A] border-2 border-[#CCFF00] shadow-xl relative' 
-            : 'bg-[#0E121A] border border-[#1E2633]'
+            ? 'ios-surface border-white/20 shadow-2xl relative' 
+            : 'ios-surface'
         }`}>
           
           <div>
             <div class="flex items-center justify-between mb-4">
-              <span class="text-xs font-mono font-bold uppercase tracking-wider text-slate-400">
-                {plan.tag}
-              </span>
+              <h3 class="text-lg font-semibold text-white tracking-tight">
+                {plan.name}
+              </h3>
               {plan.popular && (
-                <span class="text-[10px] font-mono font-black uppercase bg-[#CCFF00] text-black px-2 py-0.5 rounded">
-                  RECOMENDADO
+                <span class="text-[11px] font-medium text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-2.5 py-0.5 rounded-full">
+                  {plan.tag}
+                </span>
+              )}
+              {!plan.popular && (
+                <span class="text-[11px] font-medium text-slate-400 bg-white/[0.04] border border-white/[0.06] px-2.5 py-0.5 rounded-full">
+                  {plan.tag}
                 </span>
               )}
             </div>
 
-            <h3 class="text-xl font-black uppercase text-white tracking-tight mb-2">
-              {plan.name}
-            </h3>
-
-            <p class="text-xs text-slate-400 min-h-[36px] mb-6">
+            <p class="text-xs sm:text-sm text-slate-400 min-h-[40px] mb-6 leading-relaxed">
               {plan.desc}
             </p>
 
-            <div class="flex items-baseline gap-1 mb-6 pb-6 border-b border-[#1E2633]">
-              <span class="text-3xl sm:text-4xl font-black text-white font-mono tracking-tight tabular-nums">
+            <div class="flex items-baseline gap-1.5 mb-8 pb-6 border-b border-white/[0.06]">
+              <span class="text-3xl sm:text-4xl font-semibold text-white tracking-tight tabular-nums">
                 {plan.price}
               </span>
-              {plan.currency && <span class="text-xs text-slate-400 font-mono font-bold">{plan.currency}</span>}
-              <span class="text-xs text-slate-400 ml-1">/ {plan.period}</span>
+              {plan.currency && <span class="text-xs font-medium text-slate-400">{plan.currency}</span>}
+              <span class="text-xs text-slate-400">/ {plan.period}</span>
             </div>
 
             <!-- Features -->
-            <ul class="space-y-3 mb-8 text-xs font-medium text-slate-300">
+            <ul class="space-y-3.5 mb-8 text-xs sm:text-sm text-slate-300">
               {plan.features.map((feat) => (
-                <li class="flex items-start gap-2.5">
-                  <span class="text-[#CCFF00] font-bold font-mono">✓</span>
-                  <span>{feat}</span>
+                <li class="flex items-start gap-3">
+                  <span class="text-emerald-400 font-medium">✓</span>
+                  <span class="text-slate-300 font-normal">{feat}</span>
                 </li>
               ))}
             </ul>
           </div>
 
-          <!-- Action -->
+          <!-- CTA Button -->
           <a 
             href={plan.ctaLink}
             target={plan.popular ? "_self" : "_blank"}
             rel="noopener noreferrer"
-            class={`w-full py-3.5 px-4 rounded-lg text-xs font-black uppercase tracking-wider text-center block transition-colors ${
+            class={`w-full py-3 px-5 rounded-full text-xs sm:text-sm text-center font-medium block transition-all ${
               plan.popular
-                ? 'btn-volt'
-                : 'bg-[#141A24] text-white hover:bg-[#1E2633] border border-[#1E2633]'
+                ? 'btn-primary'
+                : 'btn-secondary'
             }`}
           >
             {plan.ctaText}
@@ -145,9 +146,9 @@ const plans = [
       ))}
     </div>
 
-    <!-- Footnote -->
-    <div class="mt-12 text-center text-xs font-mono text-slate-400">
-      <span>● Todos los planes incluyen actualizaciones de seguridad y cálculo automático del motor SIGET.</span>
+    <!-- Trust Footnote -->
+    <div class="mt-12 text-center text-xs text-slate-400">
+      <span>Sin contratos de permanencia. Puedes cancelar o pausar tu suscripción en cualquier momento.</span>
     </div>
 
   </div>

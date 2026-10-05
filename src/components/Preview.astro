@@ -2,299 +2,326 @@
 import { LINKS } from '../config';
 ---
 
-<section id="preview" class="py-20 md:py-28 border-b border-[#1E2633] bg-[#0B0E14]">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<section id="preview" class="py-24 md:py-36 border-t border-white/[0.06]">
+  <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
     
-    <!-- Header -->
-    <div class="max-w-3xl mb-14">
-      <div class="inline-flex items-center gap-2 px-2.5 py-1 rounded bg-[#0E121A] border border-[#1E2633] text-[#CCFF00] font-mono text-[11px] font-bold uppercase tracking-wider mb-4">
-        <span>INTERFAZ OPERACIONAL • MOTOR SIGET</span>
-      </div>
-      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black uppercase tracking-tight text-white leading-tight font-sans">
-        Así se ve el control total de tu torneo.
+    <!-- Section Header -->
+    <div class="max-w-2xl mb-12">
+      <span class="text-xs font-medium text-emerald-400 mb-3 block">
+        Demostración de la plataforma
+      </span>
+      <h2 class="text-3xl sm:text-4xl font-semibold tracking-tight text-white leading-tight">
+        Una experiencia fluida, pensada como una aplicación nativa.
       </h2>
-      <p class="text-base sm:text-lg text-slate-300 mt-4">
-        Una consola sin distracciones. Rápida para el organizador en el portátil y optimizada para el árbitro al pie de la cancha sintética.
+      <p class="text-base text-slate-400 mt-4 leading-relaxed">
+        Tablas sin sobrecarga visual, lectura inmediata de marcadores y acceso instantáneo para el organizador y el cuerpo arbitral.
       </p>
     </div>
 
-    <!-- Interactive Simulator Window -->
-    <div class="max-w-5xl mx-auto">
-      
-      <!-- Tab Navigation -->
-      <div class="flex flex-wrap items-center gap-2 mb-6">
-        <button 
-          data-tab="tab-posiciones"
-          class="preview-tab-btn active px-4 py-2 rounded-lg text-xs font-mono font-bold uppercase tracking-wider transition-colors border bg-[#CCFF00] text-black border-[#CCFF00]"
-        >
-          [ 01 • TABLA DE POSICIONES ]
-        </button>
-        <button 
-          data-tab="tab-fixture"
-          class="preview-tab-btn px-4 py-2 rounded-lg text-xs font-mono font-bold uppercase tracking-wider transition-colors border bg-[#0E121A] text-slate-400 border-[#1E2633] hover:text-white hover:border-slate-600"
-        >
-          [ 02 • FIXTURE DEL DOMINGO ]
-        </button>
-        <button 
-          data-tab="tab-disciplinario"
-          class="preview-tab-btn px-4 py-2 rounded-lg text-xs font-mono font-bold uppercase tracking-wider transition-colors border bg-[#0E121A] text-slate-400 border-[#1E2633] hover:text-white hover:border-slate-600"
-        >
-          [ 03 • CONTROL DISCIPLINARIO ]
-        </button>
-        <button 
-          data-tab="tab-planilla"
-          class="preview-tab-btn px-4 py-2 rounded-lg text-xs font-mono font-bold uppercase tracking-wider transition-colors border bg-[#0E121A] text-slate-400 border-[#1E2633] hover:text-white hover:border-slate-600"
-        >
-          [ 04 • PLANILLA DIGITAL ]
-        </button>
-      </div>
+    <!-- Segmented Control Bar (Apple Style) -->
+    <div class="flex items-center gap-1 bg-[#0E1017] p-1 rounded-xl border border-white/[0.06] w-fit mb-8 max-w-full overflow-x-auto">
+      <button 
+        data-tab="tab-posiciones"
+        class="preview-tab-btn active px-4 py-2 rounded-lg text-xs font-medium transition-all text-white bg-[#1E2330] shadow-sm whitespace-nowrap"
+      >
+        Tabla de posiciones
+      </button>
+      <button 
+        data-tab="tab-fixture"
+        class="preview-tab-btn px-4 py-2 rounded-lg text-xs font-medium transition-all text-slate-400 hover:text-white whitespace-nowrap"
+      >
+        Programación y fixture
+      </button>
+      <button 
+        data-tab="tab-disciplinario"
+        class="preview-tab-btn px-4 py-2 rounded-lg text-xs font-medium transition-all text-slate-400 hover:text-white whitespace-nowrap"
+      >
+        Control disciplinario
+      </button>
+      <button 
+        data-tab="tab-planilla"
+        class="preview-tab-btn px-4 py-2 rounded-lg text-xs font-medium transition-all text-slate-400 hover:text-white whitespace-nowrap"
+      >
+        Planilla digital
+      </button>
+    </div>
 
-      <!-- Main Display Box: High Contrast Tactical Matte Panel -->
-      <div class="sport-card rounded-xl p-5 sm:p-7 border border-[#1E2633] bg-[#0E121A] shadow-2xl">
-        
-        <!-- Terminal Header -->
-        <div class="flex items-center justify-between pb-4 mb-6 border-b border-[#1E2633] font-mono text-xs">
-          <div class="flex items-center gap-3 text-slate-400">
-            <span class="w-2.5 h-2.5 bg-[#CCFF00]"></span>
-            <span class="text-white font-bold">TORNEO ÉLITE CLAUSURA • CATEGORÍA LIBRE</span>
-            <span class="text-slate-600 hidden sm:inline">|</span>
-            <span class="text-slate-400 hidden sm:inline">SIGET V1 ENGINE</span>
+    <!-- Main Native Window Container (iOS / macOS App Style) -->
+    <div class="ios-surface rounded-2xl p-6 sm:p-8 shadow-xl">
+      
+      <!-- TAB 1: Tabla de posiciones impecable -->
+      <div id="tab-posiciones" class="preview-panel block">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-6 mb-6 border-b border-white/[0.06] gap-3">
+          <div>
+            <h3 class="text-base font-semibold text-white">Torneo Clausura — Categoría Libre</h3>
+            <p class="text-xs text-slate-400 mt-0.5">Grupo A · Criterio de desempate federativo</p>
           </div>
-          <span class="text-[10px] text-[#CCFF00] bg-[#CCFF00]/10 border border-[#CCFF00]/30 px-2 py-0.5 rounded font-bold uppercase">
-            SISTEMA EN LÍNEA
+          <span class="text-xs font-medium text-slate-400 bg-white/[0.04] px-3 py-1 rounded-full border border-white/[0.06] w-fit">
+            8 equipos participantes
           </span>
         </div>
 
-        <!-- TAB 1: Tabla de Posiciones Content -->
-        <div id="tab-posiciones" class="preview-panel block">
-          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-4">
-            <div>
-              <h3 class="text-base font-bold text-white uppercase tracking-tight">Grupo A - Clasificación General</h3>
-              <p class="text-xs text-slate-400 font-mono">Desempate: Puntos &gt; Gol Diferencia &gt; Goles a Favor</p>
-            </div>
-            <span class="text-xs font-mono text-slate-300 bg-[#141A24] px-3 py-1 rounded border border-[#1E2633]">
-              8 Equipos en competencia
-            </span>
-          </div>
+        <div class="overflow-x-auto">
+          <table class="w-full text-left text-xs sm:text-sm">
+            <thead>
+              <tr class="text-[12px] font-medium text-slate-400 border-b border-white/[0.06]">
+                <th class="pb-3 px-3 w-12 font-normal">Pos</th>
+                <th class="pb-3 px-3 font-normal">Club</th>
+                <th class="pb-3 px-2 text-center font-normal">PJ</th>
+                <th class="pb-3 px-2 text-center font-normal">PG</th>
+                <th class="pb-3 px-2 text-center font-normal">PE</th>
+                <th class="pb-3 px-2 text-center font-normal">PP</th>
+                <th class="pb-3 px-2 text-center font-normal">GF</th>
+                <th class="pb-3 px-2 text-center font-normal">GC</th>
+                <th class="pb-3 px-2 text-center font-normal">DG</th>
+                <th class="pb-3 px-4 text-center font-medium text-white">PTS</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-white/[0.04]">
+              
+              <!-- Row 1 -->
+              <tr class="group hover:bg-white/[0.02] transition-colors">
+                <td class="py-3.5 px-3">
+                  <span class="w-6 h-6 rounded-full bg-emerald-500/10 text-emerald-400 flex items-center justify-center font-medium text-xs">
+                    1
+                  </span>
+                </td>
+                <td class="py-3.5 px-3 font-medium text-white">
+                  <div class="flex items-center gap-2.5">
+                    <span class="w-6 h-6 rounded-md bg-white/[0.06] flex items-center justify-center text-[10px] font-semibold text-slate-300">
+                      AS
+                    </span>
+                    <span>Atlético San Juan</span>
+                  </div>
+                </td>
+                <td class="py-3.5 px-2 text-center text-slate-300 tabular-nums">7</td>
+                <td class="py-3.5 px-2 text-center text-slate-300 tabular-nums">6</td>
+                <td class="py-3.5 px-2 text-center text-slate-400 tabular-nums">0</td>
+                <td class="py-3.5 px-2 text-center text-slate-400 tabular-nums">1</td>
+                <td class="py-3.5 px-2 text-center text-slate-300 tabular-nums">18</td>
+                <td class="py-3.5 px-2 text-center text-slate-400 tabular-nums">5</td>
+                <td class="py-3.5 px-2 text-center font-medium text-emerald-400 tabular-nums">+13</td>
+                <td class="py-3.5 px-4 text-center font-semibold text-white tabular-nums">
+                  <span class="px-2 py-0.5 rounded-md bg-white/[0.06]">18</span>
+                </td>
+              </tr>
 
-          <div class="overflow-x-auto rounded-lg border border-[#1E2633]">
-            <table class="w-full text-left text-xs sm:text-sm">
-              <thead class="bg-[#141A24] text-slate-400 uppercase font-mono text-[11px] tracking-wider border-b border-[#1E2633]">
-                <tr>
-                  <th class="py-2.5 px-3">POS</th>
-                  <th class="py-2.5 px-3">EQUIPO</th>
-                  <th class="py-2.5 px-2 text-center">PJ</th>
-                  <th class="py-2.5 px-2 text-center">PG</th>
-                  <th class="py-2.5 px-2 text-center">PE</th>
-                  <th class="py-2.5 px-2 text-center">PP</th>
-                  <th class="py-2.5 px-2 text-center">GF</th>
-                  <th class="py-2.5 px-2 text-center">GC</th>
-                  <th class="py-2.5 px-2 text-center font-bold text-slate-200">DG</th>
-                  <th class="py-2.5 px-3 text-center font-bold text-[#CCFF00]">PTS</th>
-                </tr>
-              </thead>
-              <tbody class="divide-y divide-[#1E2633] font-mono text-xs">
-                <tr class="bg-[#141A24]/40 hover:bg-[#141A24] transition-colors">
-                  <td class="py-3 px-3 font-bold text-[#CCFF00]">01</td>
-                  <td class="py-3 px-3 font-sans font-bold text-white flex items-center gap-2">
-                    <span class="w-2 h-2 bg-[#CCFF00]"></span>
-                    Atlético San Juan FC
-                  </td>
-                  <td class="py-3 px-2 text-center text-slate-300">7</td>
-                  <td class="py-3 px-2 text-center text-slate-300">6</td>
-                  <td class="py-3 px-2 text-center text-slate-300">0</td>
-                  <td class="py-3 px-2 text-center text-slate-300">1</td>
-                  <td class="py-3 px-2 text-center text-slate-300">18</td>
-                  <td class="py-3 px-2 text-center text-slate-300">5</td>
-                  <td class="py-3 px-2 text-center font-bold text-white">+13</td>
-                  <td class="py-3 px-3 text-center font-bold text-black bg-[#CCFF00] text-sm">18</td>
-                </tr>
-                <tr class="bg-[#141A24]/40 hover:bg-[#141A24] transition-colors">
-                  <td class="py-3 px-3 font-bold text-[#CCFF00]">02</td>
-                  <td class="py-3 px-3 font-sans font-bold text-white flex items-center gap-2">
-                    <span class="w-2 h-2 bg-[#CCFF00]"></span>
-                    Deportivo Unión
-                  </td>
-                  <td class="py-3 px-2 text-center text-slate-300">7</td>
-                  <td class="py-3 px-2 text-center text-slate-300">4</td>
-                  <td class="py-3 px-2 text-center text-slate-300">2</td>
-                  <td class="py-3 px-2 text-center text-slate-300">1</td>
-                  <td class="py-3 px-2 text-center text-slate-300">14</td>
-                  <td class="py-3 px-2 text-center text-slate-300">8</td>
-                  <td class="py-3 px-2 text-center font-bold text-white">+6</td>
-                  <td class="py-3 px-3 text-center font-bold text-black bg-[#CCFF00] text-sm">14</td>
-                </tr>
-                <tr class="hover:bg-[#141A24]/50 transition-colors">
-                  <td class="py-3 px-3 font-bold text-slate-400">03</td>
-                  <td class="py-3 px-3 font-sans font-medium text-slate-300">Leones del Norte</td>
-                  <td class="py-3 px-2 text-center text-slate-400">7</td>
-                  <td class="py-3 px-2 text-center text-slate-400">3</td>
-                  <td class="py-3 px-2 text-center text-slate-400">2</td>
-                  <td class="py-3 px-2 text-center text-slate-400">2</td>
-                  <td class="py-3 px-2 text-center text-slate-400">11</td>
-                  <td class="py-3 px-2 text-center text-slate-400">9</td>
-                  <td class="py-3 px-2 text-center text-slate-300">+2</td>
-                  <td class="py-3 px-3 text-center font-bold text-white text-sm bg-[#141A24]">11</td>
-                </tr>
-                <tr class="hover:bg-[#141A24]/50 transition-colors">
-                  <td class="py-3 px-3 font-bold text-slate-400">04</td>
-                  <td class="py-3 px-3 font-sans font-medium text-slate-300">Halcones Sintética</td>
-                  <td class="py-3 px-2 text-center text-slate-400">7</td>
-                  <td class="py-3 px-2 text-center text-slate-400">2</td>
-                  <td class="py-3 px-2 text-center text-slate-400">1</td>
-                  <td class="py-3 px-2 text-center text-slate-400">4</td>
-                  <td class="py-3 px-2 text-center text-slate-400">9</td>
-                  <td class="py-3 px-2 text-center text-slate-400">14</td>
-                  <td class="py-3 px-2 text-center text-rose-400">-5</td>
-                  <td class="py-3 px-3 text-center font-bold text-white text-sm bg-[#141A24]">07</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <div class="mt-3 flex items-center justify-between text-[11px] font-mono text-slate-400">
-            <span class="flex items-center gap-1.5 text-[#CCFF00]">
-              <span class="w-2 h-2 bg-[#CCFF00]"></span> Puestos 01 y 02 clasifican directo a semifinales
-            </span>
-            <span>Cálculo matemático certificado por SIGET</span>
-          </div>
+              <!-- Row 2 -->
+              <tr class="group hover:bg-white/[0.02] transition-colors">
+                <td class="py-3.5 px-3">
+                  <span class="w-6 h-6 rounded-full bg-emerald-500/10 text-emerald-400 flex items-center justify-center font-medium text-xs">
+                    2
+                  </span>
+                </td>
+                <td class="py-3.5 px-3 font-medium text-white">
+                  <div class="flex items-center gap-2.5">
+                    <span class="w-6 h-6 rounded-md bg-white/[0.06] flex items-center justify-center text-[10px] font-semibold text-slate-300">
+                      DU
+                    </span>
+                    <span>Deportivo Unión</span>
+                  </div>
+                </td>
+                <td class="py-3.5 px-2 text-center text-slate-300 tabular-nums">7</td>
+                <td class="py-3.5 px-2 text-center text-slate-300 tabular-nums">4</td>
+                <td class="py-3.5 px-2 text-center text-slate-400 tabular-nums">2</td>
+                <td class="py-3.5 px-2 text-center text-slate-400 tabular-nums">1</td>
+                <td class="py-3.5 px-2 text-center text-slate-300 tabular-nums">14</td>
+                <td class="py-3.5 px-2 text-center text-slate-400 tabular-nums">8</td>
+                <td class="py-3.5 px-2 text-center font-medium text-emerald-400 tabular-nums">+6</td>
+                <td class="py-3.5 px-4 text-center font-semibold text-white tabular-nums">
+                  <span class="px-2 py-0.5 rounded-md bg-white/[0.06]">14</span>
+                </td>
+              </tr>
+
+              <!-- Row 3 -->
+              <tr class="group hover:bg-white/[0.02] transition-colors">
+                <td class="py-3.5 px-3 text-slate-400 font-medium">
+                  <span class="w-6 h-6 rounded-full flex items-center justify-center text-xs">3</span>
+                </td>
+                <td class="py-3.5 px-3 font-medium text-slate-200">
+                  <div class="flex items-center gap-2.5">
+                    <span class="w-6 h-6 rounded-md bg-white/[0.06] flex items-center justify-center text-[10px] font-semibold text-slate-400">
+                      LN
+                    </span>
+                    <span>Leones del Norte</span>
+                  </div>
+                </td>
+                <td class="py-3.5 px-2 text-center text-slate-400 tabular-nums">7</td>
+                <td class="py-3.5 px-2 text-center text-slate-400 tabular-nums">3</td>
+                <td class="py-3.5 px-2 text-center text-slate-400 tabular-nums">2</td>
+                <td class="py-3.5 px-2 text-center text-slate-400 tabular-nums">2</td>
+                <td class="py-3.5 px-2 text-center text-slate-400 tabular-nums">11</td>
+                <td class="py-3.5 px-2 text-center text-slate-400 tabular-nums">9</td>
+                <td class="py-3.5 px-2 text-center font-medium text-slate-300 tabular-nums">+2</td>
+                <td class="py-3.5 px-4 text-center font-medium text-slate-200 tabular-nums">11</td>
+              </tr>
+
+              <!-- Row 4 -->
+              <tr class="group hover:bg-white/[0.02] transition-colors">
+                <td class="py-3.5 px-3 text-slate-400 font-medium">
+                  <span class="w-6 h-6 rounded-full flex items-center justify-center text-xs">4</span>
+                </td>
+                <td class="py-3.5 px-3 font-medium text-slate-200">
+                  <div class="flex items-center gap-2.5">
+                    <span class="w-6 h-6 rounded-md bg-white/[0.06] flex items-center justify-center text-[10px] font-semibold text-slate-400">
+                      HF
+                    </span>
+                    <span>Halcones Sintética</span>
+                  </div>
+                </td>
+                <td class="py-3.5 px-2 text-center text-slate-400 tabular-nums">7</td>
+                <td class="py-3.5 px-2 text-center text-slate-400 tabular-nums">2</td>
+                <td class="py-3.5 px-2 text-center text-slate-400 tabular-nums">1</td>
+                <td class="py-3.5 px-2 text-center text-slate-400 tabular-nums">4</td>
+                <td class="py-3.5 px-2 text-center text-slate-400 tabular-nums">9</td>
+                <td class="py-3.5 px-2 text-center text-slate-400 tabular-nums">14</td>
+                <td class="py-3.5 px-2 text-center font-medium text-rose-400 tabular-nums">-5</td>
+                <td class="py-3.5 px-4 text-center font-medium text-slate-200 tabular-nums">07</td>
+              </tr>
+
+            </tbody>
+          </table>
         </div>
 
-        <!-- TAB 2: Fixture Content -->
-        <div id="tab-fixture" class="preview-panel hidden">
-          <div class="flex items-center justify-between mb-4">
-            <div>
-              <h3 class="text-base font-bold text-white uppercase tracking-tight">Programación Domingo - Cancha Sintética</h3>
-              <p class="text-xs text-slate-400 font-mono">Asignación automática de jueces y planilleros</p>
-            </div>
-            <span class="text-xs font-mono text-[#CCFF00] bg-[#CCFF00]/10 border border-[#CCFF00]/30 px-3 py-1 rounded">
-              FECHA 8
-            </span>
+        <div class="mt-5 pt-4 border-t border-white/[0.06] flex items-center justify-between text-xs text-slate-400">
+          <div class="flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+            <span>Clasificación directa a semifinales</span>
           </div>
-
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 font-mono text-xs">
-            <div class="rounded-lg bg-[#080A0E] border border-[#1E2633] p-4">
-              <div class="flex items-center justify-between text-slate-400 mb-2">
-                <span>09:00 AM • CANCHA 1</span>
-                <span class="text-[#CCFF00] font-bold">PROGRAMADO</span>
-              </div>
-              <div class="flex items-center justify-between py-2 border-y border-[#1E2633]">
-                <span class="font-bold text-white font-sans text-sm">Atlético San Juan</span>
-                <span class="text-slate-500 font-mono">VS</span>
-                <span class="font-bold text-white font-sans text-sm">Halcones FC</span>
-              </div>
-              <div class="text-[11px] text-slate-400 mt-2 flex justify-between">
-                <span>Juez Central: C. Rodríguez</span>
-                <span class="text-[#CCFF00]">Planilla Lista</span>
-              </div>
-            </div>
-
-            <div class="rounded-lg bg-[#080A0E] border border-[#1E2633] p-4">
-              <div class="flex items-center justify-between text-slate-400 mb-2">
-                <span>10:45 AM • CANCHA 1</span>
-                <span class="text-[#CCFF00] font-bold">PROGRAMADO</span>
-              </div>
-              <div class="flex items-center justify-between py-2 border-y border-[#1E2633]">
-                <span class="font-bold text-white font-sans text-sm">Deportivo Unión</span>
-                <span class="text-slate-500 font-mono">VS</span>
-                <span class="font-bold text-white font-sans text-sm">Leones del Norte</span>
-              </div>
-              <div class="text-[11px] text-slate-400 mt-2 flex justify-between">
-                <span>Juez Central: M. Pardo</span>
-                <span class="text-[#CCFF00]">Planilla Lista</span>
-              </div>
-            </div>
-          </div>
+          <span>Actualización en tiempo real vía SIGET</span>
         </div>
-
-        <!-- TAB 3: Control Disciplinario Content -->
-        <div id="tab-disciplinario" class="preview-panel hidden">
-          <div class="flex items-center justify-between mb-4">
-            <div>
-              <h3 class="text-base font-bold text-white uppercase tracking-tight">Resolución Disciplinaria Automática</h3>
-              <p class="text-xs text-slate-400 font-mono">Inhabilitación inmediata al cerrar la planilla anterior</p>
-            </div>
-            <span class="text-xs font-mono text-rose-400 bg-rose-500/10 border border-rose-500/30 px-3 py-1 rounded">
-              2 Sancionados
-            </span>
-          </div>
-
-          <div class="space-y-3 font-mono text-xs">
-            <div class="p-3.5 rounded-lg bg-[#141A24] border border-rose-500/40 flex items-center justify-between">
-              <div class="flex items-center gap-3">
-                <span class="text-lg">🟥</span>
-                <div>
-                  <h4 class="text-sm font-bold text-white font-sans">Carlos Valdés (Dorsal #10)</h4>
-                  <p class="text-xs text-slate-400">Deportivo Unión • Expulsión directa (Roja directa)</p>
-                </div>
-              </div>
-              <div class="text-right">
-                <span class="text-xs font-bold text-rose-400 bg-rose-500/20 px-2 py-1 rounded">2 Fechas Pendientes</span>
-                <p class="text-[10px] text-slate-400 mt-1">Cumple en Fechas 8 y 9</p>
-              </div>
-            </div>
-
-            <div class="p-3.5 rounded-lg bg-[#141A24] border border-amber-500/40 flex items-center justify-between">
-              <div class="flex items-center gap-3">
-                <span class="text-lg">🟨</span>
-                <div>
-                  <h4 class="text-sm font-bold text-white font-sans">Javier Arango (Dorsal #5)</h4>
-                  <p class="text-xs text-slate-400">Halcones Sintética • Acumulación de 3 Tarjetas Amarillas</p>
-                </div>
-              </div>
-              <div class="text-right">
-                <span class="text-xs font-bold text-amber-400 bg-amber-500/20 px-2 py-1 rounded">1 Fecha de Suspensión</span>
-                <p class="text-[10px] text-slate-400 mt-1">Habilitado para Fecha 9</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- TAB 4: Planilla Digital Content -->
-        <div id="tab-planilla" class="preview-panel hidden">
-          <div class="flex items-center justify-between mb-4">
-            <div>
-              <h3 class="text-base font-bold text-white uppercase tracking-tight">Acta Arbitral Digital en Pantalla</h3>
-              <p class="text-xs text-slate-400 font-mono">Modo de registro rápido para el cuerpo técnico y arbitral</p>
-            </div>
-            <span class="text-xs font-mono text-[#CCFF00] bg-[#CCFF00]/10 border border-[#CCFF00]/30 px-3 py-1 rounded">
-              ACTA ABIERTA
-            </span>
-          </div>
-
-          <div class="rounded-lg bg-[#080A0E] border border-[#1E2633] p-4 grid grid-cols-1 sm:grid-cols-3 gap-4 font-mono">
-            <div class="p-3 bg-[#141A24] rounded border border-[#1E2633]">
-              <span class="text-[10px] uppercase font-bold text-slate-400">Cronómetro del Partido</span>
-              <div class="text-2xl font-bold text-[#CCFF00] mt-1 tabular-nums">78:42</div>
-              <span class="text-[10px] text-slate-400">+3 Minutos adicionados</span>
-            </div>
-            <div class="p-3 bg-[#141A24] rounded border border-[#1E2633]">
-              <span class="text-[10px] uppercase font-bold text-slate-400">Firmas de Capitanes</span>
-              <div class="text-xs font-semibold text-white mt-2 flex items-center gap-1.5 font-sans">
-                <span class="text-[#CCFF00]">✓</span> Cap. Local
-                <span class="text-[#CCFF00] ml-2">✓</span> Cap. Visita
-              </div>
-              <span class="text-[10px] text-slate-400 mt-1 block">Validado con PIN</span>
-            </div>
-            <div class="p-3 bg-[#141A24] rounded border border-[#1E2633]">
-              <span class="text-[10px] uppercase font-bold text-slate-400">Cierre Oficial</span>
-              <div class="text-xs font-bold text-[#CCFF00] mt-2 font-sans">Descargar PDF Certificado</div>
-              <span class="text-[10px] text-slate-400 mt-1 block">Generado en 1 clic</span>
-            </div>
-          </div>
-        </div>
-
       </div>
 
-      <!-- Live Demo CTA -->
-      <div class="mt-8 text-center">
-        <a 
-          href={LINKS.whatsappContact} 
-          target="_blank"
-          rel="noopener noreferrer"
-          class="inline-flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-wider text-slate-300 hover:text-[#CCFF00] transition-colors"
-        >
-          <span>[ Probar la consola de SIGET con los datos de tu torneo -&gt; Hablar por WhatsApp ]</span>
-        </a>
+      <!-- TAB 2: Programación / Fixture -->
+      <div id="tab-fixture" class="preview-panel hidden">
+        <div class="flex items-center justify-between pb-6 mb-6 border-b border-white/[0.06]">
+          <div>
+            <h3 class="text-base font-semibold text-white">Programación — Próximo domingo</h3>
+            <p class="text-xs text-slate-400 mt-0.5">Asignación automática de canchas y jueces</p>
+          </div>
+          <span class="text-xs font-medium text-slate-300 bg-white/[0.04] px-3 py-1 rounded-full border border-white/[0.06]">
+            Jornada 8
+          </span>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div class="p-5 rounded-xl bg-white/[0.02] border border-white/[0.06]">
+            <div class="flex items-center justify-between text-xs text-slate-400 mb-3">
+              <span>09:00 AM · Cancha Central</span>
+              <span class="text-emerald-400 font-medium">Programado</span>
+            </div>
+            <div class="flex items-center justify-between py-2 font-medium text-white text-sm">
+              <span>Atlético San Juan</span>
+              <span class="text-slate-500 text-xs">vs</span>
+              <span>Halcones Sintética</span>
+            </div>
+            <div class="mt-3 pt-3 border-t border-white/[0.04] flex items-center justify-between text-xs text-slate-400">
+              <span>Juez: Carlos Rodríguez</span>
+              <span>Planilla lista</span>
+            </div>
+          </div>
+
+          <div class="p-5 rounded-xl bg-white/[0.02] border border-white/[0.06]">
+            <div class="flex items-center justify-between text-xs text-slate-400 mb-3">
+              <span>10:45 AM · Cancha Central</span>
+              <span class="text-emerald-400 font-medium">Programado</span>
+            </div>
+            <div class="flex items-center justify-between py-2 font-medium text-white text-sm">
+              <span>Deportivo Unión</span>
+              <span class="text-slate-500 text-xs">vs</span>
+              <span>Leones del Norte</span>
+            </div>
+            <div class="mt-3 pt-3 border-t border-white/[0.04] flex items-center justify-between text-xs text-slate-400">
+              <span>Juez: Mario Pardo</span>
+              <span>Planilla lista</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB 3: Control Disciplinario -->
+      <div id="tab-disciplinario" class="preview-panel hidden">
+        <div class="flex items-center justify-between pb-6 mb-6 border-b border-white/[0.06]">
+          <div>
+            <h3 class="text-base font-semibold text-white">Sanciones y tarjetas</h3>
+            <p class="text-xs text-slate-400 mt-0.5">Inhabilitación automática para la siguiente fecha</p>
+          </div>
+          <span class="text-xs font-medium text-rose-400 bg-rose-500/10 px-3 py-1 rounded-full border border-rose-500/20">
+            2 inhabilitaciones vigentes
+          </span>
+        </div>
+
+        <div class="space-y-3">
+          <div class="p-4 rounded-xl bg-white/[0.02] border border-white/[0.06] flex items-center justify-between">
+            <div class="flex items-center gap-3">
+              <span class="w-8 h-8 rounded-lg bg-rose-500/10 text-rose-400 flex items-center justify-center text-sm font-semibold">
+                R
+              </span>
+              <div>
+                <h4 class="text-sm font-medium text-white">Carlos Valdés (#10)</h4>
+                <p class="text-xs text-slate-400">Deportivo Unión · Expulsión directa</p>
+              </div>
+            </div>
+            <div class="text-right">
+              <span class="text-xs font-medium text-rose-400 bg-rose-500/10 px-2.5 py-1 rounded-full border border-rose-500/20">
+                2 fechas pendientes
+              </span>
+            </div>
+          </div>
+
+          <div class="p-4 rounded-xl bg-white/[0.02] border border-white/[0.06] flex items-center justify-between">
+            <div class="flex items-center gap-3">
+              <span class="w-8 h-8 rounded-lg bg-amber-500/10 text-amber-400 flex items-center justify-center text-sm font-semibold">
+                A
+              </span>
+              <div>
+                <h4 class="text-sm font-medium text-white">Javier Arango (#5)</h4>
+                <p class="text-xs text-slate-400">Halcones Sintética · Acumulación de 3 tarjetas amarillas</p>
+              </div>
+            </div>
+            <div class="text-right">
+              <span class="text-xs font-medium text-amber-400 bg-amber-500/10 px-2.5 py-1 rounded-full border border-amber-500/20">
+                1 fecha de suspensión
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB 4: Planilla digital -->
+      <div id="tab-planilla" class="preview-panel hidden">
+        <div class="flex items-center justify-between pb-6 mb-6 border-b border-white/[0.06]">
+          <div>
+            <h3 class="text-base font-semibold text-white">Planilla arbitral móvil</h3>
+            <p class="text-xs text-slate-400 mt-0.5">Diseñada para captura rápida desde el celular del árbitro</p>
+          </div>
+          <span class="text-xs font-medium text-emerald-400 bg-emerald-500/10 px-3 py-1 rounded-full border border-emerald-500/20">
+            Acta abierta
+          </span>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          <div class="p-5 rounded-xl bg-white/[0.02] border border-white/[0.06]">
+            <span class="text-xs text-slate-400 block mb-1">Tiempo de juego</span>
+            <div class="text-2xl font-semibold text-white tabular-nums">78:42</div>
+            <span class="text-xs text-emerald-400 mt-1 block">+3' tiempo de adición</span>
+          </div>
+
+          <div class="p-5 rounded-xl bg-white/[0.02] border border-white/[0.06]">
+            <span class="text-xs text-slate-400 block mb-1">Firmas de capitanes</span>
+            <div class="text-sm font-medium text-white mt-2 flex items-center gap-2">
+              <span class="text-emerald-400">✓</span> Local
+              <span class="text-emerald-400 ml-2">✓</span> Visitante
+            </div>
+            <span class="text-xs text-slate-500 mt-1 block">Validado con código de seguridad</span>
+          </div>
+
+          <div class="p-5 rounded-xl bg-white/[0.02] border border-white/[0.06]">
+            <span class="text-xs text-slate-400 block mb-1">Cierre de encuentro</span>
+            <div class="text-sm font-medium text-emerald-400 mt-2">Exportar boletín oficial</div>
+            <span class="text-xs text-slate-500 mt-1 block">Generación automática en PDF</span>
+          </div>
+        </div>
       </div>
 
     </div>
@@ -312,12 +339,12 @@ import { LINKS } from '../config';
       if (!targetId) return;
 
       tabBtns.forEach(b => {
-        b.classList.remove('bg-[#CCFF00]', 'text-black', 'border-[#CCFF00]');
-        b.classList.add('bg-[#0E121A]', 'text-slate-400', 'border-[#1E2633]');
+        b.classList.remove('active', 'text-white', 'bg-[#1E2330]', 'shadow-sm');
+        b.classList.add('text-slate-400');
       });
 
-      btn.classList.add('bg-[#CCFF00]', 'text-black', 'border-[#CCFF00]');
-      btn.classList.remove('bg-[#0E121A]', 'text-slate-400', 'border-[#1E2633]');
+      btn.classList.add('active', 'text-white', 'bg-[#1E2330]', 'shadow-sm');
+      btn.classList.remove('text-slate-400');
 
       panels.forEach(panel => {
         if (panel.id === targetId) {

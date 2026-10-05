@@ -1,158 +1,73 @@
 ﻿---
+const features = [
+  {
+    title: "Programación automática de canchas",
+    desc: "Organiza fechas completas en segundos. El motor distribuye horarios y canchas evitando cruces y garantizando descanso equilibrado entre equipos.",
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />`
+  },
+  {
+    title: "Tablas de posiciones al instante",
+    desc: "Cálculo matemático inmediato al registrar cada resultado: puntos, diferencia de gol, partidos jugados y criterios de desempate federativos.",
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />`
+  },
+  {
+    title: "Control disciplinario automatizado",
+    desc: "Seguimiento riguroso de tarjetas amarillas y rojas. El sistema bloquea de manera automática a los futbolistas inhabilitados para la siguiente jornada.",
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />`
+  },
+  {
+    title: "Planilla arbitral digital",
+    desc: "Sin papeles rotos ni caligrafía ilegible. Los árbitros registran incidencias desde su teléfono móvil y validan el acta con firmas digitales.",
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />`
+  },
+  {
+    title: "Artilleros y valla menos vencida",
+    desc: "Reconoce a los mejores jugadores del torneo. Tablas de goleadores y arqueros destacados actualizadas automáticamente cada fin de semana.",
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />`
+  },
+  {
+    title: "Portal público para jugadores",
+    desc: "Comparte un enlace web limpio por WhatsApp donde delegados, hinchas y familias pueden consultar resultados y posiciones en cualquier momento.",
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />`
+  }
+];
 ---
 
-<section id="features" class="py-20 md:py-28 border-b border-[#1E2633] bg-[#080A0E]">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<section id="features" class="py-24 md:py-36 border-t border-white/[0.06]">
+  <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
     
-    <!-- Section Heading -->
-    <div class="max-w-3xl mb-16">
-      <div class="inline-flex items-center gap-2 px-2.5 py-1 rounded bg-[#0E121A] border border-[#1E2633] text-[#CCFF00] font-mono text-[11px] font-bold uppercase tracking-wider mb-4">
-        <span>BENTO OPERACIONAL • FUNCIONES DE TERRENO</span>
-      </div>
-      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black uppercase tracking-tight text-white leading-tight font-sans">
-        Herramientas construidas para el barro, el sudor y el pito.
+    <!-- Section Header -->
+    <div class="max-w-2xl mb-16 md:mb-24">
+      <span class="text-xs font-medium text-emerald-400 mb-3 block">
+        Funcionalidades principales
+      </span>
+      <h2 class="text-3xl sm:text-4xl font-semibold tracking-tight text-white leading-tight">
+        Todo lo que necesitas para operar tu liga con total tranquilidad.
       </h2>
-      <p class="text-base sm:text-lg text-slate-300 mt-4 leading-relaxed">
-        Menos adornos y más soluciones a los problemas reales de administrar canchas sintéticas, ligas de barrio y torneos empresariales.
+      <p class="text-base text-slate-400 mt-4 leading-relaxed">
+        Diseñado específicamente para complejos de fútbol 5, 8, 11 y microfútbol que buscan orden, transparencia y rapidez.
       </p>
     </div>
 
-    <!-- Asymmetric Bento Grid -->
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
-      
-      <!-- BENTO 1 (Large - Col Span 2): El Cuadre de Fixture del Domingo -->
-      <div class="md:col-span-2 sport-card rounded-xl p-6 sm:p-8 flex flex-col justify-between">
-        <div>
-          <div class="flex items-center justify-between mb-4">
-            <span class="text-xs font-mono font-bold uppercase tracking-wider text-[#CCFF00]">
-              [ 01 • MOTOR DE CALENDARIOS ]
-            </span>
-            <span class="text-[11px] font-mono text-slate-400 bg-[#141A24] border border-[#1E2633] px-2 py-0.5 rounded">
-              ALGORITMO ANTI-CRUCE
-            </span>
-          </div>
-          <h3 class="text-xl sm:text-2xl font-black uppercase text-white tracking-tight mb-2">
-            Programación de Canchas sin Doble Asignación
-          </h3>
-          <p class="text-sm text-slate-300 leading-relaxed max-w-xl">
-            Cuadrar 20 partidos repartidos en 3 canchas sintéticas un domingo por la tarde solía tomar horas en Excel. SIGET organiza las franjas horarias garantizando que ningún equipo ni árbitro quede citado en dos lugares al mismo tiempo.
-          </p>
-        </div>
-
-        <!-- Mini Visual Simulation inside Bento -->
-        <div class="mt-6 pt-5 border-t border-[#1E2633] grid grid-cols-1 sm:grid-cols-3 gap-3 font-mono text-xs">
-          <div class="p-3 bg-[#080A0E] rounded border border-[#1E2633]">
-            <div class="text-[10px] text-slate-400">CANCHA 1 • 08:00 AM</div>
-            <div class="font-bold text-white mt-1">Los Galácticos vs Milán</div>
-            <div class="text-[10px] text-[#CCFF00] mt-1">✓ Cancha Confirmada</div>
-          </div>
-          <div class="p-3 bg-[#080A0E] rounded border border-[#1E2633]">
-            <div class="text-[10px] text-slate-400">CANCHA 1 • 09:30 AM</div>
-            <div class="font-bold text-white mt-1">La Cuadra FC vs Bayern</div>
-            <div class="text-[10px] text-[#CCFF00] mt-1">✓ Cancha Confirmada</div>
-          </div>
-          <div class="p-3 bg-[#080A0E] rounded border border-[#1E2633]">
-            <div class="text-[10px] text-slate-400">CANCHA 2 • 08:00 AM</div>
-            <div class="font-bold text-white mt-1">Inter Sintética vs PSG</div>
-            <div class="text-[10px] text-[#CCFF00] mt-1">✓ Sin cruces de horario</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- BENTO 2 (Col Span 1): Sanciones & Tarjetas -->
-      <div class="sport-card rounded-xl p-6 sm:p-8 flex flex-col justify-between">
-        <div>
-          <div class="flex items-center justify-between mb-4">
-            <span class="text-xs font-mono font-bold uppercase tracking-wider text-amber-400">
-              [ 02 • FAIR PLAY ]
-            </span>
-          </div>
-          <h3 class="text-xl font-black uppercase text-white tracking-tight mb-2">
-            Bloqueo Automático de Sancionados
-          </h3>
-          <p class="text-sm text-slate-300 leading-relaxed">
-            Se acabaron los reclamos en la mesa por jugadores que juegan con 3 amarillas acumuladas. El sistema bloquea su registro en la planilla antes del pitazo inicial.
-          </p>
-        </div>
-
-        <div class="mt-6 pt-5 border-t border-[#1E2633]">
-          <div class="p-3 bg-[#141A24] rounded border border-rose-500/40 text-xs">
-            <div class="flex items-center gap-1.5 font-bold text-rose-400 uppercase text-[11px]">
-              <span>🟥 1 FECHA PENDIENTE</span>
+    <!-- Clean Grid: Apple / Linear Style -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {features.map((item) => (
+        <div class="ios-surface ios-surface-hover rounded-2xl p-8 flex flex-col justify-between">
+          <div>
+            <div class="w-10 h-10 rounded-xl bg-white/[0.04] border border-white/[0.08] flex items-center justify-center text-slate-200 mb-6">
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" set:html={item.icon} />
             </div>
-            <div class="text-white font-mono mt-1 font-bold">J. Gómez (#7 - Leones)</div>
-            <div class="text-[10px] text-slate-400 mt-0.5">Inhabilitado para la Fecha 8</div>
+
+            <h3 class="text-base font-semibold text-white mb-2.5 tracking-tight">
+              {item.title}
+            </h3>
+
+            <p class="text-sm text-slate-400 leading-relaxed font-normal">
+              {item.desc}
+            </p>
           </div>
         </div>
-      </div>
-
-      <!-- BENTO 3 (Col Span 1): Tabla Viva -->
-      <div class="sport-card rounded-xl p-6 sm:p-8 flex flex-col justify-between">
-        <div>
-          <div class="flex items-center justify-between mb-4">
-            <span class="text-xs font-mono font-bold uppercase tracking-wider text-[#CCFF00]">
-              [ 03 • TABLA VIVA ]
-            </span>
-          </div>
-          <h3 class="text-xl font-black uppercase text-white tracking-tight mb-2">
-            Matemática Inmediata sin Fórmulas Rotas
-          </h3>
-          <p class="text-sm text-slate-300 leading-relaxed">
-            PJ, PG, PE, PP, Goles a Favor, en Contra, Gol Diferencia y Puntos de bonificación calculados en tiempo real. Los delegados ven la tabla desde su celular apenas pita el juez.
-          </p>
-        </div>
-
-        <div class="mt-6 pt-5 border-t border-[#1E2633] font-mono text-xs">
-          <div class="flex justify-between text-slate-400 pb-1 border-b border-[#1E2633]">
-            <span>EQUIPO</span>
-            <span>DG / PTS</span>
-          </div>
-          <div class="flex justify-between py-1.5 text-white font-bold">
-            <span>1. Dep. Pasto Aficionado</span>
-            <span class="text-[#CCFF00]">+14 / 21</span>
-          </div>
-          <div class="flex justify-between py-1.5 text-slate-300">
-            <span>2. Real Alianza</span>
-            <span>+9 / 18</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- BENTO 4 (Large - Col Span 2): Planilla Digital del Árbitro -->
-      <div class="md:col-span-2 sport-card rounded-xl p-6 sm:p-8 flex flex-col justify-between">
-        <div>
-          <div class="flex items-center justify-between mb-4">
-            <span class="text-xs font-mono font-bold uppercase tracking-wider text-[#CCFF00]">
-              [ 04 • PLANILLA DIGITAL ]
-            </span>
-            <span class="text-[11px] font-mono text-slate-400 bg-[#141A24] border border-[#1E2633] px-2 py-0.5 rounded">
-              PENSADA PARA EL CELULAR DEL JUEZ
-            </span>
-          </div>
-          <h3 class="text-xl sm:text-2xl font-black uppercase text-white tracking-tight mb-2">
-            El Árbitro Firma y Cierra el Acta en Cancha
-          </h3>
-          <p class="text-sm text-slate-300 leading-relaxed max-w-xl">
-            Nada de planillas con letra borrosa o tachones. El árbitro o planillero califica desde el celular con botones grandes para marcar goles, tarjetas y sustituciones. Al final, los capitanes firman en pantalla y el acta queda blindada.
-          </p>
-        </div>
-
-        <div class="mt-6 pt-5 border-t border-[#1E2633] flex flex-wrap items-center gap-3 font-mono text-xs">
-          <div class="px-3 py-2 bg-[#080A0E] rounded border border-[#1E2633] text-white">
-            <span class="text-[#CCFF00]">⚽</span> Botón Rápido de Gol
-          </div>
-          <div class="px-3 py-2 bg-[#080A0E] rounded border border-[#1E2633] text-white">
-            <span class="text-amber-400">🟨</span> Registro de Tarjeta con Motivo
-          </div>
-          <div class="px-3 py-2 bg-[#080A0E] rounded border border-[#1E2633] text-white">
-            <span class="text-[#CCFF00]">✍️</span> Firma Táctil de Capitanes
-          </div>
-          <div class="px-3 py-2 bg-[#080A0E] rounded border border-[#1E2633] text-white">
-            <span class="text-[#CCFF00]">📄</span> Exportación a PDF Oficial
-          </div>
-        </div>
-      </div>
-
+      ))}
     </div>
 
   </div>
