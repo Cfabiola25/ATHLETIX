@@ -2,79 +2,83 @@
 import { LINKS } from '../config';
 ---
 
-<header class="sticky top-0 z-50 w-full transition-all duration-300 backdrop-blur-md bg-slate-950/75 border-b border-slate-800/80">
+<header class="sticky top-0 z-50 w-full bg-[#080A0E]/95 backdrop-blur-md border-b border-[#1E2633]">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex items-center justify-between h-20">
+    <div class="flex items-center justify-between h-16">
       
-      <!-- Brand Logo -->
+      <!-- Brand Logo: Technical Athletic Brand -->
       <a href="/" class="flex items-center gap-3 group">
-        <div class="relative flex items-center justify-center w-11 h-11 rounded-xl bg-gradient-to-br from-emerald-500/20 via-cyan-500/10 to-slate-900 border border-emerald-500/30 group-hover:border-emerald-400 transition-all duration-300 shadow-lg shadow-emerald-950/50">
-          <img src="/logo-athletix.svg" alt="Athletix Logo" class="w-7 h-7 drop-shadow" />
+        <div class="w-9 h-9 rounded-lg bg-[#0E121A] border border-[#1E2633] group-hover:border-[#CCFF00]/50 transition-colors flex items-center justify-center">
+          <svg class="w-5 h-5" viewBox="0 0 40 40" fill="none">
+            <path d="M22 6L10 22H18L16 34L28 18H20L22 6Z" fill="#CCFF00"/>
+          </svg>
         </div>
-        <div class="flex flex-col">
-          <div class="flex items-center gap-1.5">
-            <span class="text-2xl font-extrabold tracking-wider text-white uppercase font-sans">
-              ATHLE<span class="text-emerald-400">TIX</span>
-            </span>
-          </div>
-          <span class="text-[10px] tracking-widest uppercase font-semibold text-slate-400 flex items-center gap-1">
-            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
-            Powered by SIGET
+        <div class="flex items-center gap-2">
+          <span class="text-xl font-black tracking-tight text-white uppercase font-sans">
+            ATHLETIX
+          </span>
+          <span class="text-[10px] font-mono font-bold tracking-wider uppercase text-slate-400 bg-[#141A24] border border-[#1E2633] px-2 py-0.5 rounded">
+            MOTOR SIGET
           </span>
         </div>
       </a>
 
-      <!-- Desktop Navigation Menu -->
-      <nav class="hidden md:flex items-center gap-8">
-        <a href="#features" class="text-sm font-medium text-slate-300 hover:text-emerald-400 transition-colors">
+      <!-- Desktop Nav -->
+      <nav class="hidden md:flex items-center gap-7 text-xs uppercase tracking-wider font-bold">
+        <a href="#features" class="text-slate-400 hover:text-white transition-colors">
           Funcionalidades
         </a>
-        <a href="#preview" class="text-sm font-medium text-slate-300 hover:text-emerald-400 transition-colors">
-          Demostración
+        <a href="#preview" class="text-slate-400 hover:text-white transition-colors">
+          Tablero en Vivo
         </a>
-        <a href="#pricing" class="text-sm font-medium text-slate-300 hover:text-emerald-400 transition-colors">
-          Planes y Precios
+        <a href="#pricing" class="text-slate-400 hover:text-white transition-colors">
+          Precios
         </a>
-        <a href="#faq" class="text-sm font-medium text-slate-300 hover:text-emerald-400 transition-colors">
+        <a href="#faq" class="text-slate-400 hover:text-white transition-colors">
           Preguntas
         </a>
-        <a href={LINKS.whatsappContact} target="_blank" rel="noopener noreferrer" class="text-sm font-medium text-slate-300 hover:text-emerald-400 transition-colors flex items-center gap-1.5">
+        <a 
+          href={LINKS.whatsappContact} 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          class="text-slate-400 hover:text-[#CCFF00] transition-colors flex items-center gap-1.5"
+        >
           <span>Soporte</span>
-          <span class="text-[10px] bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 px-1.5 py-0.5 rounded font-bold">24/7</span>
+          <span class="w-1.5 h-1.5 rounded-full bg-[#CCFF00] animate-pulse"></span>
         </a>
       </nav>
 
-      <!-- Desktop Action Buttons -->
-      <div class="hidden md:flex items-center gap-4">
+      <!-- Action Buttons -->
+      <div class="hidden md:flex items-center gap-3">
         <a 
           href={LINKS.login} 
-          class="text-sm font-semibold text-slate-200 hover:text-white px-4 py-2 rounded-lg border border-slate-700/80 hover:border-slate-500 transition-all duration-200 hover:bg-slate-800/40"
+          class="text-xs font-bold uppercase tracking-wider text-slate-300 hover:text-white px-3.5 py-2 rounded-lg bg-[#0E121A] border border-[#1E2633] hover:border-slate-600 transition-colors"
         >
-          Iniciar Sesión
+          Ingresar
         </a>
         <a 
           href={LINKS.register} 
-          class="relative inline-flex items-center justify-center text-sm font-bold text-slate-950 px-5 py-2.5 rounded-lg bg-gradient-to-r from-emerald-400 via-emerald-300 to-cyan-400 hover:from-emerald-300 hover:to-cyan-300 shadow-md shadow-emerald-500/20 hover:shadow-emerald-500/40 transition-all duration-300 group"
+          class="btn-volt text-xs font-black uppercase tracking-wider px-4 py-2 rounded-lg flex items-center gap-1.5"
         >
-          <span>Crear Torneo Gratis</span>
-          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 ml-1.5 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <span>Crear Torneo</span>
+          <svg class="w-3.5 h-3.5 text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13 7l5 5m0 0l-5 5m5-5H6" />
           </svg>
         </a>
       </div>
 
-      <!-- Mobile Menu Button -->
+      <!-- Mobile Button -->
       <div class="flex md:hidden">
         <button 
           id="mobile-menu-btn"
           type="button" 
           aria-label="Abrir menú"
-          class="p-2 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800/60 focus:outline-none"
+          class="p-2 rounded-lg text-slate-400 hover:text-white bg-[#0E121A] border border-[#1E2633] focus:outline-none"
         >
-          <svg id="hamburger-icon" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <svg id="hamburger-icon" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
           </svg>
-          <svg id="close-icon" class="w-6 h-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <svg id="close-icon" class="w-5 h-5 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
           </svg>
         </button>
@@ -83,28 +87,25 @@ import { LINKS } from '../config';
     </div>
   </div>
 
-  <!-- Mobile Dropdown Menu -->
-  <div id="mobile-menu" class="hidden md:hidden border-b border-slate-800 bg-slate-950/95 backdrop-blur-xl px-4 pt-3 pb-6 space-y-4">
-    <div class="flex flex-col space-y-3">
-      <a href="#features" class="mobile-nav-link text-base font-medium text-slate-300 hover:text-emerald-400 py-1">Funcionalidades</a>
-      <a href="#preview" class="mobile-nav-link text-base font-medium text-slate-300 hover:text-emerald-400 py-1">Demostración</a>
-      <a href="#pricing" class="mobile-nav-link text-base font-medium text-slate-300 hover:text-emerald-400 py-1">Planes y Precios</a>
-      <a href="#faq" class="mobile-nav-link text-base font-medium text-slate-300 hover:text-emerald-400 py-1">Preguntas Frecuentes</a>
-      <a href={LINKS.whatsappContact} target="_blank" rel="noopener noreferrer" class="mobile-nav-link text-base font-medium text-emerald-400 py-1 flex items-center justify-between">
-        <span>Soporte WhatsApp</span>
-        <span class="text-xs bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 px-2 py-0.5 rounded">24/7</span>
-      </a>
+  <!-- Mobile Dropdown -->
+  <div id="mobile-menu" class="hidden md:hidden border-b border-[#1E2633] bg-[#0B0E14] px-4 pt-3 pb-6 space-y-4">
+    <div class="flex flex-col space-y-2.5 text-xs uppercase tracking-wider font-bold">
+      <a href="#features" class="mobile-nav-link text-slate-300 hover:text-[#CCFF00] py-2 border-b border-[#1E2633]/50">Funcionalidades</a>
+      <a href="#preview" class="mobile-nav-link text-slate-300 hover:text-[#CCFF00] py-2 border-b border-[#1E2633]/50">Tablero en Vivo</a>
+      <a href="#pricing" class="mobile-nav-link text-slate-300 hover:text-[#CCFF00] py-2 border-b border-[#1E2633]/50">Precios</a>
+      <a href="#faq" class="mobile-nav-link text-slate-300 hover:text-[#CCFF00] py-2 border-b border-[#1E2633]/50">Preguntas</a>
+      <a href={LINKS.whatsappContact} target="_blank" rel="noopener noreferrer" class="mobile-nav-link text-[#CCFF00] py-2">Soporte WhatsApp</a>
     </div>
-    <div class="pt-4 border-t border-slate-800 flex flex-col gap-3">
+    <div class="pt-3 flex flex-col gap-2.5">
       <a 
         href={LINKS.login} 
-        class="w-full text-center text-sm font-semibold text-slate-200 py-2.5 rounded-lg border border-slate-700 bg-slate-900/60"
+        class="w-full text-center text-xs font-bold uppercase tracking-wider text-slate-200 py-2.5 rounded-lg border border-[#1E2633] bg-[#0E121A]"
       >
-        Iniciar Sesión en SIGET
+        Ingresar a SIGET
       </a>
       <a 
         href={LINKS.register} 
-        class="w-full text-center text-sm font-bold text-slate-950 py-3 rounded-lg bg-gradient-to-r from-emerald-400 to-cyan-400 shadow-md shadow-emerald-500/20"
+        class="w-full text-center text-xs font-black uppercase tracking-wider btn-volt py-3 rounded-lg"
       >
         Crear Torneo Gratis
       </a>

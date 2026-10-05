@@ -2,66 +2,66 @@
 const faqs = [
   {
     q: "¿Cuál es la relación entre Athletix y SIGET?",
-    a: "Athletix es la plataforma comercial y de soporte que te acompaña en la organización de tus torneos; mientras que SIGET (Sistema Integral de Gestión de Torneos) es el motor tecnológico que procesa de manera segura los datos, genera los fixtures automáticos y calcula las tablas de posiciones en tiempo real."
+    a: "Athletix es la plataforma comercial y de soporte para organizadores de torneos; mientras que SIGET (Sistema Integral de Gestión de Torneos) es el motor tecnológico que procesa de manera segura las reglas, calcula las tablas y genera los fixtures sin cruces de horarios."
   },
   {
-    q: "¿Los jugadores o hinchas deben pagar para ver resultados?",
-    a: "No, en absoluto. El acceso para jugadores, delegados y fanáticos es 100% gratuito. Tu torneo genera un enlace web público que puedes compartir por WhatsApp, donde cualquiera puede consultar la tabla, fixture, goleadores y sanciones desde su smartphone."
+    q: "¿Los jugadores o delegados deben pagar para consultar la tabla?",
+    a: "No. El acceso para jugadores, capitanes y aficionados es 100% gratuito. Cada torneo genera un enlace web público que se puede compartir directamente por WhatsApp para ver resultados, fixture y tabla al segundo."
   },
   {
-    q: "¿Qué modalidades de fútbol son compatibles?",
-    a: "Athletix y el motor SIGET están diseñados para Fútbol 11, Fútbol 7/8, Fútbol 5 (Sintética) y Microfútbol / Futsal. Puedes configurar el puntaje por victoria, empate o punto bonificado (fair play/penales), así como la duración de cada tiempo según tu reglamento."
+    q: "¿Qué modalidades de fútbol están soportadas?",
+    a: "Athletix y SIGET soportan Fútbol 11, Fútbol 7, Fútbol 8, Fútbol 5 (Sintética) y Microfútbol / Futsal. Puedes configurar el valor de los puntos (victoria, empate, penales/fair play) y la duración de los tiempos de juego."
   },
   {
-    q: "¿Cómo funciona el control de tarjetas y sanciones automáticas?",
-    a: "Al registrar las incidencias en la planilla arbitral digital, SIGET lleva el historial de cada jugador. Si un futbolista acumula el número límite de amarillas o recibe tarjeta roja directa, el sistema lo inhabilita automáticamente para la siguiente fecha y alerta al árbitro si intentan alinearlo."
+    q: "¿Cómo evita el sistema que juegue un futbolista sancionado?",
+    a: "Al registrar tarjetas en la planilla digital, el motor SIGET actualiza la ficha del jugador al instante. Si acumula 3 amarillas o vio la roja directa, la planilla del siguiente partido bloquea su inclusión y alerta al árbitro con un aviso en pantalla."
   },
   {
-    q: "¿Los árbitros necesitan instalar una aplicación pesada?",
-    a: "No. La planilla arbitral funciona en la web con tecnología responsiva. Los árbitros o veedores ingresan con su usuario desde el navegador de su teléfono, seleccionan el partido asignado y registran goles, tarjetas y firmas de capitanes con un solo toque."
+    q: "¿El árbitro necesita descargar una aplicación pesada?",
+    a: "No. La planilla digital se abre directamente desde el navegador de cualquier teléfono celular con una interfaz ligera y botones grandes pensados para usar con dedos rápidos al pie de la cancha."
   },
   {
-    q: "¿Puedo exportar actas oficiales y reportes a PDF?",
-    a: "Sí. Con un solo clic puedes descargar el boletín oficial de cada fecha, tabla de posiciones, tabla de goleadores y la planilla arbitral con firmas para el comité organizador o las reuniones de delegados."
+    q: "¿Puedo exportar actas y resoluciones oficiales a PDF?",
+    a: "Sí. Con un solo clic puedes descargar el boletín oficial de la fecha con firmas de capitanes y jueces para las asambleas de delegados."
   }
 ];
 ---
 
-<section id="faq" class="py-20 md:py-32 relative bg-slate-950/40">
+<section id="faq" class="py-20 md:py-28 border-b border-[#1E2633] bg-[#0B0E14]">
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
     
-    <div class="text-center mb-16">
-      <span class="text-xs font-bold uppercase tracking-widest text-emerald-400 bg-emerald-950/60 border border-emerald-500/30 px-3 py-1 rounded-full">
-        Resolvemos tus Dudas
-      </span>
-      <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mt-4 mb-4">
-        Preguntas Frecuentes
+    <div class="mb-14">
+      <div class="inline-flex items-center gap-2 px-2.5 py-1 rounded bg-[#0E121A] border border-[#1E2633] text-[#CCFF00] font-mono text-[11px] font-bold uppercase tracking-wider mb-4">
+        <span>PREGUNTAS FRECUENTES</span>
+      </div>
+      <h2 class="text-3xl sm:text-4xl font-black uppercase tracking-tight text-white font-sans">
+        Respuestas directas, sin rodeos.
       </h2>
-      <p class="text-base text-slate-400">
-        ¿Tienes otra consulta? Estamos disponibles las 24 horas a través de nuestra línea directa de WhatsApp.
+      <p class="text-base text-slate-400 mt-2">
+        ¿Tienes una necesidad específica para tu liga? Escríbenos directamente a WhatsApp.
       </p>
     </div>
 
     <!-- Accordion List -->
-    <div class="space-y-4">
-      {faqs.map((faq, index) => (
-        <div class="faq-item rounded-2xl bg-slate-900/60 border border-slate-800 transition-all duration-200 overflow-hidden">
+    <div class="space-y-3">
+      {faqs.map((faq) => (
+        <div class="faq-item rounded-xl bg-[#0E121A] border border-[#1E2633] transition-colors overflow-hidden">
           <button 
             type="button"
-            class="faq-btn w-full p-6 text-left flex items-center justify-between gap-4 focus:outline-none"
+            class="faq-btn w-full p-5 text-left flex items-center justify-between gap-4 focus:outline-none"
             aria-expanded="false"
           >
-            <span class="text-base sm:text-lg font-bold text-white pr-2">
+            <span class="text-sm sm:text-base font-bold text-white uppercase tracking-tight pr-2">
               {faq.q}
             </span>
-            <div class="faq-icon-wrapper w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center shrink-0 text-slate-300 transition-transform duration-300">
-              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            <div class="faq-icon-wrapper w-7 h-7 rounded bg-[#141A24] border border-[#1E2633] flex items-center justify-center shrink-0 text-slate-300 transition-transform duration-200">
+              <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7" />
               </svg>
             </div>
           </button>
           
-          <div class="faq-content hidden px-6 pb-6 text-sm sm:text-base text-slate-300 leading-relaxed border-t border-slate-800/40 pt-4">
+          <div class="faq-content hidden px-5 pb-5 text-xs sm:text-sm text-slate-300 leading-relaxed border-t border-[#1E2633] pt-4">
             {faq.a}
           </div>
         </div>
@@ -83,17 +83,16 @@ const faqs = [
       const icon = item.querySelector('.faq-icon-wrapper');
       const isExpanded = btn.getAttribute('aria-expanded') === 'true';
 
-      // Toggle current
       if (isExpanded) {
         btn.setAttribute('aria-expanded', 'false');
         content?.classList.add('hidden');
-        icon?.classList.remove('rotate-180', 'bg-emerald-500/20', 'text-emerald-400');
-        item.classList.remove('border-emerald-500/40', 'bg-slate-900/90');
+        icon?.classList.remove('rotate-180', 'text-[#CCFF00]', 'border-[#CCFF00]/40');
+        item.classList.remove('border-slate-500');
       } else {
         btn.setAttribute('aria-expanded', 'true');
         content?.classList.remove('hidden');
-        icon?.classList.add('rotate-180', 'bg-emerald-500/20', 'text-emerald-400');
-        item.classList.add('border-emerald-500/40', 'bg-slate-900/90');
+        icon?.classList.add('rotate-180', 'text-[#CCFF00]', 'border-[#CCFF00]/40');
+        item.classList.add('border-slate-500');
       }
     });
   });

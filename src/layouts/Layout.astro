@@ -8,8 +8,8 @@ interface Props {
 }
 
 const { 
-  title = `${SITE_INFO.name} | ${SITE_INFO.tagline}`,
-  description = SITE_INFO.description 
+  title = `ATHLETIX | Software de Operación y Gestión para Torneos de Fútbol`,
+  description = `Athletix y el motor SIGET automatizan fixtures sin cruces, planillas arbitrales digitales y control de sanciones para ligas y complejos deportivos.` 
 } = Astro.props;
 ---
 
@@ -21,41 +21,22 @@ const {
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
 
-    <!-- Primary Meta Tags -->
+    <!-- SEO Meta Tags -->
     <title>{title}</title>
     <meta name="title" content={title} />
     <meta name="description" content={description} />
-    <meta name="keywords" content="gestión de torneos, software torneos fútbol, fixtures automáticos, tabla de posiciones en vivo, planilla arbitral digital, SIGET, Athletix, microfútbol, control de tarjetas" />
-    <meta name="author" content="Athletix & SIGET" />
+    <meta name="keywords" content="torneos de futbol, planillas arbitrales, software para canchas sinteticas, fixture automatico, control de tarjetas, SIGET, Athletix" />
 
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://athletix.co/" />
-    <meta property="og:title" content={title} />
-    <meta property="og:description" content={description} />
-    <meta property="og:image" content="/logo-athletix.svg" />
-
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:title" content={title} />
-    <meta property="twitter:description" content={description} />
-    <meta property="twitter:image" content="/logo-athletix.svg" />
-
-    <!-- Google Fonts -->
+    <!-- Google Fonts: Plus Jakarta Sans (Editorial UI) + JetBrains Mono (Scoreboards & Timers) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Teko:wght@500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   </head>
-  <body class="bg-[#030712] text-slate-100 min-h-screen relative flex flex-col font-sans selection:bg-emerald-500 selection:text-white antialiased">
-    <!-- Ambient glowing gradients -->
-    <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden">
-      <div class="absolute -top-40 left-1/2 -translate-x-1/2 w-[900px] h-[500px] bg-gradient-to-b from-emerald-500/15 via-cyan-500/10 to-transparent blur-[120px] rounded-full"></div>
-      <div class="absolute top-[40%] -left-40 w-[600px] h-[600px] bg-emerald-600/10 blur-[140px] rounded-full"></div>
-      <div class="absolute top-[65%] -right-40 w-[600px] h-[600px] bg-cyan-600/10 blur-[140px] rounded-full"></div>
-      <div class="absolute inset-0 bg-grid-pattern opacity-60"></div>
-    </div>
+  <body class="bg-[#080A0E] text-slate-200 min-h-screen relative flex flex-col font-sans antialiased selection:bg-[#CCFF00] selection:text-black">
+    <!-- Top razor hairline line in volt -->
+    <div class="w-full h-[2px] bg-[#CCFF00]/80"></div>
 
-    <!-- Main page content -->
+    <!-- Main App Container -->
     <div class="relative z-10 flex flex-col min-h-screen">
       <slot />
     </div>
