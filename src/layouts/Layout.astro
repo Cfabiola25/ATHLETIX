@@ -9,7 +9,7 @@ interface Props {
 
 const { 
   title = `Athletix — Software Integral de Gestión Deportiva`,
-  description = `Organiza tus torneos con la precisión de un software de primer nivel. Fixtures automáticos, control de sanciones y planilla arbitral móvil con el motor SIGET.` 
+  description = `Organiza tus torneos con la precisión de un software corporativo de primer nivel. Fixtures automáticos, control de sanciones y planilla arbitral móvil con el motor SIGET.` 
 } = Astro.props;
 ---
 
@@ -25,16 +25,8 @@ const {
     <title>{title}</title>
     <meta name="title" content={title} />
     <meta name="description" content={description} />
-
-    <!-- Google Fonts: Inter -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   </head>
-  <body class="bg-[#0D1117] text-[#F1F5F9] min-h-screen relative flex flex-col font-sans antialiased selection:bg-[#2563EB] selection:text-white">
-    <!-- Ambient vibrant light glow from top -->
-    <div class="fixed inset-0 pointer-events-none z-0 ambient-glow opacity-90"></div>
-
+  <body class="bg-[#14171F] text-[#E2E8F0] min-h-screen relative flex flex-col antialiased selection:bg-[#2B4C7E] selection:text-white" style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;">
     <div class="relative z-10 flex flex-col min-h-screen">
       <slot />
     </div>

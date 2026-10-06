@@ -2,23 +2,23 @@
 import { LINKS } from '../config';
 ---
 
-<header class="sticky top-0 z-50 w-full bg-[#0D1117]/85 backdrop-blur-xl border-b border-blue-500/15 transition-colors">
+<header class="sticky top-0 z-50 w-full bg-[#14171F] border-b border-[#2D3748] transition-colors">
   <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
     <div class="flex items-center justify-between h-18">
       
-      <!-- Brand Logo -->
+      <!-- Brand Logo (Corporate Helvetica Style) -->
       <a href="/" class="flex items-center gap-3 group">
-        <div class="w-8 h-8 rounded-lg bg-blue-600/25 border border-blue-400/40 flex items-center justify-center shadow-md shadow-blue-900/30 group-hover:border-blue-400 transition-colors">
+        <div class="w-8 h-8 rounded-lg bg-[#2B4C7E] flex items-center justify-center border border-[#3B82F6]/30">
           <svg class="w-4 h-4 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
             <polyline points="18 15 12 9 6 15"></polyline>
           </svg>
         </div>
         <div class="flex items-center gap-2.5">
-          <span class="text-base font-bold tracking-tight text-white font-sans">
+          <span class="text-base font-bold tracking-tight text-white">
             Athletix
           </span>
-          <span class="text-[11px] font-semibold text-blue-200 bg-blue-950/60 border border-blue-500/30 px-2.5 py-0.5 rounded-full hidden sm:inline-flex items-center gap-1.5 shadow-xs">
-            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+          <span class="text-[11px] font-medium text-slate-300 bg-[#1C2333] border border-[#2B4C7E] px-2.5 py-0.5 rounded-full hidden sm:inline-flex items-center gap-1.5">
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
             Motor SIGET
           </span>
         </div>
@@ -42,9 +42,9 @@ import { LINKS } from '../config';
           href={LINKS.whatsappContact} 
           target="_blank" 
           rel="noopener noreferrer" 
-          class="text-blue-400 hover:text-blue-300 font-semibold transition-colors flex items-center gap-1"
+          class="hover:text-[#3B82F6] transition-colors font-semibold"
         >
-          <span>Soporte</span>
+          Soporte
         </a>
       </nav>
 
@@ -52,16 +52,16 @@ import { LINKS } from '../config';
       <div class="hidden md:flex items-center gap-4">
         <a 
           href={LINKS.login} 
-          class="text-[13px] font-medium text-slate-200 hover:text-white px-3 py-1.5 transition-colors"
+          class="text-[13px] font-medium text-slate-300 hover:text-white px-3 py-1.5 transition-colors"
         >
           Iniciar sesión
         </a>
         <a 
           href={LINKS.register} 
-          class="btn-pill-light text-[13px] px-4 py-1.5 inline-flex items-center gap-1.5"
+          class="btn-corp-primary text-[13px] px-4 py-1.5 inline-flex items-center gap-1.5"
         >
           <span>Crear torneo</span>
-          <svg class="w-3.5 h-3.5 text-[#0D1117]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7" />
           </svg>
         </a>
@@ -73,7 +73,7 @@ import { LINKS } from '../config';
           id="mobile-menu-btn"
           type="button" 
           aria-label="Abrir menú"
-          class="p-2 rounded-lg text-slate-200 hover:text-white focus:outline-none"
+          class="p-2 rounded-lg text-slate-300 hover:text-white focus:outline-none"
         >
           <svg id="hamburger-icon" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
@@ -88,24 +88,24 @@ import { LINKS } from '../config';
   </div>
 
   <!-- Mobile Dropdown -->
-  <div id="mobile-menu" class="hidden md:hidden border-b border-blue-500/20 bg-[#0D1117]/98 px-6 pt-3 pb-6 space-y-4 shadow-2xl backdrop-blur-xl">
+  <div id="mobile-menu" class="hidden md:hidden border-b border-[#2D3748] bg-[#14171F] px-6 pt-3 pb-6 space-y-4">
     <div class="flex flex-col space-y-3 text-[14px] font-medium text-slate-200">
       <a href="#features" class="mobile-nav-link hover:text-white py-1">Funcionalidades</a>
       <a href="#preview" class="mobile-nav-link hover:text-white py-1">Demostración en vivo</a>
       <a href="#pricing" class="mobile-nav-link hover:text-white py-1">Planes y precios</a>
       <a href="#faq" class="mobile-nav-link hover:text-white py-1">Preguntas frecuentes</a>
-      <a href={LINKS.whatsappContact} target="_blank" rel="noopener noreferrer" class="mobile-nav-link text-blue-400 py-1">Soporte WhatsApp</a>
+      <a href={LINKS.whatsappContact} target="_blank" rel="noopener noreferrer" class="mobile-nav-link text-[#3B82F6] py-1">Soporte WhatsApp</a>
     </div>
-    <div class="pt-4 border-t border-blue-500/20 flex flex-col gap-2.5">
+    <div class="pt-4 border-t border-[#2D3748] flex flex-col gap-2.5">
       <a 
         href={LINKS.login} 
-        class="w-full text-center text-[13px] font-medium text-slate-200 py-2.5 rounded-full border border-blue-500/30 bg-white/[0.04]"
+        class="w-full text-center text-[13px] font-medium text-white py-2.5 rounded-full border border-[#2D3748] bg-[#1C202B]"
       >
         Iniciar sesión en SIGET
       </a>
       <a 
         href={LINKS.register} 
-        class="w-full text-center text-[13px] btn-pill-light py-2.5"
+        class="w-full text-center text-[13px] btn-corp-primary py-2.5"
       >
         Crear torneo gratis
       </a>

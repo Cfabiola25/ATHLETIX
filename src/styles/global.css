@@ -2,31 +2,34 @@
 
 @layer base {
   :root {
-    /* Mismos tonos pero con saturación, brillo y contraste elevados (Vivos y luminosos) */
-    --color-bg: #0D1117;          /* Fondo obsidiana profundo, elimina el tono gris apagado */
-    --color-surface: #161B26;     /* Tarjetas pulidas con presencia */
-    --color-surface-hover: #1E2534;
-    --color-navy: #1D4ED8;        /* Azul marino royal vibrante */
-    --color-blue: #3B82F6;        /* Azul eléctrico vivo y nítido */
-    --color-blue-light: #60A5FA;  /* Azul cielo luminoso para detalles */
-    --color-slate: #94A3B8;       /* Pizarra clara con excelente lectura */
-    --color-ice: #FFFFFF;         /* Blanco puro de alto brillo */
+    /* Paleta Corporativa Suiza Sólida (Sin degradados ni resplandores) */
+    --color-bg: #14171F;          /* Fondo corporativo sólido oscuro */
+    --color-surface: #1C202B;     /* Superficie sólida de tarjeta */
+    --color-surface-hover: #232936;
+    --color-navy: #2B4C7E;        /* Azul marino institucional sólido */
+    --color-blue: #3B82F6;        /* Azul corporativo de acción */
+    --color-slate-border: #2D3748;/* Bordes nítidos sólidos */
+    --color-text-muted: #8F9CAE;  /* Texto secundario de alta legibilidad */
+    --color-text-white: #FFFFFF;  /* Blanco puro para títulos Helvetica */
   }
 
   html {
     scroll-behavior: smooth;
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     color-scheme: dark;
-    background-color: #0D1117;
+    background-color: #14171F;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
   }
 
   body {
-    background-color: #0D1117;
-    color: #F1F5F9;
+    background-color: #14171F;
+    color: #E2E8F0;
     overflow-x: hidden;
-    letter-spacing: -0.011em;
-    selection-background-color: #2563EB;
+    letter-spacing: -0.015em;
+    selection-background-color: #2B4C7E;
     selection-color: #FFFFFF;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   }
 
   .tabular-nums {
@@ -34,67 +37,59 @@
   }
 }
 
-/* Vivid Cards & Radiant Containers */
-.card-vivid {
-  background-color: #161B26;
-  border: 1px solid rgba(96, 165, 250, 0.16);
-  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5), 0 0 20px -5px rgba(37, 99, 235, 0.08);
+/* Swiss Corporate Solid Cards (Zero Gradients, Crisp 1px Borders) */
+.card-corporate {
+  background-color: #1C202B;
+  border: 1px solid #2D3748;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2), 0 2px 4px -1px rgba(0, 0, 0, 0.1);
 }
 
-.card-vivid-hover {
-  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+.card-corporate-hover {
+  transition: border-color 0.15s ease, background-color 0.15s ease, transform 0.15s ease;
 }
 
-.card-vivid-hover:hover {
-  border-color: rgba(96, 165, 250, 0.35);
-  box-shadow: 0 20px 40px -15px rgba(37, 99, 235, 0.18);
+.card-corporate-hover:hover {
+  border-color: #4A5568;
+  background-color: #202633;
   transform: translateY(-2px);
 }
 
-/* Glowing Accent Pills & Badges */
-.pill-badge-vivid {
-  background: rgba(30, 58, 138, 0.3);
-  border: 1px solid rgba(96, 165, 250, 0.35);
-  color: #F1F5F9;
-  border-radius: 9999px;
-  box-shadow: 0 0 15px -3px rgba(59, 130, 246, 0.15);
-}
-
-/* Primary High-Gloss Button */
-.btn-pill-light {
+/* Corporate Solid Buttons */
+.btn-corp-primary {
   background-color: #FFFFFF;
-  color: #0D1117;
+  color: #14171F;
   font-weight: 700;
   border-radius: 9999px;
-  transition: all 0.18s ease;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3), 0 0 20px -3px rgba(255, 255, 255, 0.4);
+  border: 1px solid #FFFFFF;
+  transition: all 0.15s ease;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
-.btn-pill-light:hover {
-  background-color: #F8FAFC;
-  transform: translateY(-1px);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4), 0 0 25px -2px rgba(255, 255, 255, 0.6);
+.btn-corp-primary:hover {
+  background-color: #E2E8F0;
+  border-color: #E2E8F0;
 }
 
-/* Secondary Button with Vivid Accent Border */
-.btn-pill-dark {
-  background-color: rgba(22, 27, 38, 0.7);
-  color: #F1F5F9;
-  border: 1px solid rgba(96, 165, 250, 0.28);
-  border-radius: 9999px;
-  font-weight: 500;
-  transition: all 0.18s ease;
-  backdrop-filter: blur(8px);
-}
-
-.btn-pill-dark:hover {
-  background-color: rgba(30, 41, 59, 0.9);
-  border-color: #60A5FA;
+.btn-corp-secondary {
+  background-color: transparent;
   color: #FFFFFF;
-  box-shadow: 0 0 15px -3px rgba(59, 130, 246, 0.25);
+  border: 1px solid #3B4758;
+  border-radius: 9999px;
+  font-weight: 600;
+  transition: all 0.15s ease;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
-/* Ambient Blue Light Glow */
-.ambient-glow {
-  background: radial-gradient(circle 600px at 50% 10%, rgba(37, 99, 235, 0.18), transparent 70%);
+.btn-corp-secondary:hover {
+  background-color: #232936;
+  border-color: #4A5568;
+}
+
+/* Corporate Pill Badge (Flat, Solid) */
+.badge-corp {
+  background-color: #1C2333;
+  border: 1px solid #2B4C7E;
+  color: #E2E8F0;
+  border-radius: 9999px;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
