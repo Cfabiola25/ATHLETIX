@@ -2,13 +2,13 @@
 import { LINKS } from '../config';
 ---
 
-<header class="sticky top-0 z-50 w-full bg-[#1F1F20]/90 backdrop-blur-md border-b border-[#606D80]/20 transition-colors">
+<header class="sticky top-0 z-50 w-full bg-[#0D1117]/85 backdrop-blur-xl border-b border-blue-500/15 transition-colors">
   <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
     <div class="flex items-center justify-between h-18">
       
-      <!-- Brand Logo (matching Image 1) -->
+      <!-- Brand Logo -->
       <a href="/" class="flex items-center gap-3 group">
-        <div class="w-8 h-8 rounded-lg bg-[#2B4C7E]/40 border border-[#567EBB]/30 flex items-center justify-center shadow-sm">
+        <div class="w-8 h-8 rounded-lg bg-blue-600/25 border border-blue-400/40 flex items-center justify-center shadow-md shadow-blue-900/30 group-hover:border-blue-400 transition-colors">
           <svg class="w-4 h-4 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
             <polyline points="18 15 12 9 6 15"></polyline>
           </svg>
@@ -17,15 +17,15 @@ import { LINKS } from '../config';
           <span class="text-base font-bold tracking-tight text-white font-sans">
             Athletix
           </span>
-          <span class="text-[11px] font-medium text-[#DCE0E6] bg-white/[0.05] border border-[#606D80]/30 px-2.5 py-0.5 rounded-full hidden sm:inline-flex items-center gap-1.5">
-            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+          <span class="text-[11px] font-semibold text-blue-200 bg-blue-950/60 border border-blue-500/30 px-2.5 py-0.5 rounded-full hidden sm:inline-flex items-center gap-1.5 shadow-xs">
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
             Motor SIGET
           </span>
         </div>
       </a>
 
-      <!-- Desktop Navigation Menu (matching Image 1) -->
-      <nav class="hidden md:flex items-center gap-8 text-[13px] font-medium text-[#DCE0E6]/80">
+      <!-- Desktop Navigation Menu -->
+      <nav class="hidden md:flex items-center gap-8 text-[13px] font-medium text-slate-300">
         <a href="#features" class="hover:text-white transition-colors">
           Funcionalidades
         </a>
@@ -42,27 +42,27 @@ import { LINKS } from '../config';
           href={LINKS.whatsappContact} 
           target="_blank" 
           rel="noopener noreferrer" 
-          class="hover:text-[#567EBB] transition-colors"
+          class="text-blue-400 hover:text-blue-300 font-semibold transition-colors flex items-center gap-1"
         >
-          Soporte
+          <span>Soporte</span>
         </a>
       </nav>
 
-      <!-- Desktop Action Buttons (matching Image 1) -->
+      <!-- Desktop Action Buttons -->
       <div class="hidden md:flex items-center gap-4">
         <a 
           href={LINKS.login} 
-          class="text-[13px] font-medium text-[#DCE0E6]/90 hover:text-white px-3 py-1.5 transition-colors"
+          class="text-[13px] font-medium text-slate-200 hover:text-white px-3 py-1.5 transition-colors"
         >
           Iniciar sesión
         </a>
         <a 
           href={LINKS.register} 
-          class="btn-pill-light text-[13px] px-4 py-1.5 inline-flex items-center gap-1.5 shadow-sm"
+          class="btn-pill-light text-[13px] px-4 py-1.5 inline-flex items-center gap-1.5"
         >
           <span>Crear torneo</span>
-          <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M9 5l7 7-7 7" />
+          <svg class="w-3.5 h-3.5 text-[#0D1117]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7" />
           </svg>
         </a>
       </div>
@@ -73,7 +73,7 @@ import { LINKS } from '../config';
           id="mobile-menu-btn"
           type="button" 
           aria-label="Abrir menú"
-          class="p-2 rounded-lg text-[#DCE0E6] hover:text-white focus:outline-none"
+          class="p-2 rounded-lg text-slate-200 hover:text-white focus:outline-none"
         >
           <svg id="hamburger-icon" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
@@ -88,18 +88,18 @@ import { LINKS } from '../config';
   </div>
 
   <!-- Mobile Dropdown -->
-  <div id="mobile-menu" class="hidden md:hidden border-b border-[#606D80]/20 bg-[#1F1F20] px-6 pt-3 pb-6 space-y-4 shadow-xl">
-    <div class="flex flex-col space-y-3 text-[14px] font-medium text-[#DCE0E6]">
+  <div id="mobile-menu" class="hidden md:hidden border-b border-blue-500/20 bg-[#0D1117]/98 px-6 pt-3 pb-6 space-y-4 shadow-2xl backdrop-blur-xl">
+    <div class="flex flex-col space-y-3 text-[14px] font-medium text-slate-200">
       <a href="#features" class="mobile-nav-link hover:text-white py-1">Funcionalidades</a>
       <a href="#preview" class="mobile-nav-link hover:text-white py-1">Demostración en vivo</a>
       <a href="#pricing" class="mobile-nav-link hover:text-white py-1">Planes y precios</a>
       <a href="#faq" class="mobile-nav-link hover:text-white py-1">Preguntas frecuentes</a>
-      <a href={LINKS.whatsappContact} target="_blank" rel="noopener noreferrer" class="mobile-nav-link text-[#567EBB] py-1">Soporte WhatsApp</a>
+      <a href={LINKS.whatsappContact} target="_blank" rel="noopener noreferrer" class="mobile-nav-link text-blue-400 py-1">Soporte WhatsApp</a>
     </div>
-    <div class="pt-4 border-t border-[#606D80]/20 flex flex-col gap-2.5">
+    <div class="pt-4 border-t border-blue-500/20 flex flex-col gap-2.5">
       <a 
         href={LINKS.login} 
-        class="w-full text-center text-[13px] font-medium text-[#DCE0E6] py-2.5 rounded-full border border-[#606D80]/40 bg-white/[0.03]"
+        class="w-full text-center text-[13px] font-medium text-slate-200 py-2.5 rounded-full border border-blue-500/30 bg-white/[0.04]"
       >
         Iniciar sesión en SIGET
       </a>

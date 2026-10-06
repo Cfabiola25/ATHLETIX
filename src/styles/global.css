@@ -2,26 +2,30 @@
 
 @layer base {
   :root {
-    --color-bg: #1F1F20;
-    --color-navy: #2B4C7E;
-    --color-blue: #567EBB;
-    --color-slate: #606D80;
-    --color-ice: #DCE0E6;
+    /* Mismos tonos pero con saturación, brillo y contraste elevados (Vivos y luminosos) */
+    --color-bg: #0D1117;          /* Fondo obsidiana profundo, elimina el tono gris apagado */
+    --color-surface: #161B26;     /* Tarjetas pulidas con presencia */
+    --color-surface-hover: #1E2534;
+    --color-navy: #1D4ED8;        /* Azul marino royal vibrante */
+    --color-blue: #3B82F6;        /* Azul eléctrico vivo y nítido */
+    --color-blue-light: #60A5FA;  /* Azul cielo luminoso para detalles */
+    --color-slate: #94A3B8;       /* Pizarra clara con excelente lectura */
+    --color-ice: #FFFFFF;         /* Blanco puro de alto brillo */
   }
 
   html {
     scroll-behavior: smooth;
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     color-scheme: dark;
-    background-color: #1F1F20;
+    background-color: #0D1117;
   }
 
   body {
-    background-color: #1F1F20;
-    color: #DCE0E6;
+    background-color: #0D1117;
+    color: #F1F5F9;
     overflow-x: hidden;
     letter-spacing: -0.011em;
-    selection-background-color: #2B4C7E;
+    selection-background-color: #2563EB;
     selection-color: #FFFFFF;
   }
 
@@ -30,85 +34,67 @@
   }
 }
 
-/* Custom palette helpers based on user design */
-.bg-base {
-  background-color: #1F1F20;
+/* Vivid Cards & Radiant Containers */
+.card-vivid {
+  background-color: #161B26;
+  border: 1px solid rgba(96, 165, 250, 0.16);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5), 0 0 20px -5px rgba(37, 99, 235, 0.08);
 }
 
-.bg-surface {
-  background-color: #26272A;
-  border: 1px solid rgba(220, 224, 230, 0.08);
+.card-vivid-hover {
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.bg-surface-elevated {
-  background-color: #2D3036;
-  border: 1px solid rgba(220, 224, 230, 0.12);
+.card-vivid-hover:hover {
+  border-color: rgba(96, 165, 250, 0.35);
+  box-shadow: 0 20px 40px -15px rgba(37, 99, 235, 0.18);
+  transform: translateY(-2px);
 }
 
-.bg-navy {
-  background-color: #2B4C7E;
+/* Glowing Accent Pills & Badges */
+.pill-badge-vivid {
+  background: rgba(30, 58, 138, 0.3);
+  border: 1px solid rgba(96, 165, 250, 0.35);
+  color: #F1F5F9;
+  border-radius: 9999px;
+  box-shadow: 0 0 15px -3px rgba(59, 130, 246, 0.15);
 }
 
-.bg-blue-accent {
-  background-color: #567EBB;
-}
-
-.text-ice {
-  color: #DCE0E6;
-}
-
-.text-slate-muted {
-  color: #A0ABB8;
-}
-
-.text-blue-accent {
-  color: #567EBB;
-}
-
-.border-slate-subtle {
-  border-color: rgba(96, 109, 128, 0.3);
-}
-
-.border-slate-strong {
-  border-color: #606D80;
-}
-
-/* Primary Light Pill Button (as seen in Image 1: 'Crear torneo >' and 'Comenzar prueba gratis →') */
+/* Primary High-Gloss Button */
 .btn-pill-light {
   background-color: #FFFFFF;
-  color: #1F1F20;
-  font-weight: 600;
+  color: #0D1117;
+  font-weight: 700;
   border-radius: 9999px;
   transition: all 0.18s ease;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3), 0 0 20px -3px rgba(255, 255, 255, 0.4);
 }
 
 .btn-pill-light:hover {
-  background-color: #DCE0E6;
+  background-color: #F8FAFC;
   transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(220, 224, 230, 0.2);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4), 0 0 25px -2px rgba(255, 255, 255, 0.6);
 }
 
-/* Secondary Pill Button (as seen in Image 1: 'Hablar con un asesor') */
+/* Secondary Button with Vivid Accent Border */
 .btn-pill-dark {
-  background-color: rgba(220, 224, 230, 0.04);
-  color: #DCE0E6;
-  border: 1px solid rgba(96, 109, 128, 0.4);
+  background-color: rgba(22, 27, 38, 0.7);
+  color: #F1F5F9;
+  border: 1px solid rgba(96, 165, 250, 0.28);
   border-radius: 9999px;
   font-weight: 500;
   transition: all 0.18s ease;
+  backdrop-filter: blur(8px);
 }
 
 .btn-pill-dark:hover {
-  background-color: rgba(220, 224, 230, 0.09);
-  border-color: #606D80;
+  background-color: rgba(30, 41, 59, 0.9);
+  border-color: #60A5FA;
   color: #FFFFFF;
+  box-shadow: 0 0 15px -3px rgba(59, 130, 246, 0.25);
 }
 
-/* Pill badge centered */
-.pill-badge {
-  background-color: rgba(220, 224, 230, 0.05);
-  border: 1px solid rgba(96, 109, 128, 0.35);
-  color: #DCE0E6;
-  border-radius: 9999px;
+/* Ambient Blue Light Glow */
+.ambient-glow {
+  background: radial-gradient(circle 600px at 50% 10%, rgba(37, 99, 235, 0.18), transparent 70%);
 }

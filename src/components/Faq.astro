@@ -27,17 +27,17 @@ const faqs = [
 ];
 ---
 
-<section id="faq" class="py-24 md:py-32 bg-[#1F1F20] border-t border-[#606D80]/20">
+<section id="faq" class="py-24 md:py-32 border-t border-blue-500/15 relative">
   <div class="max-w-4xl mx-auto px-6 sm:px-8 lg:px-12">
     
     <div class="max-w-2xl mb-16">
-      <span class="text-xs font-semibold uppercase tracking-wider text-[#567EBB] mb-3 block">
+      <span class="text-xs font-bold uppercase tracking-wider text-blue-400 bg-blue-950/60 border border-blue-500/30 px-3 py-1 rounded-full mb-4 inline-block">
         Preguntas frecuentes
       </span>
-      <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-white leading-tight">
+      <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-white leading-tight">
         Respuestas claras a tus dudas operativas.
       </h2>
-      <p class="text-base text-[#A0ABB8] mt-4 leading-relaxed">
+      <p class="text-base text-slate-300 mt-4 leading-relaxed">
         ¿Tienes requerimientos particulares para tu liga? Nuestro equipo está disponible directamente por WhatsApp.
       </p>
     </div>
@@ -45,23 +45,23 @@ const faqs = [
     <!-- Accordion List -->
     <div class="space-y-3.5">
       {faqs.map((faq) => (
-        <div class="faq-item rounded-xl bg-[#26272A] border border-[#606D80]/25 transition-colors overflow-hidden">
+        <div class="faq-item rounded-xl card-vivid transition-colors overflow-hidden">
           <button 
             type="button"
             class="faq-btn w-full p-6 text-left flex items-center justify-between gap-4 focus:outline-none"
             aria-expanded="false"
           >
-            <span class="text-sm sm:text-base font-semibold text-white pr-2">
+            <span class="text-sm sm:text-base font-bold text-white pr-2">
               {faq.q}
             </span>
-            <div class="faq-icon-wrapper w-7 h-7 rounded-full bg-white/[0.04] border border-[#606D80]/30 flex items-center justify-center shrink-0 text-[#A0ABB8] transition-transform duration-200">
+            <div class="faq-icon-wrapper w-7 h-7 rounded-full bg-blue-950/60 border border-blue-400/30 flex items-center justify-center shrink-0 text-blue-300 transition-transform duration-200">
               <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
               </svg>
             </div>
           </button>
           
-          <div class="faq-content hidden px-6 pb-6 text-xs sm:text-sm text-[#A0ABB8] leading-relaxed border-t border-[#606D80]/15 pt-4 font-normal">
+          <div class="faq-content hidden px-6 pb-6 text-xs sm:text-sm text-slate-300 leading-relaxed border-t border-blue-500/15 pt-4 font-normal">
             {faq.a}
           </div>
         </div>
@@ -86,13 +86,13 @@ const faqs = [
       if (isExpanded) {
         btn.setAttribute('aria-expanded', 'false');
         content?.classList.add('hidden');
-        icon?.classList.remove('rotate-180', 'text-[#567EBB]', 'border-[#567EBB]/50');
-        item.classList.remove('border-[#567EBB]/50');
+        icon?.classList.remove('rotate-180', 'text-white', 'border-blue-400');
+        item.classList.remove('border-blue-400/50');
       } else {
         btn.setAttribute('aria-expanded', 'true');
         content?.classList.remove('hidden');
-        icon?.classList.add('rotate-180', 'text-[#567EBB]', 'border-[#567EBB]/50');
-        item.classList.add('border-[#567EBB]/50');
+        icon?.classList.add('rotate-180', 'text-white', 'border-blue-400');
+        item.classList.add('border-blue-400/50');
       }
     });
   });
