@@ -1,7 +1,7 @@
 ﻿// src/config.ts
 export const APP_URL = import.meta.env.PROD 
   ? 'https://app.athletix.com' 
-  : 'http://localhost:8000';
+  : 'http://localhost';
 
 export const LINKS = {
   app: APP_URL,
