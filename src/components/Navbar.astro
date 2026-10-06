@@ -2,77 +2,78 @@
 import { LINKS } from '../config';
 ---
 
-<header class="sticky top-0 z-50 w-full bg-white/95 backdrop-blur-md border-b border-slate-200/80 transition-colors">
+<header class="sticky top-0 z-50 w-full bg-[#1F1F20]/90 backdrop-blur-md border-b border-[#606D80]/20 transition-colors">
   <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
     <div class="flex items-center justify-between h-18">
       
-      <!-- Brand Logo -->
+      <!-- Brand Logo (matching Image 1) -->
       <a href="/" class="flex items-center gap-3 group">
-        <div class="w-8 h-8 rounded-lg bg-emerald-600 flex items-center justify-center shadow-sm group-hover:bg-emerald-700 transition-colors">
-          <img src="/logo-athletix.svg" alt="Athletix" class="w-5 h-5" />
+        <div class="w-8 h-8 rounded-lg bg-[#2B4C7E]/40 border border-[#567EBB]/30 flex items-center justify-center shadow-sm">
+          <svg class="w-4 h-4 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="18 15 12 9 6 15"></polyline>
+          </svg>
         </div>
         <div class="flex items-center gap-2.5">
-          <span class="text-lg font-bold tracking-tight text-slate-900 font-sans">
+          <span class="text-base font-bold tracking-tight text-white font-sans">
             Athletix
           </span>
-          <span class="text-[11px] font-medium text-emerald-800 bg-emerald-50 border border-emerald-200/80 px-2 py-0.5 rounded-full hidden sm:inline-flex items-center gap-1.5">
-            <span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span>
+          <span class="text-[11px] font-medium text-[#DCE0E6] bg-white/[0.05] border border-[#606D80]/30 px-2.5 py-0.5 rounded-full hidden sm:inline-flex items-center gap-1.5">
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
             Motor SIGET
           </span>
         </div>
       </a>
 
-      <!-- Desktop Nav -->
-      <nav class="hidden md:flex items-center gap-8 text-[13px] font-medium text-slate-600">
-        <a href="#features" class="hover:text-slate-900 transition-colors">
-          Cómo funciona
+      <!-- Desktop Navigation Menu (matching Image 1) -->
+      <nav class="hidden md:flex items-center gap-8 text-[13px] font-medium text-[#DCE0E6]/80">
+        <a href="#features" class="hover:text-white transition-colors">
+          Funcionalidades
         </a>
-        <a href="#preview" class="hover:text-slate-900 transition-colors">
+        <a href="#preview" class="hover:text-white transition-colors">
           Demostración
         </a>
-        <a href="#pricing" class="hover:text-slate-900 transition-colors">
-          Planes y precios
+        <a href="#pricing" class="hover:text-white transition-colors">
+          Planes
         </a>
-        <a href="#faq" class="hover:text-slate-900 transition-colors">
+        <a href="#faq" class="hover:text-white transition-colors">
           Preguntas frecuentes
         </a>
         <a 
           href={LINKS.whatsappContact} 
           target="_blank" 
           rel="noopener noreferrer" 
-          class="text-emerald-700 hover:text-emerald-800 font-semibold transition-colors flex items-center gap-1.5"
+          class="hover:text-[#567EBB] transition-colors"
         >
-          <span>Soporte</span>
-          <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+          Soporte
         </a>
       </nav>
 
-      <!-- Action Buttons -->
-      <div class="hidden md:flex items-center gap-3">
+      <!-- Desktop Action Buttons (matching Image 1) -->
+      <div class="hidden md:flex items-center gap-4">
         <a 
           href={LINKS.login} 
-          class="text-[13px] font-medium text-slate-700 hover:text-slate-900 px-3.5 py-2 transition-colors"
+          class="text-[13px] font-medium text-[#DCE0E6]/90 hover:text-white px-3 py-1.5 transition-colors"
         >
           Iniciar sesión
         </a>
         <a 
           href={LINKS.register} 
-          class="btn-green text-[13px] px-4 py-2 rounded-xl inline-flex items-center gap-1.5"
+          class="btn-pill-light text-[13px] px-4 py-1.5 inline-flex items-center gap-1.5 shadow-sm"
         >
-          <span>Crear torneo gratis</span>
+          <span>Crear torneo</span>
           <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M9 5l7 7-7 7" />
           </svg>
         </a>
       </div>
 
-      <!-- Mobile Menu Toggle -->
+      <!-- Mobile Button -->
       <div class="flex md:hidden">
         <button 
           id="mobile-menu-btn"
           type="button" 
           aria-label="Abrir menú"
-          class="p-2 rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-100 focus:outline-none"
+          class="p-2 rounded-lg text-[#DCE0E6] hover:text-white focus:outline-none"
         >
           <svg id="hamburger-icon" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
@@ -87,24 +88,24 @@ import { LINKS } from '../config';
   </div>
 
   <!-- Mobile Dropdown -->
-  <div id="mobile-menu" class="hidden md:hidden border-b border-slate-200 bg-white px-6 pt-3 pb-6 space-y-4 shadow-lg">
-    <div class="flex flex-col space-y-3 text-[14px] font-medium text-slate-700">
-      <a href="#features" class="mobile-nav-link hover:text-slate-900 py-1">Cómo funciona</a>
-      <a href="#preview" class="mobile-nav-link hover:text-slate-900 py-1">Demostración en vivo</a>
-      <a href="#pricing" class="mobile-nav-link hover:text-slate-900 py-1">Planes y precios</a>
-      <a href="#faq" class="mobile-nav-link hover:text-slate-900 py-1">Preguntas frecuentes</a>
-      <a href={LINKS.whatsappContact} target="_blank" rel="noopener noreferrer" class="mobile-nav-link text-emerald-700 font-semibold py-1">Soporte por WhatsApp</a>
+  <div id="mobile-menu" class="hidden md:hidden border-b border-[#606D80]/20 bg-[#1F1F20] px-6 pt-3 pb-6 space-y-4 shadow-xl">
+    <div class="flex flex-col space-y-3 text-[14px] font-medium text-[#DCE0E6]">
+      <a href="#features" class="mobile-nav-link hover:text-white py-1">Funcionalidades</a>
+      <a href="#preview" class="mobile-nav-link hover:text-white py-1">Demostración en vivo</a>
+      <a href="#pricing" class="mobile-nav-link hover:text-white py-1">Planes y precios</a>
+      <a href="#faq" class="mobile-nav-link hover:text-white py-1">Preguntas frecuentes</a>
+      <a href={LINKS.whatsappContact} target="_blank" rel="noopener noreferrer" class="mobile-nav-link text-[#567EBB] py-1">Soporte WhatsApp</a>
     </div>
-    <div class="pt-4 border-t border-slate-100 flex flex-col gap-2.5">
+    <div class="pt-4 border-t border-[#606D80]/20 flex flex-col gap-2.5">
       <a 
         href={LINKS.login} 
-        class="w-full text-center text-[13px] font-medium text-slate-800 py-2.5 rounded-xl border border-slate-300 bg-slate-50"
+        class="w-full text-center text-[13px] font-medium text-[#DCE0E6] py-2.5 rounded-full border border-[#606D80]/40 bg-white/[0.03]"
       >
         Iniciar sesión en SIGET
       </a>
       <a 
         href={LINKS.register} 
-        class="w-full text-center text-[13px] btn-green py-2.5 rounded-xl"
+        class="w-full text-center text-[13px] btn-pill-light py-2.5"
       >
         Crear torneo gratis
       </a>
