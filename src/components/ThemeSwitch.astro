@@ -1,0 +1,34 @@
+---
+interface Props {
+  id?: string;
+  className?: string;
+}
+
+const { id = "theme-switch-toggle", className = "" } = Astro.props;
+---
+
+<div class={`inline-flex items-center gap-2 ${className}`}>
+  <label class="switch" title="Cambiar tema (Claro / Oscuro)">
+    <input 
+      class="switch__input theme-switch-checkbox" 
+      type="checkbox" 
+      role="switch" 
+      id={id} 
+      aria-label="Cambiar modo oscuro o claro" 
+    />
+    <span class="switch__icon">
+      <span class="switch__icon-part switch__icon-part--1"></span>
+      <span class="switch__icon-part switch__icon-part--2"></span>
+      <span class="switch__icon-part switch__icon-part--3"></span>
+      <span class="switch__icon-part switch__icon-part--4"></span>
+      <span class="switch__icon-part switch__icon-part--5"></span>
+      <span class="switch__icon-part switch__icon-part--6"></span>
+      <span class="switch__icon-part switch__icon-part--7"></span>
+      <span class="switch__icon-part switch__icon-part--8"></span>
+      <span class="switch__icon-part switch__icon-part--9"></span>
+      <span class="switch__icon-part switch__icon-part--10"></span>
+      <span class="switch__icon-part switch__icon-part--11"></span>
+    </span>
+    <span class="switch__sr">Dark Mode</span>
+  </label>
+</div>

@@ -1,8 +1,9 @@
-﻿---
+---
 import { LINKS } from '../config';
+import ThemeSwitch from './ThemeSwitch.astro';
 ---
 
-<header class="sticky top-0 z-50 w-full bg-[#14171F] border-b border-[#2D3748] transition-colors">
+<header class="sticky top-0 z-50 w-full bg-[#000000] border-b border-[#1F1F1F] transition-colors">
   <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
     <div class="flex items-center justify-between h-18">
       
@@ -17,7 +18,7 @@ import { LINKS } from '../config';
           <span class="text-base font-bold tracking-tight text-white">
             Athletix
           </span>
-          <span class="text-[11px] font-medium text-slate-300 bg-[#1C2333] border border-[#2B4C7E] px-2.5 py-0.5 rounded-full hidden sm:inline-flex items-center gap-1.5">
+          <span class="text-[11px] font-medium text-slate-300 bg-[#111722] border border-[#1E3A66] px-2.5 py-0.5 rounded-full hidden sm:inline-flex items-center gap-1.5">
             <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
             Motor SIGET
           </span>
@@ -50,6 +51,9 @@ import { LINKS } from '../config';
 
       <!-- Desktop Action Buttons -->
       <div class="hidden md:flex items-center gap-4">
+        <!-- Animated Dark/Light/Energy Theme Switcher -->
+        <ThemeSwitch id="desktop-theme-switch" />
+
         <a 
           href={LINKS.login} 
           class="text-[13px] font-medium text-slate-300 hover:text-white px-3 py-1.5 transition-colors"
@@ -67,8 +71,10 @@ import { LINKS } from '../config';
         </a>
       </div>
 
-      <!-- Mobile Button -->
-      <div class="flex md:hidden">
+      <!-- Mobile Button & Switch -->
+      <div class="flex items-center gap-3 md:hidden">
+        <ThemeSwitch id="mobile-header-theme-switch" />
+
         <button 
           id="mobile-menu-btn"
           type="button" 
@@ -88,7 +94,7 @@ import { LINKS } from '../config';
   </div>
 
   <!-- Mobile Dropdown -->
-  <div id="mobile-menu" class="hidden md:hidden border-b border-[#2D3748] bg-[#14171F] px-6 pt-3 pb-6 space-y-4">
+  <div id="mobile-menu" class="hidden md:hidden border-b border-[#1F1F1F] bg-[#000000] px-6 pt-3 pb-6 space-y-4">
     <div class="flex flex-col space-y-3 text-[14px] font-medium text-slate-200">
       <a href="#features" class="mobile-nav-link hover:text-white py-1">Funcionalidades</a>
       <a href="#preview" class="mobile-nav-link hover:text-white py-1">Demostración en vivo</a>
@@ -96,10 +102,10 @@ import { LINKS } from '../config';
       <a href="#faq" class="mobile-nav-link hover:text-white py-1">Preguntas frecuentes</a>
       <a href={LINKS.whatsappContact} target="_blank" rel="noopener noreferrer" class="mobile-nav-link text-[#3B82F6] py-1">Soporte WhatsApp</a>
     </div>
-    <div class="pt-4 border-t border-[#2D3748] flex flex-col gap-2.5">
+    <div class="pt-4 border-t border-[#1F1F1F] flex flex-col gap-2.5">
       <a 
         href={LINKS.login} 
-        class="w-full text-center text-[13px] font-medium text-white py-2.5 rounded-full border border-[#2D3748] bg-[#1C202B]"
+        class="w-full text-center text-[13px] font-medium text-white py-2.5 rounded-full border border-[#1F1F1F] bg-[#0A0A0A]"
       >
         Iniciar sesión en SIGET
       </a>

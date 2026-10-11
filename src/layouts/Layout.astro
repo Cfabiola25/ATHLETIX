@@ -1,6 +1,5 @@
-﻿---
+---
 import '../styles/global.css';
-import { SITE_INFO } from '../config';
 
 interface Props {
   title?: string;
@@ -8,13 +7,13 @@ interface Props {
 }
 
 const { 
-  title = `Athletix — Software Integral de Gestión Deportiva`,
-  description = `Organiza tus torneos con la precisión de un software corporativo de primer nivel. Fixtures automáticos, control de sanciones y planilla arbitral móvil con el motor SIGET.` 
+  title = "Athletix - Software Integral de Gestión Deportiva",
+  description = "Organiza tus torneos con la precisión de un software corporativo de primer nivel. Fixtures automáticos, control de sanciones y planilla arbitral móvil con el motor SIGET." 
 } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="es" class="scroll-smooth">
+<html lang="es" class="scroll-smooth dark" data-theme="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -25,10 +24,128 @@ const {
     <title>{title}</title>
     <meta name="title" content={title} />
     <meta name="description" content={description} />
+
+    <!-- Immediate Theme & Energy-Saving Initialization (Zero Flash) -->
+    <script is:inline>
+      (function() {
+        const THEME_KEY = 'siget_athletix_theme';
+        const saved = localStorage.getItem(THEME_KEY);
+        let isDark = true;
+
+        if (saved === 'light') {
+          isDark = false;
+        } else if (saved === 'dark') {
+          isDark = true;
+        } else {
+          if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+            isDark = false;
+          }
+        }
+
+        if (isDark) {
+          document.documentElement.classList.add('dark');
+          document.documentElement.classList.remove('light');
+          document.documentElement.setAttribute('data-theme', 'dark');
+        } else {
+          document.documentElement.classList.add('light');
+          document.documentElement.classList.remove('dark');
+          document.documentElement.setAttribute('data-theme', 'light');
+        }
+      })();
+    </script>
   </head>
-  <body class="bg-[#14171F] text-[#E2E8F0] min-h-screen relative flex flex-col antialiased selection:bg-[#2B4C7E] selection:text-white" style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;">
+  <body class="bg-[#000000] text-[#E2E8F0] min-h-screen relative flex flex-col antialiased selection:bg-[#2B4C7E] selection:text-white" style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;">
     <div class="relative z-10 flex flex-col min-h-screen">
       <slot />
     </div>
+
+    <!-- Client-side Switch Binding and Energy-Saving Watcher -->
+    <script>
+      const THEME_KEY = 'siget_athletix_theme';
+      const MANUAL_KEY = 'siget_athletix_manual_override';
+
+      function applyTheme(theme: string, reason = 'manual') {
+        const root = document.documentElement;
+        const isDark = (theme === 'dark');
+
+        if (isDark) {
+          root.classList.add('dark');
+          root.classList.remove('light');
+          root.setAttribute('data-theme', 'dark');
+        } else {
+          root.classList.add('light');
+          root.classList.remove('dark');
+          root.setAttribute('data-theme', 'light');
+        }
+
+        const checkboxes = document.querySelectorAll('.theme-switch-checkbox');
+        checkboxes.forEach((cb) => {
+          const input = cb as HTMLInputElement;
+          input.checked = isDark;
+          const label = input.closest('.switch');
+          if (label) {
+            if (reason === 'battery_saver') {
+              label.setAttribute('title', 'Modo Oscuro OLED (Activado por Ahorro de Batería)');
+            } else if (reason === 'data_saver') {
+              label.setAttribute('title', 'Modo Oscuro (Activado por Ahorro de Datos)');
+            } else {
+              label.setAttribute('title', isDark ? 'Modo Oscuro (Clic para cambiar a Claro)' : 'Modo Claro (Clic para cambiar a Oscuro)');
+            }
+          }
+        });
+      }
+
+      async function checkBatteryAndEnergySaving() {
+        const isManual = localStorage.getItem(MANUAL_KEY) === 'true';
+        if (isManual) return;
+
+        const nav = navigator as any;
+        if (nav.connection && nav.connection.saveData) {
+          applyTheme('dark', 'data_saver');
+          return;
+        }
+
+        if ('getBattery' in navigator) {
+          try {
+            const battery = await (navigator as any).getBattery();
+            const evaluateBattery = () => {
+              if (localStorage.getItem(MANUAL_KEY) === 'true') return;
+              if (!battery.charging && battery.level <= 0.20) {
+                applyTheme('dark', 'battery_saver');
+              }
+            };
+
+            evaluateBattery();
+            battery.addEventListener('levelchange', evaluateBattery);
+            battery.addEventListener('chargingchange', evaluateBattery);
+          } catch (e) {
+            // Battery API not supported or permissions
+          }
+        }
+      }
+
+      function setupThemeListeners() {
+        const currentTheme = document.documentElement.classList.contains('light') ? 'light' : 'dark';
+        applyTheme(currentTheme, 'init');
+
+        document.querySelectorAll('.theme-switch-checkbox').forEach((cb) => {
+          cb.addEventListener('change', (e) => {
+            const target = e.target as HTMLInputElement;
+            const newTheme = target.checked ? 'dark' : 'light';
+            localStorage.setItem(THEME_KEY, newTheme);
+            localStorage.setItem(MANUAL_KEY, 'true');
+            applyTheme(newTheme, 'manual');
+          });
+        });
+
+        checkBatteryAndEnergySaving();
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', setupThemeListeners);
+      } else {
+        setupThemeListeners();
+      }
+    </script>
   </body>
 </html>

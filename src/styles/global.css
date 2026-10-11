@@ -1,35 +1,62 @@
-﻿@import "tailwindcss";
+@import "tailwindcss";
 
 @layer base {
-  :root {
-    /* Paleta Corporativa Suiza Sólida (Sin degradados ni resplandores) */
-    --color-bg: #14171F;          /* Fondo corporativo sólido oscuro */
-    --color-surface: #1C202B;     /* Superficie sólida de tarjeta */
-    --color-surface-hover: #232936;
-    --color-navy: #2B4C7E;        /* Azul marino institucional sólido */
-    --color-blue: #3B82F6;        /* Azul corporativo de acción */
-    --color-slate-border: #2D3748;/* Bordes nítidos sólidos */
-    --color-text-muted: #8F9CAE;  /* Texto secundario de alta legibilidad */
-    --color-text-white: #FFFFFF;  /* Blanco puro para títulos Helvetica */
+  :root,
+  html.dark {
+    /* Athletix PURE BLACK (#000000) Theme */
+    --color-bg: #000000;
+    --color-surface: #0a0a0a;
+    --color-surface-card: #0d0d0d;
+    --color-surface-hover: #141414;
+    --color-navy: #1e3a66;
+    --color-blue: #3b82f6;
+    --color-slate-border: #1f1f1f;
+    --color-text-muted: #8f9cae;
+    --color-text-white: #ffffff;
+  }
+
+  html.light {
+    /* Athletix LIGHT Theme */
+    --color-bg: #f8fafc;
+    --color-surface: #ffffff;
+    --color-surface-card: #ffffff;
+    --color-surface-hover: #f1f5f9;
+    --color-navy: #2b4c7e;
+    --color-blue: #2563eb;
+    --color-slate-border: #e2e8f0;
+    --color-text-muted: #64748b;
+    --color-text-white: #0f172a;
   }
 
   html {
     scroll-behavior: smooth;
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     color-scheme: dark;
-    background-color: #14171F;
+    background-color: #000000;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
   }
 
+  html.light {
+    color-scheme: light;
+    background-color: #f8fafc;
+  }
+
   body {
-    background-color: #14171F;
-    color: #E2E8F0;
+    background-color: #000000;
+    color: #e2e8f0;
     overflow-x: hidden;
     letter-spacing: -0.015em;
-    selection-background-color: #2B4C7E;
-    selection-color: #FFFFFF;
+    selection-background-color: #2b4c7e;
+    selection-color: #ffffff;
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    transition: background-color 0.25s ease, color 0.25s ease;
+  }
+
+  html.light body {
+    background-color: #f8fafc;
+    color: #1e293b;
+    selection-background-color: #3b82f6;
   }
 
   .tabular-nums {
@@ -37,43 +64,196 @@
   }
 }
 
-/* Swiss Corporate Solid Cards (Zero Gradients, Crisp 1px Borders) */
+/* Pure Black Mode (#000000) Mappings */
+html.dark .bg-\[\#000000\],
+html.dark .bg-\[\#14171F\],
+html:not(.light) .bg-\[\#000000\],
+html:not(.light) .bg-\[\#14171F\] {
+  background-color: #000000 !important;
+}
+
+html.dark header.bg-\[\#000000\],
+html.dark header.bg-\[\#14171F\],
+html:not(.light) header.bg-\[\#000000\],
+html:not(.light) header.bg-\[\#14171F\] {
+  background-color: #000000 !important;
+  border-color: #1f1f1f !important;
+}
+
+html.dark footer.bg-\[\#000000\],
+html.dark footer.bg-\[\#14171F\],
+html:not(.light) footer.bg-\[\#000000\],
+html:not(.light) footer.bg-\[\#14171F\] {
+  background-color: #000000 !important;
+  border-color: #1f1f1f !important;
+}
+
+html.dark .card-corporate,
+html:not(.light) .card-corporate {
+  background-color: #0a0a0a !important;
+  border: 1px solid #1f1f1f !important;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+}
+
+html.dark .card-corporate-hover:hover,
+html:not(.light) .card-corporate-hover:hover {
+  border-color: #333333 !important;
+  background-color: #121212 !important;
+  transform: translateY(-2px);
+}
+
+html.dark .border-\[\#1F1F1F\],
+html.dark .border-\[\#2D3748\],
+html:not(.light) .border-\[\#1F1F1F\],
+html:not(.light) .border-\[\#2D3748\] {
+  border-color: #1f1f1f !important;
+}
+
+html.dark .bg-\[\#0A0A0A\],
+html.dark .bg-\[\#1C202B\],
+html:not(.light) .bg-\[\#0A0A0A\],
+html:not(.light) .bg-\[\#1C202B\] {
+  background-color: #0a0a0a !important;
+  border-color: #1f1f1f !important;
+}
+
+html.dark .bg-\[\#111722\],
+html.dark .bg-\[\#1C2333\],
+html:not(.light) .bg-\[\#111722\],
+html:not(.light) .bg-\[\#1C2333\] {
+  background-color: #111722 !important;
+  border-color: #1e3a66 !important;
+}
+
+/* Light Mode Overrides */
+html.light .bg-\[\#000000\],
+html.light .bg-\[\#14171F\] {
+  background-color: #f8fafc !important;
+}
+
+html.light header.bg-\[\#000000\],
+html.light header.bg-\[\#14171F\] {
+  background-color: #ffffff !important;
+  border-color: #e2e8f0 !important;
+}
+
+html.light footer.bg-\[\#000000\],
+html.light footer.bg-\[\#14171F\] {
+  background-color: #ffffff !important;
+  border-color: #e2e8f0 !important;
+}
+
+html.light .card-corporate {
+  background-color: #ffffff !important;
+  border: 1px solid #e2e8f0 !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.02) !important;
+}
+
+html.light .card-corporate-hover:hover {
+  border-color: #cbd5e1 !important;
+  background-color: #f8fafc !important;
+  transform: translateY(-2px);
+}
+
+html.light .border-\[\#1F1F1F\],
+html.light .border-\[\#2D3748\] {
+  border-color: #e2e8f0 !important;
+}
+
+html.light .bg-\[\#0A0A0A\],
+html.light .bg-\[\#1C202B\] {
+  background-color: #ffffff !important;
+  border-color: #e2e8f0 !important;
+}
+
+html.light .bg-\[\#111722\],
+html.light .bg-\[\#1C2333\] {
+  background-color: #eff6ff !important;
+  border-color: #bfdbfe !important;
+  color: #1e40af !important;
+}
+
+html.light .text-white {
+  color: #0f172a !important;
+}
+
+html.light .text-slate-200,
+html.light .text-slate-300 {
+  color: #334155 !important;
+}
+
+html.light .text-\[\#8F9CAE\],
+html.light .text-\[\#A0AEC0\] {
+  color: #64748b !important;
+}
+
+html.light .btn-corp-primary {
+  background-color: #0f172a !important;
+  color: #ffffff !important;
+  border: 1px solid #0f172a !important;
+}
+
+html.light .btn-corp-primary:hover {
+  background-color: #1e293b !important;
+}
+
+html.light .btn-corp-secondary {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+  border: 1px solid #cbd5e1 !important;
+}
+
+html.light .btn-corp-secondary:hover {
+  background-color: #f1f5f9 !important;
+  border-color: #94a3b8 !important;
+}
+
+html.light .badge-corp {
+  background-color: #eff6ff !important;
+  border-color: #bfdbfe !important;
+  color: #1e40af !important;
+}
+
+html.light .bg-\[\#2B4C7E\] span,
+html.light .bg-\[\#2B4C7E\] svg,
+html.light .btn-corp-primary span,
+html.light .btn-corp-primary svg,
+html.light [class*=bg-rose-] span,
+html.light [class*=bg-emerald-] span,
+html.light [class*=bg-amber-] span {
+  color: #ffffff !important;
+}
+
+/* Swiss Corporate Solid Buttons & Cards */
 .card-corporate {
-  background-color: #1C202B;
-  border: 1px solid #2D3748;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2), 0 2px 4px -1px rgba(0, 0, 0, 0.1);
+  background-color: #0a0a0a;
+  border: 1px solid #1f1f1f;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
 }
 
 .card-corporate-hover {
   transition: border-color 0.15s ease, background-color 0.15s ease, transform 0.15s ease;
 }
 
-.card-corporate-hover:hover {
-  border-color: #4A5568;
-  background-color: #202633;
-  transform: translateY(-2px);
-}
-
-/* Corporate Solid Buttons */
 .btn-corp-primary {
-  background-color: #FFFFFF;
-  color: #14171F;
+  background-color: #ffffff;
+  color: #000000;
   font-weight: 700;
   border-radius: 9999px;
-  border: 1px solid #FFFFFF;
+  border: 1px solid #ffffff;
   transition: all 0.15s ease;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
 .btn-corp-primary:hover {
-  background-color: #E2E8F0;
-  border-color: #E2E8F0;
+  background-color: #e2e8f0;
+  border-color: #e2e8f0;
 }
 
 .btn-corp-secondary {
   background-color: transparent;
-  color: #FFFFFF;
-  border: 1px solid #3B4758;
+  color: #ffffff;
+  border: 1px solid #3b4758;
   border-radius: 9999px;
   font-weight: 600;
   transition: all 0.15s ease;
@@ -81,15 +261,230 @@
 }
 
 .btn-corp-secondary:hover {
-  background-color: #232936;
-  border-color: #4A5568;
+  background-color: #141414;
+  border-color: #4a5568;
 }
 
-/* Corporate Pill Badge (Flat, Solid) */
 .badge-corp {
-  background-color: #1C2333;
-  border: 1px solid #2B4C7E;
-  color: #E2E8F0;
+  background-color: #111722;
+  border: 1px solid #1e3a66;
+  color: #e2e8f0;
   border-radius: 9999px;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+/* User's Exact Animated Sun/Moon Switch */
+.switch {
+  --hue: 223;
+  --trans-dur: 0.4s;
+  --trans-timing: cubic-bezier(0.65, 0, 0.35, 1);
+  font-size: 14px;
+  position: relative;
+  display: inline-block;
+  -webkit-tap-highlight-color: transparent;
+  vertical-align: middle;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.switch *,
+.switch *::before,
+.switch *::after {
+  box-sizing: border-box;
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.switch__input {
+  position: relative;
+  -webkit-tap-highlight-color: transparent;
+  background-color: hsl(var(--hue), 10%, 15%);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 0.75em;
+  cursor: pointer;
+  display: block;
+  width: 3em;
+  height: 1.5em;
+  transition: background-color var(--trans-dur) var(--trans-timing), border-color var(--trans-dur) var(--trans-timing);
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+html.light .switch__input {
+  background-color: #e2e8f0;
+  border: 1px solid #cbd5e1;
+}
+
+.switch__input:before {
+  border-radius: 50%;
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0.125em;
+  left: 0.125em;
+  width: 1.25em;
+  height: 1.25em;
+  background-color: hsl(var(--hue), 10%, 10%);
+  transition:
+    background-color var(--trans-dur) var(--trans-timing),
+    transform var(--trans-dur) var(--trans-timing);
+}
+
+.switch__icon,
+.switch__icon-part {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.switch__icon {
+  background-color: hsl(var(--hue), 10%, 90%);
+  border-radius: 50%;
+  overflow: hidden;
+  pointer-events: none;
+  top: 0.125em;
+  left: 0.125em;
+  width: 1.25em;
+  height: 1.25em;
+  transition: transform var(--trans-dur) var(--trans-timing);
+}
+
+.switch__icon-part {
+  transition:
+    box-shadow var(--trans-dur) var(--trans-timing),
+    transform var(--trans-dur) var(--trans-timing);
+}
+
+.switch__icon-part--1,
+.switch__icon-part--2,
+.switch__icon-part--3 {
+  border-radius: 50%;
+}
+
+.switch__icon-part--1 {
+  background-color: hsl(var(--hue), 10%, 90%);
+  top: calc(50% - 0.375em);
+  left: calc(50% - 0.375em);
+  width: 0.75em;
+  height: 0.75em;
+}
+
+.switch__icon-part--2 {
+  background-color: hsl(var(--hue), 10%, 10%);
+  top: calc(50% - 0.4375em);
+  left: calc(50% - 0.0625em);
+  width: 0.5em;
+  height: 0.5em;
+  transform: translate(-0.1875em, 0.1875em) scale(0.2);
+}
+
+.switch__icon-part--3 {
+  box-shadow: 0 0 0 0.625em hsl(var(--hue), 10%, 10%) inset;
+  width: 1.25em;
+  height: 1.25em;
+  transform: scale(0.25);
+}
+
+.switch__icon-part--3 ~ .switch__icon-part {
+  background-color: hsl(var(--hue), 10%, 10%);
+  border-radius: 0.0625em;
+  top: 50%;
+  left: 50%;
+  width: 0.125em;
+  height: 0.1875em;
+  transform-origin: 50% 0;
+}
+
+.switch__icon-part--4 {
+  transform: translateX(-50%) rotate(0) translateY(0.25em);
+}
+
+.switch__icon-part--5 {
+  transform: translateX(-50%) rotate(45deg) translateY(0.25em);
+}
+
+.switch__icon-part--6 {
+  transform: translateX(-50%) rotate(90deg) translateY(0.25em);
+}
+
+.switch__icon-part--7 {
+  transform: translateX(-50%) rotate(135deg) translateY(0.25em);
+}
+
+.switch__icon-part--8 {
+  transform: translateX(-50%) rotate(180deg) translateY(0.25em);
+}
+
+.switch__icon-part--9 {
+  transform: translateX(-50%) rotate(225deg) translateY(0.25em);
+}
+
+.switch__icon-part--10 {
+  transform: translateX(-50%) rotate(270deg) translateY(0.25em);
+}
+
+.switch__icon-part--11 {
+  transform: translateX(-50%) rotate(315deg) translateY(0.25em);
+}
+
+.switch__sr {
+  overflow: hidden;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  clip: rect(0, 0, 0, 0);
+}
+
+/* :checked state (DARK MODE - MOON) */
+.switch__input:checked {
+  background-color: hsl(var(--hue), 10%, 25%);
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+.switch__input:checked:before,
+.switch__input:checked ~ .switch__icon {
+  transform: translateX(1.5em);
+}
+
+.switch__input:checked ~ .switch__icon .switch__icon-part--2 {
+  transform: translate(0, 0) scale(1);
+}
+
+.switch__input:checked ~ .switch__icon .switch__icon-part--3 {
+  box-shadow: 0 0 0 0.25em hsl(var(--hue), 10%, 10%) inset;
+  transform: scale(1);
+}
+
+.switch__input:checked ~ .switch__icon .switch__icon-part--4 {
+  transform: translateX(-50%) rotate(0) translateY(0.625em) scale(0);
+}
+
+.switch__input:checked ~ .switch__icon .switch__icon-part--5 {
+  transform: translateX(-50%) rotate(45deg) translateY(0.625em) scale(0);
+}
+
+.switch__input:checked ~ .switch__icon .switch__icon-part--6 {
+  transform: translateX(-50%) rotate(90deg) translateY(0.625em) scale(0);
+}
+
+.switch__input:checked ~ .switch__icon .switch__icon-part--7 {
+  transform: translateX(-50%) rotate(135deg) translateY(0.625em) scale(0);
+}
+
+.switch__input:checked ~ .switch__icon .switch__icon-part--8 {
+  transform: translateX(-50%) rotate(180deg) translateY(0.625em) scale(0);
+}
+
+.switch__input:checked ~ .switch__icon .switch__icon-part--9 {
+  transform: translateX(-50%) rotate(225deg) translateY(0.625em) scale(0);
+}
+
+.switch__input:checked ~ .switch__icon .switch__icon-part--10 {
+  transform: translateX(-50%) rotate(270deg) translateY(0.625em) scale(0);
+}
+
+.switch__input:checked ~ .switch__icon .switch__icon-part--11 {
+  transform: translateX(-50%) rotate(315deg) translateY(0.625em) scale(0);
 }
