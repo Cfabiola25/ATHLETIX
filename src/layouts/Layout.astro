@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import CookieBanner from '../components/CookieBanner.astro';
 
 interface Props {
   title?: string;
@@ -58,6 +59,9 @@ const {
     <div class="relative z-10 flex flex-col min-h-screen">
       <slot />
     </div>
+
+    <!-- Cookie Consent Banner -->
+    <CookieBanner />
 
     <!-- Client-side Switch Binding and Energy-Saving Watcher -->
     <script>
