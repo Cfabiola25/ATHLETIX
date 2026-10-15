@@ -5,7 +5,8 @@ export const APP_URL = import.meta.env.PROD
 
 export const LINKS = {
   app: APP_URL,
-  login: `${APP_URL}/login`,
+  siget: 'https://siget.online',
+  login: 'https://siget.online/login',
   register: `${APP_URL}/register`,
   whatsappContact: 'https://wa.me/573108895042?text=Hola,%20quiero%20información%20sobre%20Athletix%20para%20mi%20torneo',
   whatsappDemo: 'https://wa.me/573108895042?text=Hola,%20quisiera%20solicitar%20una%20demostración%20en%20vivo%20de%20Athletix%20y%20SIGET',
