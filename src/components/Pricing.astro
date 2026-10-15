@@ -1,63 +1,74 @@
-﻿---
+---
 import { LINKS } from '../config';
 
-const plans = [
+const tiers = [
   {
-    name: "Torneo Relámpago",
-    tag: "Pago único",
-    price: "$99.000",
+    name: "Relámpago",
+    tag: "Tarifa Plana Única",
+    price: "$100,000",
     currency: "COP",
     period: "por torneo",
-    desc: "Para copas de fin de semana, torneos de microfútbol barriales o campeonatos empresariales.",
+    duration: "Fin de semana (1 a 3 días)",
+    featuresAndDuration: "Fin de semana (1 a 3 días). Hasta 16 equipos.",
+    billingModel: "Tarifa Plana Única",
+    projectedValue: "$100,000 por torneo",
+    estimatedRevenue: "$100,000",
     popular: false,
-    ctaText: "Crear torneo relámpago",
+    ctaText: "Organizar Torneo Relámpago",
     ctaLink: LINKS.register,
     features: [
       "Hasta 16 equipos participantes",
+      "Duración de 1 a 3 días (Fin de semana)",
       "Fixture automático sin cruces de horarios",
       "Tabla de posiciones en tiempo real",
       "Planilla digital básica para jueces",
-      "Enlace público de resultados para WhatsApp",
-      "Soporte directo por WhatsApp"
+      "Enlace público de resultados para WhatsApp"
     ]
   },
   {
-    name: "Liga Pro",
-    tag: "Recomendado",
-    price: "$189.000",
+    name: "Liga Amateur",
+    tag: "Por Equipo Inscrito",
+    price: "$12,000 - $15,000",
     currency: "COP",
-    period: "al mes",
-    desc: "Para complejos deportivos con canchas sintéticas y ligas continuas con múltiples categorías.",
+    period: "por equipo",
+    duration: "1 a 3 meses",
+    featuresAndDuration: "1 a 3 meses. Torneo regular (16 a 32 equipos).",
+    billingModel: "Por Equipo Inscrito",
+    projectedValue: "$12,000 - $15,000 por equipo",
+    estimatedRevenue: "$192,000 - $480,000",
     popular: true,
-    ctaText: "Comenzar prueba gratis de 14 días",
+    ctaText: "Comenzar Liga Amateur",
     ctaLink: LINKS.register,
     features: [
-      "Categorías ilimitadas (Libre, Veteranos, Femenino)",
-      "Hasta 48 equipos simultáneos",
+      "Torneo regular de 16 a 32 equipos",
+      "Duración de 1 a 3 meses de competencia",
+      "Cobro por equipo inscrito",
       "Bloqueo automático de jugadores sancionados",
       "Goleadores y valla menos vencida en vivo",
-      "Acceso móvil ilimitado para árbitros",
-      "Descarga de boletines oficiales en PDF",
-      "Soporte prioritario 24/7 por WhatsApp"
+      "Planilla arbitral móvil y boletines en PDF"
     ]
   },
   {
-    name: "Corporativo & Ligas",
-    tag: "A la medida",
-    price: "A convenir",
-    currency: "",
-    period: "grandes organizaciones",
-    desc: "Para ligas departamentales, cajas de compensación y complejos multideportivos de 4+ canchas.",
+    name: "Mega Torneo",
+    tag: "Licencia Extendida",
+    price: "$500,000+",
+    currency: "COP",
+    period: "por temporada",
+    duration: "Temporada completa / Varias sedes",
+    featuresAndDuration: "Múltiples categorías (ej. libre, veteranos, femenino) / Varias sedes.",
+    billingModel: "Licencia Extendida",
+    projectedValue: "$500,000+ por temporada",
+    estimatedRevenue: "$500,000+",
     popular: false,
-    ctaText: "Hablar con un asesor comercial",
+    ctaText: "Cotizar Licencia Extendida",
     ctaLink: LINKS.whatsappContact,
     features: [
-      "Torneos y categorías sin límite",
-      "Dominio web personalizado (ej. tu-liga.com)",
+      "Múltiples categorías (libre, veteranos, femenino)",
+      "Gestión simultánea de varias sedes y canchas",
+      "Equipos y categorías sin límite",
       "Carnetización con código QR para jugadores",
-      "Panel para comité disciplinario y apelaciones",
-      "Capacitación directa para tus planilleros",
-      "Gerente de cuenta dedicado"
+      "Panel para comité disciplinario y resoluciones",
+      "Capacitación presencial/virtual y soporte prioritario"
     ]
   }
 ];
@@ -69,19 +80,19 @@ const plans = [
     <!-- Section Header (Helvetica) -->
     <div class="max-w-2xl mb-16 md:mb-20">
       <span class="text-xs font-bold uppercase tracking-wider text-[#3B82F6] bg-[#1C2333] border border-[#2B4C7E] px-3 py-1 rounded-full mb-4 inline-block">
-        Planes y precios
+        Modelos de Inversión y Proyección
       </span>
       <h2 class="text-3xl sm:text-4xl font-bold tracking-[-0.025em] text-white leading-tight">
-        Planes transparentes para cada etapa de tu liga.
+        Tarifas adaptadas al formato de tu torneo.
       </h2>
       <p class="text-base text-[#8F9CAE] mt-4 leading-relaxed">
-        Paga únicamente por el torneo que organizas o suscríbete mensualmente si operas un complejo durante todo el año.
+        Elige el modelo ideal según la magnitud, duración y cantidad de equipos de tu evento deportivo.
       </p>
     </div>
 
     <!-- Pricing Cards Grid -->
-    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto items-stretch">
-      {plans.map((plan) => (
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto items-stretch mb-20">
+      {tiers.map((plan) => (
         <div class={`rounded-2xl p-8 flex flex-col justify-between transition-all card-corporate ${
           plan.popular 
             ? 'border-2 border-[#3B82F6] relative' 
@@ -90,7 +101,7 @@ const plans = [
           
           <div>
             <div class="flex items-center justify-between mb-4">
-              <h3 class="text-lg font-bold text-white tracking-tight">
+              <h3 class="text-xl font-bold text-white tracking-tight">
                 {plan.name}
               </h3>
               {plan.popular ? (
@@ -104,20 +115,30 @@ const plans = [
               )}
             </div>
 
-            <p class="text-xs sm:text-sm text-[#8F9CAE] min-h-[40px] mb-6 leading-relaxed">
-              {plan.desc}
+            <p class="text-xs sm:text-sm text-[#8F9CAE] min-h-[44px] mb-6 leading-relaxed">
+              {plan.featuresAndDuration}
             </p>
 
-            <div class="flex items-baseline gap-1.5 mb-8 pb-6 border-b border-[#1F1F1F]">
-              <span class="text-3xl sm:text-4xl font-bold text-white tracking-tight font-mono tabular-nums">
+            <div class="flex items-baseline gap-1.5 mb-4 pb-4 border-b border-[#1F1F1F]">
+              <span class="text-2xl sm:text-3xl font-bold text-white tracking-tight font-mono tabular-nums">
                 {plan.price}
               </span>
               {plan.currency && <span class="text-xs font-semibold text-slate-400">{plan.currency}</span>}
               <span class="text-xs text-slate-400 ml-1">/ {plan.period}</span>
             </div>
 
+            <!-- Revenue Projection Pill -->
+            <div class="bg-[#14171F] border border-[#2D3748] rounded-xl p-3.5 mb-6">
+              <div class="text-[11px] uppercase tracking-wider font-semibold text-slate-400 mb-1">
+                Ingreso Total Estimado
+              </div>
+              <div class="text-base font-bold text-[#3B82F6] font-mono tabular-nums">
+                {plan.estimatedRevenue} <span class="text-xs text-slate-400 font-normal">COP</span>
+              </div>
+            </div>
+
             <!-- Features -->
-            <ul class="space-y-3.5 mb-8 text-xs sm:text-sm text-slate-200">
+            <ul class="space-y-3 mb-8 text-xs sm:text-sm text-slate-200">
               {plan.features.map((feat) => (
                 <li class="flex items-start gap-3">
                   <span class="text-[#3B82F6] font-bold">✓</span>
@@ -145,10 +166,79 @@ const plans = [
       ))}
     </div>
 
+    <!-- Comparative Projection Table -->
+    <div class="max-w-6xl mx-auto">
+      <div class="mb-6 flex items-center justify-between">
+        <div>
+          <h3 class="text-xl sm:text-2xl font-bold text-white tracking-tight">
+            Tabla Comparativa de Proyección
+          </h3>
+          <p class="text-xs sm:text-sm text-[#8F9CAE] mt-1">
+            Resumen detallado de características, modelos de cobro y recaudación estimada.
+          </p>
+        </div>
+      </div>
+
+      <div class="overflow-x-auto rounded-2xl border border-[#2D3748] card-corporate">
+        <table class="w-full text-left text-xs sm:text-sm text-[#E2E8F0] border-collapse">
+          <thead>
+            <tr class="bg-[#161B26] border-b border-[#2D3748]">
+              <th scope="col" class="py-4 px-5 font-bold text-white uppercase tracking-wider text-[11px]">
+                Nivel de Torneo
+              </th>
+              <th scope="col" class="py-4 px-5 font-bold text-white uppercase tracking-wider text-[11px]">
+                Características y Duración
+              </th>
+              <th scope="col" class="py-4 px-5 font-bold text-white uppercase tracking-wider text-[11px]">
+                Modelo de Cobro
+              </th>
+              <th scope="col" class="py-4 px-5 font-bold text-white uppercase tracking-wider text-[11px]">
+                Valor Proyectado (COP)
+              </th>
+              <th scope="col" class="py-4 px-5 font-bold text-white uppercase tracking-wider text-[11px]">
+                Ingreso Total Estimado
+              </th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-[#2D3748]">
+            {tiers.map((row) => (
+              <tr class={`transition-colors hover:bg-[#202633] ${row.popular ? 'bg-[#1C2333]/30' : ''}`}>
+                <td class="py-4 px-5 font-bold text-white whitespace-nowrap">
+                  <div class="flex items-center gap-2">
+                    <span>{row.name}</span>
+                    {row.popular && (
+                      <span class="text-[10px] font-bold text-[#3B82F6] bg-[#2B4C7E]/40 border border-[#3B82F6]/40 px-2 py-0.5 rounded-full">
+                        Popular
+                      </span>
+                    )}
+                  </div>
+                </td>
+                <td class="py-4 px-5 text-slate-300 max-w-xs leading-relaxed">
+                  {row.featuresAndDuration}
+                </td>
+                <td class="py-4 px-5 text-slate-200 font-medium whitespace-nowrap">
+                  <span class="bg-[#14171F] border border-[#2D3748] px-2.5 py-1 rounded-md text-[11px] text-slate-300">
+                    {row.billingModel}
+                  </span>
+                </td>
+                <td class="py-4 px-5 font-mono tabular-nums text-white whitespace-nowrap font-semibold">
+                  {row.projectedValue}
+                </td>
+                <td class="py-4 px-5 font-mono tabular-nums text-[#3B82F6] font-bold whitespace-nowrap">
+                  {row.estimatedRevenue}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+
     <!-- Footnote -->
     <div class="mt-12 text-center text-xs text-slate-400">
-      <span>Sin contratos de permanencia. Puedes pausar o cancelar tu suscripción en cualquier momento.</span>
+      <span>Sin contratos de permanencia ni cobros ocultos. Soporte y acompañamiento continuo para tu organización deportiva.</span>
     </div>
 
   </div>
 </section>
+
